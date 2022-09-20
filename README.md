@@ -6,4 +6,4 @@ Group Members:
 Bella Humphrey
 Nathan Jacobi
 Nicholas Kundin
-Yalani Nadar
+Yalini Nadar
