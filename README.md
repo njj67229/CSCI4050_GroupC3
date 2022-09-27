@@ -7,3 +7,7 @@ Bella Humphrey
 Nathan Jacobi
 Nicholas Kundin
 Yalani Nadar
+
+## Run Django Project
+cd project
+py manage.py runserver
