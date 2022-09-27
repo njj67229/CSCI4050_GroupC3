@@ -1,6 +1,16 @@
 {% extends "base_generic.html" %}
 {% block title %}Hello World!{% endblock %}
 {% block content %}
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
+<h1>BUY TICKETS FOR:</h1>
+<h2>DC LEAGUE OF SUPER PETS</h2>
+{% load static %}
+<img src="{% static 'dc.jpg' %}" alt="">
+<p>
+  In “DC League of Super-Pets,” Krypto the Super-Dog and Superman are
+  inseparable best friends, sharing the same superpowers and fighting crime in
+  Metropolis side by side. When Superman and the rest of the Justice League are
+  kidnapped, Krypto must convince a rag-tag shelter pack—Ace the hound, PB the
+  potbellied pig, Merton the turtle and Chip the squirrel—to master their own
+  newfound powers and help him rescue the superheroes.
+</p>
 {% endblock %}
