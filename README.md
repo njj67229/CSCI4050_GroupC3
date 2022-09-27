@@ -9,5 +9,5 @@ Nicholas Kundin
 Yalani Nadar
 
 ## Run Django Project
-cd project
+cd project  
 py manage.py runserver
