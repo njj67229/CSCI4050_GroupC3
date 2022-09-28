@@ -12,6 +12,6 @@ Yalini Nadar
 cd project  
 py manage.py runserver
 
-# Managing DB
+## Managing DB
 python manage.py makemigrations
 python manage.py migrate
