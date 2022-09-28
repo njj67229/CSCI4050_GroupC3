@@ -3,7 +3,14 @@ from pydoc import synopsis
 from django.db import models
 
 # Create your models here.
+class Genre(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    
+    def __str__(self):
+        return f"{self.title}"
+    
 class Movie(models.Model):
+    id = models.IntegerField(primary_key=True, unique=True)
     title = models.CharField(max_length=200)
     tag_line = models.TextField(blank=True, null=True)
     rating = models.CharField(max_length=200)
@@ -12,6 +19,9 @@ class Movie(models.Model):
     synopsis = models.TextField(blank=True, null=True)
     pic = models.ImageField(blank=True, null=True, upload_to='images/')
     trailer_url = models.URLField(blank=True, null=True)
+    producer = models.CharField(max_length=200, blank=True, null=True)
+    director = models.CharField(max_length=200, blank=True, null=True)
+    genres = models.ManyToManyField(Genre)
     
     class Meta:
         verbose_name_plural = "Movies"
@@ -32,4 +42,6 @@ class Showing(models.Model):
     
     def __str__(self):
         return f"{self.movie} - {self.showtime}"
+
+    
 
