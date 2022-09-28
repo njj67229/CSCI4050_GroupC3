@@ -1,16 +1,36 @@
 {% extends "components/base.html" %}
 {% block title %}Select Show Time{% endblock %}
 {% block content %}
-<h1>BUY TICKETS FOR:</h1>
-<h2>DC LEAGUE OF SUPER PETS</h2>
-{% load static %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+      {% load static %}
 <img src="{% static 'dc.jpg' %}" alt="">
-<p>
-  In “DC League of Super-Pets,” Krypto the Super-Dog and Superman are
-  inseparable best friends, sharing the same superpowers and fighting crime in
-  Metropolis side by side. When Superman and the rest of the Justice League are
-  kidnapped, Krypto must convince a rag-tag shelter pack—Ace the hound, PB the
-  potbellied pig, Merton the turtle and Chip the squirrel—to master their own
-  newfound powers and help him rescue the superheroes.
-</p>
+    </div>
+    <div class="col-md-5 text-start">
+      <h1 class="text-uppercase">Buy tickets for:</h1>
+      <h2 class="text-uppercase">DC League of Super Pets</h2>
+      <ul class="list-inline">
+        <li class="list-inline-item">PG</li>
+        <li class="list-inline-item">1h 45m</li>
+        <li class="list-inline-item">Released: 07/09/22</li>
+      </ul>
+      <p>
+        In “DC League of Super-Pets,” Krypto the Super-Dog and Superman are
+        inseparable best friends, sharing the same superpowers and fighting crime in
+        Metropolis side by side. When Superman and the rest of the Justice League are
+        kidnapped, Krypto must convince a rag-tag shelter pack—Ace the hound, PB the
+        potbellied pig, Merton the turtle and Chip the squirrel—to master their own
+        newfound powers and help him rescue the superheroes.
+      </p>
+      <p>Today - Tuesday 20 September</p>
+      <button type="button" class="btn btn-light">4:30 PM</button>
+      <p>Tomorrow - Wednesday 21 September</p>
+      <button type="button" class="btn btn-light">4:30 PM</button>
+      <button type="button" class="btn btn-primary text-uppercase d-block">Continue</button>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
 {% endblock %}
