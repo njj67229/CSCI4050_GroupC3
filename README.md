@@ -6,4 +6,8 @@ Group Members:
 Bella Humphrey
 Nathan Jacobi
 Nicholas Kundin
-Yalini Nadar
+Yalani Nadar
+
+## Run Django Project
+cd project  
+py manage.py runserver
