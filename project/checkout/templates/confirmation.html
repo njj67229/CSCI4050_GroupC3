@@ -1,12 +1,18 @@
 {% extends "components/base.html" %}
 {% block title %}Confirmation{% endblock %}
 {% block content %}
-<h1>ORDER CONFIRMATION</h1>
-{% load static %}
-<img src="{% static 'check-mark.png' %}" alt="">
-<p>
-  Your order is complete! You will be receiving a confirmation email with order
-  details.
-</p>
-<button type="button" class="btn btn-success">EXPLORE MORE MOVIES</button>
+<div class="container mt-5">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h1 class="text-uppercase">Order Confirmation</h1>
+      <!-- {% load static %}
+      <img src="{% static 'check-mark.png' %}" class="img-fluid" alt="" /> -->
+      <p>
+        Your order is complete! You will be receiving a confirmation email with
+        order details.
+      </p>
+      <button type="button" class="btn btn-success text-uppercase">Explore More Movies</button>
+    </div>
+  </div>
+</div>
 {% endblock %}

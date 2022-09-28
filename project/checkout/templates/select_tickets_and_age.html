@@ -1,5 +1,75 @@
 {% extends "components/base.html" %}
 {% block title %}Select Tickets and Age{% endblock %}
 {% block content %}
-<h1>SELECT TICKETS AND AGE</h1>
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h1>SELECT TICKETS AND AGE</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Ticket Type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Adult</th>
+                    <td>$10.00</td>
+                    <td>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </td>
+                    <td>$10.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Child <i>(Age 2-12)</i></th>
+                    <td>$8.00</td>
+                    <td>
+                      <select class="form-select" aria-label="Default select example">
+                          <option selected value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                      </select>
+                    </td>
+                    <td>$8.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Senior <i>(Age 60+)</i></th>
+                    <td>$6.00</td>
+                    <td>
+                      <select class="form-select" aria-label="Default select example">
+                          <option selected value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                      </select>
+                    </td>
+                    <td>$6.00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-secondary text-uppercase btn-lg">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary text-uppercase btn-lg">
+                Continue
+              </button>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
 {% endblock %}
