@@ -1,7 +1,12 @@
 from datetime import datetime, timedelta
 from pydoc import synopsis
 from django.db import models
+import string
+import random
 
+def get_code(size=6, chars=string.ascii_uppercase + string.digits):
+        return ''.join(random.choice(chars) for _ in range(size))
+    
 # Create your models here.
 class Genre(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -31,9 +36,10 @@ class Movie(models.Model):
 
 class Promo(models.Model):
     name = models.CharField(max_length=200)
-    code = models.CharField(max_length=6)
+    code = models.CharField(max_length=6, default=get_code())
     discount = models.DecimalField(decimal_places=2, max_digits=3, default=0.1)
     exp_date = models.DateField(default= datetime.now()+ timedelta(days=30))
+    
 
 class Showing(models.Model):
     movie = models.ForeignKey(Movie, on_delete = models.CASCADE)
