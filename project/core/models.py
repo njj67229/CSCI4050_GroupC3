@@ -17,9 +17,9 @@ class Genre(models.Model):
 class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     title = models.CharField(max_length=200)
-    tag_line = models.TextField(blank=True, null=True)
+    tag = models.TextField(blank=True, null=True)
     rating = models.CharField(max_length=200)
-    runtime = models.IntegerField(blank=True, null=True)
+    runtime = models.CharField(max_length=200)
     release_date = models.DateField(null=True)
     synopsis = models.TextField(blank=True, null=True)
     pic = models.ImageField(blank=True, null=True, upload_to='images/')
