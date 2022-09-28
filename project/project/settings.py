@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'checkout.apps.CheckoutConfig',
     'home',
+    'core',
 ]
 
 MIDDLEWARE = [
