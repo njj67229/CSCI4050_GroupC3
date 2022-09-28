@@ -1,12 +1,12 @@
 {% extends "components/base.html" %}
-{% block title %}Select Show Time{% endblock %}
+{% block title %}Select Show Time{%endblock %}
 {% block content %}
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-3">
       {% load static %}
-<img src="{% static 'dc.jpg' %}" alt="">
+      <img src="{% static 'dc.jpg' %}" class="rounded" alt="" />
     </div>
     <div class="col-md-5 text-start">
       <h1 class="text-uppercase">Buy tickets for:</h1>
@@ -16,19 +16,32 @@
         <li class="list-inline-item">1h 45m</li>
         <li class="list-inline-item">Released: 07/09/22</li>
       </ul>
+      <ul class="list-inline">
+        <li class="list-inline-item">Directed by: Jared Stern, Sam Levine</li>
+        <li class="list-inline-item">Cast: Dwayne Johnson, Kevin Hart, Vanessa Bayer</li>
+      </ul>
       <p>
         In “DC League of Super-Pets,” Krypto the Super-Dog and Superman are
-        inseparable best friends, sharing the same superpowers and fighting crime in
-        Metropolis side by side. When Superman and the rest of the Justice League are
-        kidnapped, Krypto must convince a rag-tag shelter pack—Ace the hound, PB the
-        potbellied pig, Merton the turtle and Chip the squirrel—to master their own
-        newfound powers and help him rescue the superheroes.
+        inseparable best friends, sharing the same superpowers and fighting
+        crime in Metropolis side by side. When Superman and the rest of the
+        Justice League are kidnapped, Krypto must convince a rag-tag shelter
+        pack—Ace the hound, PB the potbellied pig, Merton the turtle and Chip
+        the squirrel—to master their own newfound powers and help him rescue the
+        superheroes.
       </p>
       <p>Today - Tuesday 20 September</p>
       <button type="button" class="btn btn-light">4:30 PM</button>
       <p>Tomorrow - Wednesday 21 September</p>
       <button type="button" class="btn btn-light">4:30 PM</button>
-      <button type="button" class="btn btn-primary text-uppercase d-block">Continue</button>
+      <br>
+      <div class="mt-4">
+        <button type="button" class="btn btn-secondary text-uppercase btn-lg">
+          Back
+        </button>
+        <button type="button" class="btn btn-primary text-uppercase btn-lg">
+          Continue
+        </button>
+      </div>
     </div>
     <div class="col-md-2"></div>
   </div>
