@@ -13,7 +13,7 @@
             <h2 class="text-uppercase">Where to send your tickets?</h2>
             <p>
                 Once you've made your payment, we'll email your tickets and order confirmation to you at the
-                email address provided below. You can either print your tickets or collect them from your box office.
+                email address provided below.
             </p>
             <!-- <div class="mb-3"> -->
             <label for="inputEmail" class="form-label">Email my tickets to this address:</label>
@@ -54,7 +54,38 @@
             <!-- </div> -->
         </div>
         <div class="col-md-5">
-            <a href="{% url 'select_seats' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
+            <p class="text-uppercase"><b>DC League of Super Pets</b></p>
+            <ul class="list-inline">
+                <li class="list-inline-item">PG</li>
+                <li class="list-inline-item">1h 45m</li>
+            </ul>
+            <p>When: Wednesday, September 21, 2022</p>
+            <p>Starts: 4:30 PM</p>
+            <table class="table mt-5">
+                <tbody>
+                    <tr>
+                        <td>Adult x1</th>
+                        <td class="text-end">$8.00</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</th>
+                        <td class="text-end">$8.00</td>
+                    </tr>
+                    <tr>
+                        <td>Sales Tax</th>
+                        <td class="text-end">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td>Online Fees</th>
+                        <td class="text-end">$1.00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-uppercase"><b>Total</b></th>
+                        <td class="text-end">$11.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="{% url 'select_tickets_and_age' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
             <a href="{% url 'confirmation' %}" class="btn btn-success text-uppercase btn-lg">Submit payment</a>
         </div>
         <div class="col-md-1"></div>
