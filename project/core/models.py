@@ -9,17 +9,18 @@ def get_code(size=6, chars=string.ascii_uppercase + string.digits):
     
 # Create your models here.
 class Genre(models.Model):
+    
     title = models.CharField(max_length=200, unique=True)
     
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.title, self.pk}"
     
 class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     title = models.CharField(max_length=200)
     tag = models.TextField(blank=True, null=True)
     rating = models.CharField(max_length=200)
-    runtime = models.CharField(max_length=200)
+    runtime = models.CharField(max_length=200, null=True)
     release_date = models.DateField(null=True)
     synopsis = models.TextField(blank=True, null=True)
     pic = models.ImageField(blank=True, null=True, upload_to='images/')
