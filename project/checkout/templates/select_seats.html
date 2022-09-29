@@ -1,7 +1,99 @@
 {% extends "components/base.html" %}
 {% block title %}Select Seats{% endblock %}
 {% block content %}
-<h1>SELECT SEATS</h1>
-<a href="{% url 'select_tickets_and_age' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
-<a href="{% url 'payment' %}" class="btn btn-primary text-uppercase btn-lg">Continue</a>
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h1 class="text-uppercase">Select seats</h1>
+            <div class="movie-container">
+
+                <ul class="showcase">
+                    <li>
+                        <div class="seat"></div>
+                        <small>N/A</small>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <small>Selected</small>
+                    </li>
+                    <li>
+                        <div class="seat occupied"></div>
+                        <small>Occupied</small>
+                    </li>
+                </ul>
+
+                <div class="inner-container">
+                    <div class="screen"></div>
+
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat occupied"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat occupied"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <p class="text">
+                        Select 1 remaining seat.
+                    </p>
+                </div>
+            </div>
+            <a href="{% url 'select_tickets_and_age' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
+            <a href="{% url 'payment' %}" class="btn btn-primary text-uppercase btn-lg">Continue</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

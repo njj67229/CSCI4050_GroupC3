@@ -4,12 +4,12 @@
 <div class="container mt-5">
   <div class="row text-center">
     <div class="col-md-12">
-      <h1>SELECT TICKETS AND AGE</h1>
+      <h1 class="text-uppercase">Select tickets and age</h1>
     </div>
   </div>
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-5">
+    <div class="col-md-10">
       <table class="table">
         <thead>
           <tr>
@@ -29,6 +29,8 @@
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
             </td>
             <td>$10.00</td>
@@ -42,9 +44,11 @@
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
             </td>
-            <td>$8.00</td>
+            <td>$0.00</td>
           </tr>
           <tr>
             <th scope="row">Senior <i>(Age 60+)</i></th>
@@ -55,16 +59,17 @@
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
             </td>
-            <td>$6.00</td>
+            <td>$0.00</td>
           </tr>
         </tbody>
       </table>
       <a href="{% url 'select_show_time' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
       <a href="{% url 'select_seats' %}" class="btn btn-primary text-uppercase btn-lg">Continue</a>
     </div>
-    <div class="col-md-5"></div>
     <div class="col-md-1"></div>
   </div>
 </div>
