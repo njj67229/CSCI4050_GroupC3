@@ -10,7 +10,7 @@ Yalini Nadar
 
 ## Run Django Project
 cd project  
-python manage.py runserver
+py manage.py runserver
 
 ## Managing DB
 python manage.py makemigrations
