@@ -15,3 +15,6 @@ py manage.py runserver
 ## Managing DB
 python manage.py makemigrations
 python manage.py migrate
+
+## Loading Data
+python3 manage.py loaddata movie_data.json
