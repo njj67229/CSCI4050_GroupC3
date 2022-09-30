@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'checkout.apps.CheckoutConfig',
-    'home.apps.HomeConfig'
+    'login.apps.LoginConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
