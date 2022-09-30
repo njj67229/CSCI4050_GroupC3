@@ -1,15 +1,15 @@
 {% extends "components/base.html" %}
-{% block title %}Payment{% endblock %}
+{% block title %}Checkout{% endblock %}
 {% block content %}
 <div class="container md-5">
     <div class="row text-center">
         <div class="col-md-12">
-            <h1 class="text-uppercase">Payment</h1>
+            <h1 class="text-uppercase">Checkout</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-5">
+        <div class="col-md-10">
             <h2 class="text-uppercase">Where to send your tickets?</h2>
             <p>
                 Once you've made your payment, we'll email your tickets and order confirmation to you at the
@@ -52,40 +52,7 @@
             <label for="inputAddress" class="form-label">Billing Address</label>
             <input type="address" class="form-control" id="inputAddress" aria-describedby="emailHelp">
             <!-- </div> -->
-        </div>
-        <div class="col-md-5">
-            <p class="text-uppercase"><b>DC League of Super Pets</b></p>
-            <ul class="list-inline">
-                <li class="list-inline-item">PG</li>
-                <li class="list-inline-item">1h 45m</li>
-            </ul>
-            <p>When: Wednesday, September 21, 2022</p>
-            <p>Starts: 4:30 PM</p>
-            <table class="table mt-5">
-                <tbody>
-                    <tr>
-                        <td>Adult x1</th>
-                        <td class="text-end">$8.00</td>
-                    </tr>
-                    <tr>
-                        <td>Subtotal</th>
-                        <td class="text-end">$8.00</td>
-                    </tr>
-                    <tr>
-                        <td>Sales Tax</th>
-                        <td class="text-end">$2.00</td>
-                    </tr>
-                    <tr>
-                        <td>Online Fees</th>
-                        <td class="text-end">$1.00</td>
-                    </tr>
-                    <tr>
-                        <td class="text-uppercase"><b>Total</b></th>
-                        <td class="text-end">$11.00</td>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="{% url 'select_tickets_and_age' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
+            <a href="{% url 'order_summary' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
             <a href="{% url 'confirmation' %}" class="btn btn-success text-uppercase btn-lg">Submit payment</a>
         </div>
         <div class="col-md-1"></div>

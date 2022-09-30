@@ -1,0 +1,50 @@
+{% extends "components/base.html" %}
+{% block title %}Order Summary{% endblock %}
+{% block content %}
+<div class="container md-5">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h1 class="text-uppercase">Order Summary</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <p class="text-uppercase"><b>DC League of Super Pets</b></p>
+            <ul class="list-inline">
+                <li class="list-inline-item">PG</li>
+                <li class="list-inline-item">1h 45m</li>
+            </ul>
+            <p>When: Wednesday, September 21, 2022</p>
+            <p>Starts: 4:30 PM</p>
+            <table class="table mt-5">
+                <tbody>
+                    <tr>
+                        <td>Adult x1</th>
+                        <td class="text-end">$8.00</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</th>
+                        <td class="text-end">$8.00</td>
+                    </tr>
+                    <tr>
+                        <td>Sales Tax</th>
+                        <td class="text-end">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td>Online Fees</th>
+                        <td class="text-end">$1.00</td>
+                    </tr>
+                    <tr>
+                        <td class="text-uppercase"><b>Total</b></th>
+                        <td class="text-end">$11.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="{% url 'select_tickets_and_age' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
+            <a href="{% url 'checkout' %}" class="btn btn-success text-uppercase btn-lg">Continue to checkout</a>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock %}

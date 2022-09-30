@@ -13,8 +13,12 @@ def select_seats(request):
   template = loader.get_template('select_seats.html')
   return HttpResponse(template.render())
 
-def payment(request):
-  template = loader.get_template('payment.html')
+def order_summary(request):
+  template = loader.get_template('order_summary.html')
+  return HttpResponse(template.render())
+
+def checkout(request):
+  template = loader.get_template('checkout.html')
   return HttpResponse(template.render())
 
 def confirmation(request):
