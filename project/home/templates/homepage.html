@@ -96,12 +96,15 @@
         </div>
       </div>
 
-      <!-- Movie section-->
-      <div>
+    <!-- Movie section-->
+    <div>
         <!--Movie filter and search-->
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="nav-item" >Show:</a>
+                
+
+             <!-- Rest of Navigation --> 
+              <a class="nav-item">Showing:</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -109,28 +112,13 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Now Showing</a>
+                    <a class="nav-link active" aria-current="page" href="#" style="color:#666666;">Now Showing</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Coming Soon</a>
+                    <a class="nav-link" href="#" style="color:#666666;">Coming Soon</a>
                   </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Rating
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Show all</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">G</a>
-                      <a class="dropdown-item" href="#">PG</a>
-                      <a class="dropdown-item" href="#">PG-13</a>
-                      <a class="dropdown-item" href="#">R</a>
-                    </div>
-                  </li>
-            
-                </div>
                 </ul>
+            </div>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
@@ -141,7 +129,7 @@
 
         <!--Movie Listings-->
         <div class="row row-cols-md-auto">
-            <div class="col">
+            <div class="col mb-2">
               <div class="card container">
                 <a href="https://youtu.be/5PSNL1qE6VY">
                     <img src="./static/img/Avatar.jpeg" class="card-img-top" alt="...">
@@ -157,7 +145,7 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col h-100">
                 <div class="card container">
                     <a href="https://youtu.be/Dr89pmKrqkI">
                       <img src="./static/img/Barbarian.jpeg" class="card-img-top" alt="...">
@@ -173,7 +161,7 @@
                   </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col h-100">
                 <div class="card container">
                     <a href="https://youtu.be/FgmnKsED-jU">
                         <img src="./static/img/dont-worry-darling-vert.jpeg" class="card-img-top" alt="...">
@@ -189,7 +177,7 @@
                   </div>
                 </div>
             </div>
-          <div class="col">
+          <div class="col h-100">
             <div class="card container">
                 <a href="https://youtu.be/BQIeBB9XMe8">
                     <img src="./static/img/bros.jpeg" class="card-img-top" alt="...">
@@ -205,7 +193,7 @@
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col h-100">
             <div class="card container">
                 <a href="https://youtu.be/BcDK7lkzzsU">
                     <img src="./static/img/smile.jpeg" class="card-img-top" alt="...">
@@ -221,15 +209,15 @@
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col h-100">
             <div class="card container">
                 <a href="https://youtu.be/3RDaPV_rJ1Y">
                     <img src="./static/img/the-woman-king-vert.jpeg" class="card-img-top" alt="...">
                 </a>
               <div class="card-body">
                 <div class="movieinfo col">
-                  <p>The Woman King</p>
-                </div>
+                    <p style="white-space: nowrap;">The Woman King</p>
+                </div>   
                 <div class="col">
                   <p>PG-13</p>
                 </div>
