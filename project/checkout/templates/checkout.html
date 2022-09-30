@@ -8,22 +8,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-10 offset-md-1">
             <h2 class="text-uppercase">Where to send your tickets?</h2>
             <p>
                 Once you've made your payment, we'll email your tickets and order confirmation to you at the
                 email address provided below.
             </p>
-            <!-- <div class="mb-3"> -->
-            <label for="inputEmail" class="form-label">Email my tickets to this address:</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
-            <!-- </div> -->
+            <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email my tickets to this address:</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+            </div>
             <h2 class="text-uppercase">Have a promo code?</h2>
-            <!-- <div class="mb-3"> -->
-            <label for="inputPromoCode" class="form-label">Enter your code below to redeem it!</label>
-            <input type="email" class="form-control" id="inputPromoCode" aria-describedby="emailHelp">
-            <!-- </div> -->
+            <div class="mb-3">
+                <label for="inputPromoCode" class="form-label">Enter your code below to redeem it!</label>
+                <input type="email" class="form-control" id="inputPromoCode" aria-describedby="emailHelp">
+            </div>
             <h2 class="text-uppercase">Enter Credit/Debit Card</h2>
             <p>
                 Please enter the details of the card you wish to use to make your payment.
@@ -40,22 +39,21 @@
                     Debit
                 </label>
             </div>
-            <!-- <div class="mb-3"> -->
-            <label for="inputCardNumber" class="form-label">Card Number</label>
-            <input type="number" class="form-control" id="inputCardNumber">
-            <!-- </div>
-            <div class="mb-3"> -->
-            <label for="inputExpiryDate" class="form-label">Expiry Date</label>
-            <input type="number" class="form-control" id="inputExpiryDate">
-            <!-- </div>
-            <div class="mb-3"> -->
-            <label for="inputAddress" class="form-label">Billing Address</label>
-            <input type="address" class="form-control" id="inputAddress" aria-describedby="emailHelp">
-            <!-- </div> -->
+            <div class="mb-3">
+                <label for="inputCardNumber" class="form-label">Card Number</label>
+                <input type="number" class="form-control" id="inputCardNumber">
+            </div>
+            <div class="mb-3">
+                <label for="inputExpiryDate" class="form-label">Expiry Date</label>
+                <input type="date" class="form-control" id="inputExpiryDate">
+            </div>
+            <div class="mb-3">
+                <label for="inputAddress" class="form-label">Billing Address</label>
+                <input type="address" class="form-control" id="inputAddress" aria-describedby="emailHelp">
+            </div>
             <a href="{% url 'order_summary' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
             <a href="{% url 'confirmation' %}" class="btn btn-success text-uppercase btn-lg">Submit payment</a>
         </div>
-        <div class="col-md-1"></div>
     </div>
 </div>
 {% endblock %}

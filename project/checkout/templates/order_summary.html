@@ -8,8 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-10 offset-md-1">
             <p class="text-uppercase"><b>DC League of Super Pets</b></p>
             <ul class="list-inline">
                 <li class="list-inline-item">PG</li>
@@ -42,9 +41,8 @@
                 </tbody>
             </table>
             <a href="{% url 'select_tickets_and_age' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
-            <a href="{% url 'checkout' %}" class="btn btn-success text-uppercase btn-lg">Continue to checkout</a>
+            <a href="{% url 'checkout' %}" class="btn btn-primary text-uppercase btn-lg">Continue to checkout</a>
         </div>
-        <div class="col-md-1"></div>
     </div>
 </div>
 {% endblock %}
