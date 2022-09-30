@@ -39,12 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'checkout.apps.CheckoutConfig',
-<<<<<<< HEAD
-    'home',
-    'core',
-=======
-    'home.apps.HomeConfig'
->>>>>>> front-end
+    'login.apps.LoginConfig',
+    'home.apps.HomeConfig',
+    'core'
 ]
 
 MIDDLEWARE = [

@@ -6,12 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('home.urls')),
     path('checkout/', include('checkout.urls')),
-<<<<<<< HEAD
     path('admin/', admin.site.urls),
     path("", include('home.urls')),
-=======
-    path('admin/', admin.site.urls)
->>>>>>> front-end
+    path('login/', include('login.urls'))
 ]
 
 if settings.DEBUG:

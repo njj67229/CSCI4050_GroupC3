@@ -1,0 +1,12 @@
+{% extends "components/base.html" %}
+{% block title %}Register Account{% endblock %}
+{% block content %}
+<div class="container" style="padding-top: 20px; margin:auto;text-align: center">
+    <b>Registered</b>
+    <p>Name: John Doe</p>
+    <p>Address: 123 Mullberry Street, Athens, GA, 30605</p>
+    <p>Phone: 123-456-7890</p>
+    <p>Email: JohnDoe@gmail.com</p>
+    <a href="{% url 'login' %}" class="btn btn-secondary text-uppercase btn-lg">Login</a>
+</div>
+{% endblock %}
