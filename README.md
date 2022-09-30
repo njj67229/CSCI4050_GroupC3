@@ -6,8 +6,15 @@ Group Members:
 Bella Humphrey
 Nathan Jacobi
 Nicholas Kundin
-Yalani Nadar
+Yalini Nadar
 
 ## Run Django Project
 cd project  
 py manage.py runserver
+
+## Managing DB
+python manage.py makemigrations
+python manage.py migrate
+
+## Loading Data
+python3 manage.py loaddata movie_data.json
