@@ -112,18 +112,28 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" style="color:#666666;">Now Showing</a>
+                    <a class="nav-link active" aria-current="page" href="#" style="color:#666666; white-space: nowrap;">Now Showing</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#" style="color:#666666;">Coming Soon</a>
                   </li>
                 </ul>
             </div>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+            <li class="d-flex dropdown" style="padding-right: 1ex;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff; background-color: #C4061A;">
+                    Sort by:
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Release Date</a>
+                    <a class="dropdown-item" href="#">Rating</a>
+                </div>
+            </li>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        
             </div>
           </nav>
 
