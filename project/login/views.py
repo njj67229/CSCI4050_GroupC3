@@ -12,3 +12,8 @@ def account_confirmation(request):
 def login(request):
   template = loader.get_template('login.html')
   return HttpResponse(template.render())
+
+def edit_profile(request):
+  template = loader.get_template('edit_profile.html')
+  return HttpResponse(template.render())
+  

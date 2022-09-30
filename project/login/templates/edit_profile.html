@@ -1,0 +1,232 @@
+{% extends "components/base.html" %}
+{% block title %}Register Account{% endblock %}
+{% block content %}
+
+<body style="min-height: 400px;margin-bottom: 100px;clear: both;">
+    <div class="container" style="margin: auto; margin-bottom: 10px;">
+        <h5 style="margin-top:20px;">John Doe's Profile</h5>
+        <a href="#!">Update password</a>
+    </div>
+    <div class="container border border-secondary" style="margin:auto;">
+        <form action="" style="margin-top:10px;">
+            <h5>Name</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" value="John">
+                </div>
+                <div class="form-group col-md-4" style="padding-left:10px">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" value="Doe">
+                </div>
+            </div>
+            <h5>Address</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputAddress">Street Address</label>
+                    <input type="text" class="form-control" id="inputAddress" value="200 D. W. Brooks Drive">
+                </div>
+                <div class="form-group col-md-4" style="padding-left:10px">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" value="4th Floor">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity" value="Athens">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                        <option value="AK">AK</option>
+                        <option value="AL">AL</option>
+                        <option value="AR">AR</option>
+                        <option value="AZ">AZ</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DC">DC</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option selected value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="IA">IA</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="MA">MA</option>
+                        <option value="MD">MD</option>
+                        <option value="ME">ME</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MO">MO</option>
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="NE">NE</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NV">NV</option>
+                        <option value="NY">NY</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VA">VA</option>
+                        <option value="VT">VT</option>
+                        <option value="WA">WA</option>
+                        <option value="WI">WI</option>
+                        <option value="WV">WV</option>
+                        <option value="WY">WY</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip" value="30602">
+                </div>
+            </div>
+    </div>
+    <hr>
+    <div class="container border border-secondary" style="margin:auto;">
+        <form action="" style="margin-top:10px;">
+            <h5 style="margin-top:10px;">Contact Information</h5>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="text" class="form-control" id="inputAddress" value="123-456-7890">
+                </div>
+                <div class="form-group col-md-4" style="padding-left:10px">
+                    <label for="inputEmail">Email Address</label>
+                    <input type="email" class="form-control" id="inputEmail" value="email@ebooking.com">
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="container border border-secondary" style="margin:auto;">
+        <form style="margin-top: 10px;">
+            <h5>Payment Information</h5>
+            <b>Credit Card Information</b>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputCCName">Name on Card</label>
+                    <input type="text" class="form-control" id="inputCCName" value="James Doe">
+                </div>
+                <div class="form-group col-md-4" style="padding-left:10px">
+                    <label for="inputCCNum">Card Number</label>
+                    <input type="text" class="form-control" id="inputCCNum" value="1234 5678 9000 0000">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputCVV">CVV</label>
+                    <input type="text" class="form-control" id="inputCVV" value="123">
+                </div>
+                <div class="form-group col-md-4" style="padding-left:10px">
+                    <label for="inputExp">Expiration Date</label>
+                    <input type="text" class="form-control" id="inputExp" value="10/24">
+                </div>
+            </div>
+            <b>Billing Address</b>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputCCAddress">Street Address</label>
+                    <input type="text" class="form-control" id="inputCCAddress" value="200 D. W. Brooks Drive">
+                </div>
+                <div class="form-group col-md-4" style="padding-left:10px">
+                    <label for="inputCCAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputCCAddress2" value="4th Floor">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputCCCity">City</label>
+                    <input type="text" class="form-control" id="inputCCCity" value="Athens" >
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputCCState">State</label>
+                    <select id="inputCCState" class="form-control">
+                        <option value="AK">AK</option>
+                        <option value="AL">AL</option>
+                        <option value="AR">AR</option>
+                        <option value="AZ">AZ</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DC">DC</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option selected value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="IA">IA</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="MA">MA</option>
+                        <option value="MD">MD</option>
+                        <option value="ME">ME</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MO">MO</option>
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="NE">NE</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NV">NV</option>
+                        <option value="NY">NY</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VA">VA</option>
+                        <option value="VT">VT</option>
+                        <option value="WA">WA</option>
+                        <option value="WI">WI</option>
+                        <option value="WV">WV</option>
+                        <option value="WY">WY</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputCCZip">Zip</label>
+                    <input type="text" class="form-control" id="inputCCZip" value="30602">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <b>Add Additional Card</b>
+                    <button type="button" class="btn btn-outline-secondary" style="padding-top: 2px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}
