@@ -14,6 +14,16 @@ class Genre(models.Model):
     
     def __str__(self):
         return f"{self.title, self.pk}"
+
+class MPAA(models.Model):
+    
+    rating = models.CharField(max_length=200, unique=True)
+    
+    class Meta:
+        verbose_name_plural = "MPAA Rating"
+    
+    def __str__(self):
+        return f"{self.rating, self.pk}"
     
 class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
