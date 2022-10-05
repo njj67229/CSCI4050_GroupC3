@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from pydoc import synopsis
 from django.db import models
 import string
 import random
@@ -28,6 +27,7 @@ class Movie(models.Model):
     producer = models.CharField(max_length=200, blank=True, null=True)
     director = models.CharField(max_length=200, blank=True, null=True)
     genres = models.ManyToManyField(Genre)
+    actor_ids = models.CharField(max_length=200, null=True)
     
     class Meta:
         verbose_name_plural = "Movies"
