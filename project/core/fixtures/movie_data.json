@@ -1,342 +1,562 @@
 [
   {
-    "model": "core.Movie",
-    "pk": "760161",
-    "fields": {
-      "title": "Orphan: First Kill",
-      "tag": "There's always been something wrong with Esther.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=UJlMFx6fm60",
-      "release_date": "2022-07-27",
-      "director": "William Brent Bell",
-      "producer": "James Tomlinson",
-      "runtime": "1h 39m",
-      "synopsis": "After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.",
-      "genres": [11, 16],
-      "pic": "images/760161.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "760161",
+      "fields": {
+          "title": "Orphan: First Kill",
+          "tag": "There's always been something wrong with Esther.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=_uX6of3vBu0",
+          "release_date": "2022-07-27",
+          "director": "William Brent Bell",
+          "producer": "James Tomlinson",
+          "runtime": 99,
+          "synopsis": "After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.",
+          "genres": [
+              11,
+              16
+          ],
+          "pic": "images/760161.jpg",
+          "actor_ids": [
+              77517,
+              12041,
+              58014,
+              2563029,
+              60719
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "985939",
-    "fields": {
-      "title": "Fall",
-      "tag": "Fear reaches new heights.",
-      "rating": "PG-13",
-      "trailer_url": "https://www.youtube.com/watch?v=FNk7Cu4sJOs",
-      "release_date": "2022-08-11",
-      "director": "Scott Mann",
-      "producer": "David Haring",
-      "runtime": "1h 47m",
-      "synopsis": "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights",
-      "genres": [16],
-      "pic": "images/985939.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "985939",
+      "fields": {
+          "title": "Fall",
+          "tag": "Fear reaches new heights.",
+          "rating": 3,
+          "trailer_url": "https://www.youtube.com/watch?v=iSspRSGc4Dk",
+          "release_date": "2022-08-11",
+          "director": "Scott Mann",
+          "producer": "David Haring",
+          "runtime": 107,
+          "synopsis": "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights",
+          "genres": [
+              16
+          ],
+          "pic": "images/985939.jpg",
+          "actor_ids": [
+              54633,
+              1279279,
+              47296,
+              2174509,
+              945542
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "760741",
-    "fields": {
-      "title": "Beast",
-      "tag": "Fight for family.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=AaEyFSPt-N0",
-      "release_date": "2022-08-11",
-      "director": "Baltasar Kormákur",
-      "producer": "James Lopez",
-      "runtime": "1h 33m",
-      "synopsis": "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fight for survival when a bloodthirsty lion starts to stalk them.",
-      "genres": [2, 7, 11],
-      "pic": "images/760741.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "760741",
+      "fields": {
+          "title": "Beast",
+          "tag": "Fight for family.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=oQMc7Sq36mI",
+          "release_date": "2022-08-11",
+          "director": "Baltasar Kormákur",
+          "producer": "James Lopez",
+          "runtime": 93,
+          "synopsis": "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fight for survival when a bloodthirsty lion starts to stalk them.",
+          "genres": [
+              2,
+              7,
+              11
+          ],
+          "pic": "images/760741.jpg",
+          "actor_ids": [
+              17605,
+              1438277,
+              1877835,
+              82191,
+              2073065
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "610150",
-    "fields": {
-      "title": "Dragon Ball Super: Super Hero",
-      "tag": "A super awakening and calamity is born.",
-      "rating": "PG-13",
-      "trailer_url": "https://www.youtube.com/watch?v=GD8nCSr54PA",
-      "release_date": "2022-06-11",
-      "director": "Tetsuro Kodama",
-      "producer": "Norihiro Hayashida",
-      "runtime": "1h 39m",
-      "synopsis": "The Red Ribbon Army, an evil organization that was once destroyed by Goku in the past, has been reformed by a group of people who have created new and mightier Androids, Gamma 1 and Gamma 2, and seek vengeance against Goku and his family.",
-      "genres": [3, 15, 1],
-      "pic": "images/610150.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "610150",
+      "fields": {
+          "title": "Dragon Ball Super: Super Hero",
+          "tag": "A super awakening and calamity is born.",
+          "rating": 3,
+          "trailer_url": "https://www.youtube.com/watch?v=bFLt45xK3kU",
+          "release_date": "2022-06-11",
+          "director": "Tetsuro Kodama",
+          "producer": "Norihiro Hayashida",
+          "runtime": 99,
+          "synopsis": "The Red Ribbon Army, an evil organization that was once destroyed by Goku in the past, has been reformed by a group of people who have created new and mightier Androids, Gamma 1 and Gamma 2, and seek vengeance against Goku and his family.",
+          "genres": [
+              3,
+              15,
+              1
+          ],
+          "pic": "images/610150.jpg",
+          "actor_ids": [
+              90496,
+              85286,
+              90569,
+              93801,
+              93803
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "921360",
-    "fields": {
-      "title": "Wire Room",
-      "tag": "His first day as an agent could be his last.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=iZ1ntqLzdfs",
-      "release_date": "2022-09-02",
-      "director": "Matt Eskandari",
-      "producer": "Noel Ashman",
-      "runtime": "1h 37m",
-      "synopsis": "New recruit Justin Rosa must monitor arms-smuggling cartel member Eddie Flynn — and keep him alive at all costs. When a SWAT team descends on Flynn’s home, Rosa breaks protocol and contacts the gangster directly to save his life. As gunmen break into the Wire Room and chaos erupts, Mueller and Rosa make a final, desperate stand against the corrupt agents and officials who seek to destroy evidence and kill them both.",
-      "genres": [1, 5, 16],
-      "pic": "images/921360.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "921360",
+      "fields": {
+          "title": "Wire Room",
+          "tag": "His first day as an agent could be his last.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=gUTjfOkVu7E",
+          "release_date": "2022-09-02",
+          "director": "Matt Eskandari",
+          "producer": "Noel Ashman",
+          "runtime": 97,
+          "synopsis": "New recruit Justin Rosa must monitor arms-smuggling cartel member Eddie Flynn — and keep him alive at all costs. When a SWAT team descends on Flynn’s home, Rosa breaks protocol and contacts the gangster directly to save his life. As gunmen break into the Wire Room and chaos erupts, Mueller and Rosa make a final, desperate stand against the corrupt agents and officials who seek to destroy evidence and kill them both.",
+          "genres": [
+              1,
+              5,
+              16
+          ],
+          "pic": "images/921360.jpg",
+          "actor_ids": [
+              6863,
+              62,
+              1395206,
+              53185,
+              84315
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "539681",
-    "fields": {
-      "title": "DC League of Super-Pets",
-      "tag": "Sit, stay, save the world.",
-      "rating": "PG",
-      "trailer_url": "https://www.youtube.com/watch?v=tFHMkB6dZxI",
-      "release_date": "2022-07-27",
-      "director": "Jared Stern",
-      "producer": "Patricia Hicks",
-      "runtime": "1h 45m",
-      "synopsis": "When Superman and the rest of the Justice League are kidnapped, Krypto the Super-Dog must convince a rag-tag shelter pack - Ace the hound, PB the potbellied pig, Merton the turtle and Chip the squirrel - to master their own newfound powers and help him rescue the superheroes.",
-      "genres": [3, 1, 2],
-      "pic": "images/539681.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "539681",
+      "fields": {
+          "title": "DC League of Super-Pets",
+          "tag": "Sit, stay, save the world.",
+          "rating": 2,
+          "trailer_url": "https://www.youtube.com/watch?v=1jkw2JPCl18",
+          "release_date": "2022-07-27",
+          "director": "Jared Stern",
+          "producer": "Patricia Hicks",
+          "runtime": 105,
+          "synopsis": "When Superman and the rest of the Justice League are kidnapped, Krypto the Super-Dog must convince a rag-tag shelter pack - Ace the hound, PB the potbellied pig, Merton the turtle and Chip the squirrel - to master their own newfound powers and help him rescue the superheroes.",
+          "genres": [
+              3,
+              1,
+              8,
+              4,
+              15
+          ],
+          "pic": "images/539681.jpg",
+          "actor_ids": [
+              18918,
+              55638,
+              17697,
+              6384,
+              1240487
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "718930",
-    "fields": {
-      "title": "Bullet Train",
-      "tag": "The end of the line is just the beginning.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=KlL0kXJ_inM",
-      "release_date": "2022-07-03",
-      "director": "David Leitch",
-      "producer": "Kelly McCormick",
-      "runtime": "2h 7m",
-      "synopsis": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
-      "genres": [1, 4, 16],
-      "pic": "images/718930.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "718930",
+      "fields": {
+          "title": "Bullet Train",
+          "tag": "The end of the line is just the beginning.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=0IOsk2Vlc4o",
+          "release_date": "2022-07-03",
+          "director": "David Leitch",
+          "producer": "Kelly McCormick",
+          "runtime": 127,
+          "synopsis": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
+          "genres": [
+              1,
+              4,
+              16
+          ],
+          "pic": "images/718930.jpg",
+          "actor_ids": [
+              287,
+              125025,
+              27428,
+              226366,
+              1658375
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "19995",
-    "fields": {
-      "title": "Avatar",
-      "tag": "Enter the world of Pandora.",
-      "rating": "PG-13",
-      "trailer_url": "https://www.youtube.com/watch?v=FVq8GX6DqTE",
-      "release_date": "2009-12-10",
-      "director": "James Cameron",
-      "producer": "Jon Landau",
-      "runtime": "2h 42m",
-      "synopsis": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
-      "genres": [1, 2, 9, 15],
-      "pic": "images/19995.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "19995",
+      "fields": {
+          "title": "Avatar",
+          "tag": "Enter the world of Pandora.",
+          "rating": 3,
+          "trailer_url": "https://www.youtube.com/watch?v=5PSNL1qE6VY",
+          "release_date": "2009-12-15",
+          "director": "James Cameron",
+          "producer": "Jon Landau",
+          "runtime": 162,
+          "synopsis": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "genres": [
+              1,
+              2,
+              9,
+              15
+          ],
+          "pic": "images/19995.jpg",
+          "actor_ids": [
+              65731,
+              8691,
+              10205,
+              32747,
+              17647
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "438148",
-    "fields": {
-      "title": "Minions: The Rise of Gru",
-      "tag": "A villain will rise.",
-      "rating": "PG",
-      "trailer_url": "https://www.youtube.com/watch?v=-ExA_Ojo1kY",
-      "release_date": "2022-06-29",
-      "director": "Kyle Balda",
-      "producer": "Chris Renaud",
-      "runtime": "1h 27m",
-      "synopsis": "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
-      "genres": [3, 2, 4, 9],
-      "pic": "images/438148.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "438148",
+      "fields": {
+          "title": "Minions: The Rise of Gru",
+          "tag": "A villain will rise.",
+          "rating": 2,
+          "trailer_url": "https://www.youtube.com/watch?v=OCSnxXtjFL0",
+          "release_date": "2022-06-29",
+          "director": "Kyle Balda",
+          "producer": "Chris Renaud",
+          "runtime": 87,
+          "synopsis": "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
+          "genres": [
+              3,
+              2,
+              4,
+              9
+          ],
+          "pic": "images/438148.jpg",
+          "actor_ids": [
+              4495,
+              124747,
+              59919,
+              1903,
+              40036
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "744276",
-    "fields": {
-      "title": "After Ever Happy",
-      "tag": "They can't stop loving each other.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=7rVxq0WB09Q",
-      "release_date": "2022-08-24",
-      "director": "Castille Landon",
-      "producer": "Aron Levitz",
-      "runtime": "1h 35m",
-      "synopsis": "As a shocking truth about a couple's families emerges, the two lovers discover they are not so different from each other. Tessa is no longer the sweet, simple, good girl she was when she met Hardin — any more than he is the cruel, moody boy she fell so hard for.",
-      "genres": [14, 7],
-      "pic": "images/744276.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "744276",
+      "fields": {
+          "title": "After Ever Happy",
+          "tag": "They can't stop loving each other.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=K7AL2OARpTo",
+          "release_date": "2022-08-24",
+          "director": "Castille Landon",
+          "producer": "Aron Levitz",
+          "runtime": 95,
+          "synopsis": "As a shocking truth about a couple's families emerges, the two lovers discover they are not so different from each other. Tessa is no longer the sweet, simple, good girl she was when she met Hardin — any more than he is the cruel, moody boy she fell so hard for.",
+          "genres": [
+              14,
+              7
+          ],
+          "pic": "images/744276.jpg",
+          "actor_ids": [
+              1753914,
+              1114487,
+              20805,
+              2035329,
+              20960
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "756999",
-    "fields": {
-      "title": "The Black Phone",
-      "tag": "Never talk to strangers.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=WlWOOljH9S0",
-      "release_date": "2022-06-22",
-      "director": "Scott Derrickson",
-      "producer": "C. Robert Cargill",
-      "runtime": "1h 43m",
-      "synopsis": "Finney Blake, a shy but clever 13-year-old boy, is abducted by a sadistic killer and trapped in a soundproof basement where screaming is of little use. When a disconnected phone on the wall begins to ring, Finney discovers that he can hear the voices of the killer’s previous victims. And they are dead set on making sure that what happened to them doesn’t happen to Finney.",
-      "genres": [11, 16],
-      "pic": "images/756999.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "756999",
+      "fields": {
+          "title": "The Black Phone",
+          "tag": "Never talk to strangers.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=3eGP6im8AZA",
+          "release_date": "2021-06-24",
+          "director": "Scott Derrickson",
+          "producer": "C. Robert Cargill",
+          "runtime": 103,
+          "synopsis": "Finney Blake, a shy but clever 13-year-old boy, is abducted by a sadistic killer and trapped in a soundproof basement where screaming is of little use. When a disconnected phone on the wall begins to ring, Finney discovers that he can hear the voices of the killer’s previous victims. And they are dead set on making sure that what happened to them doesn’t happen to Finney.",
+          "genres": [
+              11,
+              16
+          ],
+          "pic": "images/756999.jpg",
+          "actor_ids": [
+              2803710,
+              569,
+              1530558,
+              4654,
+              41020
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "634649",
-    "fields": {
-      "title": "Spider-Man: No Way Home",
-      "tag": "The Multiverse unleashed.",
-      "rating": "PG-13",
-      "trailer_url": "https://www.youtube.com/watch?v=XG_CimbpVMQ",
-      "release_date": "2021-12-15",
-      "director": "Jon Watts",
-      "producer": "Amy Pascal",
-      "runtime": "2h 28m",
-      "synopsis": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
-      "genres": [1, 2, 15],
-      "pic": "images/634649.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "634649",
+      "fields": {
+          "title": "Spider-Man: No Way Home",
+          "tag": "The Multiverse unleashed.",
+          "rating": 3,
+          "trailer_url": "https://www.youtube.com/watch?v=WgU7P6o-GkM",
+          "release_date": "2021-12-15",
+          "director": "Jon Watts",
+          "producer": "Amy Pascal",
+          "runtime": 148,
+          "synopsis": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+          "genres": [
+              1,
+              2,
+              15
+          ],
+          "pic": "images/634649.jpg",
+          "actor_ids": [
+              1136406,
+              505710,
+              71580,
+              1649152,
+              15277
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "675353",
-    "fields": {
-      "title": "Sonic the Hedgehog 2",
-      "tag": "Welcome to the next level.",
-      "rating": "PG",
-      "trailer_url": "https://www.youtube.com/watch?v=KlBnLGew1Gk",
-      "release_date": "2022-03-30",
-      "director": "Jeff Fowler",
-      "producer": "Hitoshi Okuno",
-      "runtime": "2h 2m",
-      "synopsis": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
-      "genres": [1, 2, 8, 4],
-      "pic": "images/675353.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "675353",
+      "fields": {
+          "title": "Sonic the Hedgehog 2",
+          "tag": "Welcome to the next level.",
+          "rating": 2,
+          "trailer_url": "https://www.youtube.com/watch?v=G5kzUpWAusI",
+          "release_date": "2022-03-30",
+          "director": "Jeff Fowler",
+          "producer": "Hitoshi Okuno",
+          "runtime": 122,
+          "synopsis": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
+          "genres": [
+              1,
+              2,
+              8,
+              4
+          ],
+          "pic": "images/675353.jpg",
+          "actor_ids": [
+              11006,
+              222121,
+              110742,
+              1546282,
+              115974
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "762504",
-    "fields": {
-      "title": "Nope",
-      "tag": "What’s a bad miracle?",
-      "rating": "",
-      "trailer_url": "https://www.youtube.com/watch?v=vdxaiZhtYt4",
-      "release_date": "2022-07-20",
-      "director": "Jordan Peele",
-      "producer": "Ian Cooper",
-      "runtime": "2h 10m",
-      "synopsis": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
-      "genres": [11, 13, 15, 16],
-      "pic": "images/762504.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "762504",
+      "fields": {
+          "title": "Nope",
+          "tag": "What’s a bad miracle?",
+          "rating": 6,
+          "trailer_url": "https://www.youtube.com/watch?v=In8fuzj3gck",
+          "release_date": "2022-07-20",
+          "director": "Jordan Peele",
+          "producer": "Ian Cooper",
+          "runtime": 130,
+          "synopsis": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
+          "genres": [
+              11,
+              13,
+              15,
+              16
+          ],
+          "pic": "images/762504.jpg",
+          "actor_ids": [
+              206919,
+              74688,
+              1602972,
+              215055,
+              7486
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "576925",
-    "fields": {
-      "title": "My Sweet Monster",
-      "tag": "Cutie and the beast",
-      "rating": "PG",
-      "trailer_url": "https://www.youtube.com/watch?v=hSCqtzcMeEg",
-      "release_date": "2022-01-27",
-      "director": "Viktor Glukhushin",
-      "producer": "Sergei Selyanov",
-      "runtime": "1h 38m",
-      "synopsis": "A scandal in the royal family: the wayward princess Barbara escaped from the palace and went through the forest in search of a handsome prince. However, instead of the cherished meeting with her beloved, she is captured by Buka, the most dangerous robber of the kingdom. But it quickly becomes clear that the brisk princess is ready to turn Buka's life into a nightmare, just to reach her goal. So the restless Varvara begins to establish her own order in the forest.",
-      "genres": [3, 2, 8],
-      "pic": "images/576925.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "576925",
+      "fields": {
+          "title": "My Sweet Monster",
+          "tag": "Cutie and the beast",
+          "rating": 2,
+          "trailer_url": "https://www.youtube.com/watch?v=hSCqtzcMeEg",
+          "release_date": "2022-01-27",
+          "director": "Viktor Glukhushin",
+          "producer": "Sergei Selyanov",
+          "runtime": 98,
+          "synopsis": "A scandal in the royal family: the wayward princess Barbara escaped from the palace and went through the forest in search of a handsome prince. However, instead of the cherished meeting with her beloved, she is captured by Buka, the most dangerous robber of the kingdom. But it quickly becomes clear that the brisk princess is ready to turn Buka's life into a nightmare, just to reach her goal. So the restless Varvara begins to establish her own order in the forest.",
+          "genres": [
+              3,
+              2,
+              8
+          ],
+          "pic": "images/576925.jpg",
+          "actor_ids": [
+              1318905,
+              1287199,
+              2365556,
+              1947592,
+              1177033
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "877957",
-    "fields": {
-      "title": "Drifting Home",
-      "tag": "What is the secret hidden in the apartment complex?",
-      "rating": "PG",
-      "trailer_url": "https://www.youtube.com/watch?v=55dzSWopxEQ",
-      "release_date": "2022-09-09",
-      "director": "Hiroyasu Ishida",
-      "producer": "Koji Yamamoto",
-      "runtime": "2h 0m",
-      "synopsis": "Sixth-graders Kosuke and Natsume grew up in the same apartment building as childhood friends. During summer break, while playing in the apartment building that is set to be demolished, they find themselves caught in a strange phenomenon. All they can see around them is a vast sea. Will Kosuke and the others make it back to their world? A journey of farewells in summer has just begun.",
-      "genres": [3, 7, 13, 9, 8],
-      "pic": "images/877957.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "877957",
+      "fields": {
+          "title": "Drifting Home",
+          "tag": "What is the secret hidden in the apartment complex?",
+          "rating": 2,
+          "trailer_url": "https://www.youtube.com/watch?v=vDCqi0LpG1g",
+          "release_date": "2022-09-09",
+          "director": "Hiroyasu Ishida",
+          "producer": "Koji Yamamoto",
+          "runtime": 120,
+          "synopsis": "Sixth-graders Kosuke and Natsume grew up in the same apartment building as childhood friends. During summer break, while playing in the apartment building that is set to be demolished, they find themselves caught in a strange phenomenon. All they can see around them is a vast sea. Will Kosuke and the others make it back to their world? A journey of farewells in summer has just begun.",
+          "genres": [
+              3,
+              7,
+              13,
+              9,
+              8
+          ],
+          "pic": "images/877957.jpg",
+          "actor_ids": [
+              1253972,
+              1254672,
+              1325230,
+              1325962,
+              126485
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "758724",
-    "fields": {
-      "title": "The Cellar",
-      "tag": "An ancient evil has awoken.",
-      "rating": "",
-      "trailer_url": "https://www.youtube.com/watch?v=pD9o8H9r9QQ",
-      "release_date": "2022-03-25",
-      "director": "Brendan Muldowney",
-      "producer": "Richard Bolger",
-      "runtime": "1h 34m",
-      "synopsis": "When Keira Woods' daughter mysteriously vanishes in the cellar of their new house in the country, she soon discovers there is an ancient and powerful entity controlling their home that she will have to face or risk losing her family's souls forever.",
-      "genres": [11, 13],
-      "pic": "images/758724.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "758724",
+      "fields": {
+          "title": "The Cellar",
+          "tag": "An ancient evil has awoken.",
+          "rating": 6,
+          "trailer_url": "https://www.youtube.com/watch?v=pD9o8H9r9QQ",
+          "release_date": "2022-03-25",
+          "director": "Brendan Muldowney",
+          "producer": "Richard Bolger",
+          "runtime": 94,
+          "synopsis": "When Keira Woods' daughter mysteriously vanishes in the cellar of their new house in the country, she soon discovers there is an ancient and powerful entity controlling their home that she will have to face or risk losing her family's souls forever.",
+          "genres": [
+              11,
+              13
+          ],
+          "pic": "images/758724.jpg",
+          "actor_ids": [
+              25837,
+              111801,
+              1541155,
+              210061,
+              1931063
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "639933",
-    "fields": {
-      "title": "The Northman",
-      "tag": "Conquer your fate.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=41owAY64UR0",
-      "release_date": "2022-04-07",
-      "director": "Robert Eggers",
-      "producer": "Robert Eggers",
-      "runtime": "2h 17m",
-      "synopsis": "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother, kill his uncle and avenge his father.",
-      "genres": [1, 2, 9],
-      "pic": "images/639933.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "639933",
+      "fields": {
+          "title": "The Northman",
+          "tag": "Conquer your fate.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=oMSdFM12hOw",
+          "release_date": "2022-04-07",
+          "director": "Robert Eggers",
+          "producer": "Robert Eggers",
+          "runtime": 137,
+          "synopsis": "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother, kill his uncle and avenge his father.",
+          "genres": [
+              1,
+              2,
+              9
+          ],
+          "pic": "images/639933.jpg",
+          "actor_ids": [
+              28846,
+              2227,
+              150802,
+              569,
+              1397778
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "852448",
-    "fields": {
-      "title": "I Came By",
-      "tag": "",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=bwHGegiFykU",
-      "release_date": "2022-08-19",
-      "director": "Babak Anvari",
-      "producer": "Lucan Toh",
-      "runtime": "1h 50m",
-      "synopsis": "A rebellious young graffiti artist, who targets the homes of the wealthy elite, discovers a shocking secret that leads him on a journey endangering himself and those closest to him.",
-      "genres": [16],
-      "pic": "images/852448.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "852448",
+      "fields": {
+          "title": "I Came By",
+          "tag": "",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=bwHGegiFykU",
+          "release_date": "2022-08-19",
+          "director": "Babak Anvari",
+          "producer": "Lucan Toh",
+          "runtime": 110,
+          "synopsis": "A rebellious young graffiti artist, who targets the homes of the wealthy elite, discovers a shocking secret that leads him on a journey endangering himself and those closest to him.",
+          "genres": [
+              16
+          ],
+          "pic": "images/852448.jpg",
+          "actor_ids": [
+              146750,
+              1171612,
+              9015,
+              1071127,
+              1013049
+          ]
+      }
   },
   {
-    "model": "core.Movie",
-    "pk": "818397",
-    "fields": {
-      "title": "Memory",
-      "tag": "His mind is fading. His conscience is clear.",
-      "rating": "R",
-      "trailer_url": "https://www.youtube.com/watch?v=sVpy5gM6HDY",
-      "release_date": "2022-04-28",
-      "director": "Martin Campbell",
-      "producer": "Michael Heimler",
-      "runtime": "1h 54m",
-      "synopsis": "Alex, an assassin-for-hire, finds that he's become a target after he refuses to complete a job for a dangerous criminal organization. With the crime syndicate and FBI in hot pursuit, Alex has the skills to stay ahead, except for one thing: he is struggling with severe memory loss, affecting his every move. Alex must question his every action and whom he can ultimately trust.",
-      "genres": [1, 16, 5],
-      "pic": "images/818397.jpg"
-    }
+      "model": "core.Movie",
+      "pk": "818397",
+      "fields": {
+          "title": "Memory",
+          "tag": "His mind is fading. His conscience is clear.",
+          "rating": 4,
+          "trailer_url": "https://www.youtube.com/watch?v=ye63hQLDj4k",
+          "release_date": "2022-04-28",
+          "director": "Martin Campbell",
+          "producer": "Michael Heimler",
+          "runtime": 114,
+          "synopsis": "Alex, an assassin-for-hire, finds that he's become a target after he refuses to complete a job for a dangerous criminal organization. With the crime syndicate and FBI in hot pursuit, Alex has the skills to stay ahead, except for one thing: he is struggling with severe memory loss, affecting his every move. Alex must question his every action and whom he can ultimately trust.",
+          "genres": [
+              1,
+              16,
+              5
+          ],
+          "pic": "images/818397.jpg",
+          "actor_ids": [
+              3896,
+              529,
+              1371819,
+              234070,
+              28782
+          ]
+      }
   }
 ]
