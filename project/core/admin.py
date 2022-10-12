@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Movie, Promo, Showing, Genre
+from core.models import Movie, Promo, Showing, Genre, MPAA
 
 # Register your models here.
 @admin.register(Movie)
@@ -15,5 +15,9 @@ class Showing(admin.ModelAdmin):
     pass
 
 @admin.register(Genre)
-class Showing(admin.ModelAdmin):
+class Genre(admin.ModelAdmin):
+    pass
+
+@admin.register(MPAA)
+class MPAA(admin.ModelAdmin):
     pass
