@@ -1,4 +1,5 @@
 {% extends "components/base.html" %}
+{%load crispy_forms_tags %} 
 {% block title %}Edit Profile{% endblock %}
 {% block content %}
 <body style="min-height: 400px;margin-bottom: 100px;clear: both;">
@@ -8,7 +9,7 @@
     <div class="form-group">
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form | crispy }}
             <button class="btn btn secondary">Update Profile</button>
         </form>
     </div>

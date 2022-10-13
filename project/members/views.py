@@ -2,7 +2,7 @@ from ast import Pass
 from django.shortcuts import render
 from django.views import generic
 from django.urls import reverse_lazy
-from .forms import SignUpForm, EditProfileForm, PasswordChangeForm
+from .forms import PaymentForm, SignUpForm, EditProfileForm, PasswordChangeForm, PaymentForm
 from django.contrib.auth.views import PasswordChangeView
 # from django.contrib.auth.forms import PasswordChangeForm
 
