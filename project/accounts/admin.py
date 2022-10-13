@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser, Address, PaymentCard
+from .models import CustomUser, Address, PaymentCard, CustomerSatus
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
@@ -26,4 +26,8 @@ class Address(admin.ModelAdmin):
 
 @admin.register(PaymentCard)
 class PaymentCard(admin.ModelAdmin):
+    pass
+
+@admin.register(CustomerSatus)
+class CustomerStatus(admin.ModelAdmin):
     pass

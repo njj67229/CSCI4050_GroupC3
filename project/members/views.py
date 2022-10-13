@@ -1,10 +1,11 @@
-from ast import Pass
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import generic
-from django.urls import reverse_lazy
-from .forms import PaymentForm, SignUpForm, EditProfileForm, PasswordChangeForm, PaymentForm
+from django.urls import reverse, reverse_lazy
+from .forms import SignUpForm, EditProfileForm, PasswordChangeForm, PaymentForm, AuthenticationForm
 from django.contrib.auth.views import PasswordChangeView
 # from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 # Create your views here.
 class PasswordsChangeView(PasswordChangeView):
@@ -16,6 +17,7 @@ class UserRegisterView(generic.CreateView):
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
+
 class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'registration/edit_profile.html'
@@ -23,3 +25,34 @@ class UserEditView(generic.UpdateView):
     
     def get_object(self):
         return self.request.user
+
+# class LoginView():
+#     form_class = AuthenticationForm
+#     template_name = 'registration/login.html'
+#     success_url = reverse_lazy('index')
+    
+#     def get_object(self):
+#         return self.request.user
+
+def login2(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username,password=password)
+        if user:
+            print(str(user.status))
+            if str(user.status) != "('Inactive', 2)":
+                login(request,user)
+                return redirect(reverse('index'))
+            else:
+                messages.error(request,'your account needs to be verified')
+                return redirect(reverse('login2'))
+                
+        else:
+            messages.error(request,'username or password not correct')
+            return redirect(reverse('login2'))
+    else:
+        form = AuthenticationForm()
+    return render(request,'registration/login.html',{'form':form})
+    

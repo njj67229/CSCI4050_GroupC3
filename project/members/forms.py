@@ -1,6 +1,6 @@
 from email.policy import default
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm, AuthenticationForm
 # from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django import forms
@@ -54,3 +54,14 @@ class PasswordChangeForm(PasswordChangeForm):
     class Meta:
         model = User
         fields = ('old_password', 'new_password1', 'new_password2')
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.error_messages["inactive"] = "This account is not verified."
+        
+    def confirm_login_allowed(self, user):
+        super().confirm_login_allowed(user)
+        print(user.status)
+        if user.status == 2:
+            raise forms.ValidationError(self.error_messages["account_expired"], code="inactive")
