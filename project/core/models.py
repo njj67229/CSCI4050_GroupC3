@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from django.db import models
+from django.contrib.auth.models import User
 import string
 import random
 
@@ -63,5 +64,11 @@ class Showing(models.Model):
     def __str__(self):
         return f"{self.movie} - {self.showtime}"
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    receive_promos = models.BooleanField()
+    
+    def __str__(self):
+        return f"{self.user}"
     
 
