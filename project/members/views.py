@@ -26,15 +26,7 @@ class UserEditView(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
-# class LoginView():
-#     form_class = AuthenticationForm
-#     template_name = 'registration/login.html'
-#     success_url = reverse_lazy('index')
-    
-#     def get_object(self):
-#         return self.request.user
-
-def login2(request):
+def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request.POST)
         username = request.POST['username']
@@ -47,11 +39,11 @@ def login2(request):
                 return redirect(reverse('index'))
             else:
                 messages.error(request,'your account needs to be verified')
-                return redirect(reverse('login2'))
+                return redirect(reverse('login'))
                 
         else:
             messages.error(request,'username or password not correct')
-            return redirect(reverse('login2'))
+            return redirect(reverse('login'))
     else:
         form = AuthenticationForm()
     return render(request,'registration/login.html',{'form':form})
