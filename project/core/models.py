@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 import string
 import random
+
+User = settings.AUTH_USER_MODEL
 
 def get_code(size=6, chars=string.ascii_uppercase + string.digits):
         return ''.join(random.choice(chars) for _ in range(size))

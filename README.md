@@ -22,5 +22,6 @@ python3 manage.py loaddata movie_data.json
 ## Installations
 ```
 pip install django-crispy-forms==1.14.0
+pip install django-localflavor
 ```
 
