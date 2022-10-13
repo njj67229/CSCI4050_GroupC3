@@ -31,7 +31,7 @@ class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     title = models.CharField(max_length=200)
     tag = models.TextField(blank=True, null=True)
-    rating = models.CharField(max_length=200)
+    rating = models.ForeignKey(MPAA, on_delete = models.CASCADE)
     runtime = models.CharField(max_length=200, null=True)
     release_date = models.DateField(null=True)
     synopsis = models.TextField(blank=True, null=True)
