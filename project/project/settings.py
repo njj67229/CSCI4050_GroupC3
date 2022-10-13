@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'core',
     "members",
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,5 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+AUTH_USER_MODEL = "accounts.CustomUser"
