@@ -13,7 +13,12 @@ Yalini Nadar
 cd project  
 py manage.py runserver
 ```
-
+## Create a .env file to store the following as environment variables
+```
+FIELD_ENCRYPTION_KEY=''
+EMAIL_HOST_PASSWORD = '' 
+TMDB_KEY=''
+```
 ## Managing DB
 ```
 python manage.py makemigrations
