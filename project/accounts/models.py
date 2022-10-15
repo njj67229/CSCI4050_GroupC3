@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from localflavor.us.models import USStateField
 from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
-
+from encrypted_model_fields.fields import EncryptedCharField
 
 # Create your models here.
 class CustomerSatus(models.Model):
@@ -27,7 +27,8 @@ class Address(models.Model):
 
 class PaymentCard(models.Model):
     name = models.CharField(max_length=120, blank=True, null=True)
-    cc_number = CardNumberField(('card number'))
+    # cc_number = CardNumberField(('card number'))
+    cc_number = EncryptedCharField(max_length=16)
     cc_expiry = CardExpiryField(('expiration date'))
     cc_code = SecurityCodeField(('security code'))
     
