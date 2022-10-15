@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "members",
     'accounts',
     'crispy_forms',
+    'django_email_verification',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,13 @@ MESSAGE_TAGS = {
 
 
 FIELD_ENCRYPTION_KEY = os.getenv('FIELD_ENCRYPTION_KEY')
+
+
+# For Django Email Backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'date5nite@gmail.com'
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # os.environ['password_key'] suggested
+EMAIL_USE_TLS = True
+

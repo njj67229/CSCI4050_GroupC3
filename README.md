@@ -48,6 +48,8 @@ pip install django-crispy-forms==1.14.0
 pip install django-localflavor
 pip install django-credit-cards
 pip install django-encrypted-model-fields
+pip install django-email-verification
+
 ```
 ## Notes and Resources
 https://pypi.org/project/django-credit-cards/

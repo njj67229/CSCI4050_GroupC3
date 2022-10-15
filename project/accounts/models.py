@@ -33,9 +33,9 @@ class PaymentCard(models.Model):
     cc_code = SecurityCodeField(('security code'))
     
 class CustomUser(AbstractUser):
-    receive_promos = models.BooleanField(default=False)
+    receive_promos = models.BooleanField(default=False, null=True, blank=True)
     address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
-    paymentcards = models.ManyToManyField(PaymentCard, null=True, blank=True)
+    paymentcards = models.ManyToManyField(PaymentCard, blank=True)
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     
     def __str__(self):
