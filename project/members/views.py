@@ -1,5 +1,3 @@
-import email
-import django
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -8,21 +6,21 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django_email_verification import send_email
-
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
+from django.contrib.messages.views import SuccessMessageMixin
 
 # Create your views here.
 class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
 
-class UserRegisterView(LoginRequiredMixin, generic.CreateView):
+class UserRegisterView(SuccessMessageMixin, LoginRequiredMixin, generic.CreateView):
     form_class = SignUpForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
+    success_message = 'Your account was successfully created'
     
     def form_valid(self, form):
         user = form.save()
@@ -40,10 +38,11 @@ class UserRegisterView(LoginRequiredMixin, generic.CreateView):
         
         return returnVal
   
-class UserEditView(LoginRequiredMixin, generic.UpdateView):
+class UserEditView(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'registration/edit_profile.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('edit_profile')
+    success_message = 'Your account was successfully updated'
     
     def get_object(self):
         return self.request.user

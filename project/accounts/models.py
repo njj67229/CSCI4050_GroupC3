@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from localflavor.us.models import USStateField
@@ -33,7 +34,7 @@ class PaymentCard(models.Model):
     cc_code = SecurityCodeField(('security code'))
     
 class CustomUser(AbstractUser):
-    receive_promos = models.BooleanField(default=False, null=True, blank=True)
+    receive_promos = models.BooleanField(default=False, blank=True, null=True)
     address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
     paymentcards = models.ManyToManyField(PaymentCard, blank=True)
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
