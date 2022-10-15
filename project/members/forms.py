@@ -4,16 +4,12 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 # from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django import forms
-from creditcards.forms import CardNumberField, CardExpiryField, SecurityCodeField
 # from django.conf import settings
+from django.forms.models import inlineformset_factory
+
 
 # User = settings.AUTH_USER_MODEL
 User = get_user_model()
-
-class PaymentForm(forms.Form):
-    cc_number = CardNumberField(label='Card Number')
-    cc_expiry = CardExpiryField(label='Expiration Date')
-    cc_code = SecurityCodeField(label='CVV/CVC')
     
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
@@ -33,6 +29,7 @@ class SignUpForm(UserCreationForm):
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
+# AddressFormSet = inlineformset_factory(CustomUser, Address)
 
 class EditProfileForm(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'readonly':'readonly'}))
