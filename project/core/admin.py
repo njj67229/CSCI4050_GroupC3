@@ -4,7 +4,7 @@ from core.models import Movie, Promo, Showing, Genre, MPAA, Profile
 # Register your models here.
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'rating', 'poster', 'release_date']
 
 @admin.register(Promo)
 class PromoAdmin(admin.ModelAdmin):

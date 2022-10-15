@@ -7,15 +7,15 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser, Address, PaymentCard, CustomerSatus
 
 class CustomUserAdmin(UserAdmin):
-    add_form = CustomUserCreationForm
+    # add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['pk',"email", "username", "first_name", "last_name"]
+    list_display = ['pk',"email", "username", "first_name", "last_name", "is_superuser"]
     add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {'fields': ('email', 'first_name', 'last_name', 'address','paymentcards', 'receive_promos', 'status'),})
+        (None, {'fields': ('email', 'first_name', 'last_name', 'address','paymentcards', 'receive_promos', 'status'),}),
     )
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('address','receive_promos', 'paymentcards', 'status')}),
+        (None,  {'fields': ('address','receive_promos', 'paymentcards', 'status')}),
     )
 
 admin.site.register(CustomUser, CustomUserAdmin)

@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 import string
 import random
+from django.utils.html import mark_safe
 
 User = settings.AUTH_USER_MODEL
 
@@ -47,6 +48,10 @@ class Movie(models.Model):
     
     def __str__(self):
         return f"{self.title}"
+    
+    def poster(self):
+                if self.pic != '':
+                    return mark_safe('<img src="%s%s" width="50" height="75" />' % (f'{settings.MEDIA_URL}', self.pic))
 
 class Promo(models.Model):
     name = models.CharField(max_length=200)
