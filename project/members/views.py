@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm, EditProfileForm, PasswordChangeForm,AuthenticationForm
+from accounts.forms import AddressForm, PaymentForm 
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -12,6 +13,31 @@ from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
 
 # Create your views here.
+def add_payment(request):
+    if request.method == 'POST':
+        form = PaymentForm(request.POST)
+        if form.is_valid():
+            new_payment = form.save()
+            request.user.paymentcards = new_payment
+            request.user.paymentcards.set([new_payment])
+            request.user.save()
+            messages.success(request,'your payment information was successfully added')
+    else:
+        form = PaymentForm()
+    return render(request,'registration/add_payment.html',{'form':form})
+
+def add_address(request):
+    if request.method == 'POST':
+        form = AddressForm(request.POST)
+        if form.is_valid():
+            new_address = form.save()
+            request.user.address = new_address
+            request.user.save()
+            messages.success(request,'your address was successfully added')
+    else:
+        form = AddressForm()
+    return render(request,'registration/add_address.html',{'form':form})
+    
 class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
@@ -19,7 +45,7 @@ class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
 class UserRegisterView(SuccessMessageMixin, LoginRequiredMixin, generic.CreateView):
     form_class = SignUpForm
     template_name = 'registration/register.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('add_address')
     success_message = 'Your account was successfully created'
     
     def form_valid(self, form):

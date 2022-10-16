@@ -6,7 +6,6 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib.auth import get_user_model
 from django import forms
 # from django.conf import settings
-from django.forms.models import inlineformset_factory
 
 
 # User = settings.AUTH_USER_MODEL
@@ -29,8 +28,6 @@ class SignUpForm(UserCreationForm):
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['class'] = 'form-control'
-
-# AddressFormSet = inlineformset_factory(CustomUser, Address)
     
 class EditProfileForm(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'readonly':'readonly'}))
