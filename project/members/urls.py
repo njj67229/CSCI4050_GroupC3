@@ -1,7 +1,8 @@
 import imp
 from django.urls import include, path
-from .views import PasswordsChangeView, UserRegisterView, UserEditView, add_payment, user_login, add_address, add_payment
+from .views import PasswordsChangeView, UserRegisterView, UserEditView, add_payment, user_login, add_address, add_payment, PasswordResetView
 from django_email_verification import urls as email_urls
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [

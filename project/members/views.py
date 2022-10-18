@@ -3,7 +3,7 @@ from django.views import generic
 from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm, EditProfileForm, PasswordChangeForm,AuthenticationForm
 from accounts.forms import AddressForm, PaymentForm 
-from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.views import PasswordChangeView, PasswordResetView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -41,6 +41,16 @@ def add_address(request):
 class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'registration/password_reset.html'
+    email_template_name = 'registration/password_reset_email.html'
+    subject_template_name = 'registration/password_reset_subject'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly." \
+                      " If you don't receive an email, " \
+                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_url = reverse_lazy('index')
 
 class UserRegisterView(SuccessMessageMixin, LoginRequiredMixin, generic.CreateView):
     form_class = SignUpForm
@@ -103,4 +113,3 @@ def user_login(request):
     else:
         form = AuthenticationForm()
     return render(request,'registration/login.html',{'form':form})
-    

@@ -5,6 +5,7 @@ from core.models import Movie, Promo, Showing, Genre, MPAA
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['title', 'rating', 'poster', 'release_date']
+    search_fields = ['title', 'id']
 
 @admin.register(Promo)
 class PromoAdmin(admin.ModelAdmin):
