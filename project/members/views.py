@@ -80,15 +80,23 @@ def user_login(request):
         password = request.POST['password']
         user = authenticate(username=username,password=password)
         if user:
-            # print(str(user.status))
-            login(request,user)
-            # if str(user.status) != "('Inactive', 2)":
-            #     login(request,user)
-            #     return redirect(reverse('index'))
-            # else:
-            #     messages.error(request,'your account needs to be verified')
-            #     return redirect(reverse('login'))
-                
+            print(user.status)
+            #check if super_user and redirect to admin portal
+            if user.is_superuser:
+                return redirect(('admin:index'))
+            #check is user is active
+            if user.status.id == 1:
+                login(request,user)
+                return redirect(reverse('index'))
+            # Check if inactive
+            if user.status.id == 2:
+                print(user.status.id)
+                messages.error(request,'your account needs to be verified')
+                return redirect(reverse('login'))
+            #check if suspended
+            if user.status.id == 3:
+                messages.error(request,'your account account has been suspended. Contact admin for more information')
+                return redirect(reverse('login'))        
         else:
             messages.error(request,'username or password not correct')
             return redirect(reverse('login'))

@@ -6,14 +6,14 @@ from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeFie
 from encrypted_model_fields.fields import EncryptedCharField
 
 # Create your models here.
-# class CustomerSatus(models.Model):
-#     status = models.CharField(max_length=100, unique=True)
+class CustomerSatus(models.Model):
+    status = models.CharField(max_length=100, unique=True)
     
-#     class Meta:
-#         verbose_name_plural = "Customer Status"
+    class Meta:
+        verbose_name_plural = "Customer Status"
     
-#     def __str__(self):
-#         return f"{self.status, self.pk}"
+    def __str__(self):
+        return f"{self.status}, {self.pk}"
     
 class Address(models.Model):
     address1 = models.CharField(verbose_name= ('Address line 1'), max_length=1024, default="")
@@ -38,7 +38,7 @@ class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
     address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
     # paymentcards = models.ManyToManyField(PaymentCard, blank=True, symmetrical = False)
-    # status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
+    status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     
     class Meta(AbstractUser.Meta):
        swappable = 'AUTH_USER_MODEL'
