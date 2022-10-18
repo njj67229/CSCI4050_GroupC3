@@ -41,7 +41,6 @@ class CustomUser(AbstractUser):
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField('checkout.Booking')
 
-
     class Meta(AbstractUser.Meta):
        swappable = 'AUTH_USER_MODEL'
        
