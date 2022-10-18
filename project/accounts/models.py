@@ -27,7 +27,7 @@ class Address(models.Model):
         verbose_name_plural = "Address"
 
 class PaymentCard(models.Model):
-    card_id = models.IntegerField(primry_key=True, unique=True)
+    card_id = models.IntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=120, default='',verbose_name= ('Name on Card'))
     cc_number = EncryptedCharField(max_length=16, verbose_name= ('Card Number'))
     cc_expiry = CardExpiryField(('Expiration Date'))

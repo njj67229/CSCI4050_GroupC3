@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Movie, Promo, Showing, Genre, PhysicalSeat, SeatInShowing, ShowRoom
+from core.models import Movie, Promo, Showing, Genre, PhysicalSeat, SeatInShowing, ShowRoom, MPAA
 
 # Register your models here.
 @admin.register(Movie)
