@@ -80,13 +80,14 @@ def user_login(request):
         password = request.POST['password']
         user = authenticate(username=username,password=password)
         if user:
-            print(str(user.status))
-            if str(user.status) != "('Inactive', 2)":
-                login(request,user)
-                return redirect(reverse('index'))
-            else:
-                messages.error(request,'your account needs to be verified')
-                return redirect(reverse('login'))
+            # print(str(user.status))
+            login(request,user)
+            # if str(user.status) != "('Inactive', 2)":
+            #     login(request,user)
+            #     return redirect(reverse('index'))
+            # else:
+            #     messages.error(request,'your account needs to be verified')
+            #     return redirect(reverse('login'))
                 
         else:
             messages.error(request,'username or password not correct')

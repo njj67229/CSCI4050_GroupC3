@@ -70,12 +70,5 @@ class Showing(models.Model):
     
     def __str__(self):
         return f"{self.movie} - {self.showtime}"
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    receive_promos = models.BooleanField()
-    
-    def __str__(self):
-        return f"{self.user}"
     
 
