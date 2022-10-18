@@ -27,17 +27,19 @@ class Address(models.Model):
         verbose_name_plural = "Address"
 
 class PaymentCard(models.Model):
-    card_id = models.IntegerField(primary_key=True, unique=True)
+    card_id = models.IntegerField(primary_key=True, unique=True, default=None)
     name = models.CharField(max_length=120, default='',verbose_name= ('Name on Card'))
     cc_number = EncryptedCharField(max_length=16, verbose_name= ('Card Number'))
     cc_expiry = CardExpiryField(('Expiration Date'))
     cc_code = SecurityCodeField(('Security Code'))
-    billing_address = models.ForeignKey(Address, on_delete=models.PROTECT)
+    billing_address = models.ForeignKey(Address, on_delete=models.PROTECT, default=None)
     
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
     address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
-    paymentcards = models.ManyToManyField(PaymentCard, null=True, blank=True)
+    paymentcard1 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_1")
+    paymentcard2 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_2")
+    paymentcard3 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_3")
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField('checkout.Booking')
 
