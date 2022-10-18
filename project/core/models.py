@@ -62,13 +62,32 @@ class Promo(models.Model):
     def __str__(self):
         return f"{self.name}"
     
+class PhysicalSeat(models.Model):
+    seat_id = models.IntegerField(primary_key=True, unique=True)
+
+    def __str__(self):
+        return f"{self.pk}"
+
+class SeatInShowing(models.Model):
+    physical_seat = models.ForeignKey(PhysicalSeat, primary_key=True)
+    reserved = models.BooleanField()    
+
+    def __str__(self):
+        return f"{self.pk} - {self.reserved}"
+
+class ShowRoom(models.Model):
+    room_id = models.IntegerField(primary_key=True, unique=True)
+    seats = models.ManyToManyField(PhysicalSeat)
+
+    def __str__(self):
+        return f"{self.pk}"
 
 class Showing(models.Model):
+    show_id = models.IntegerField(primary_key=True, uniqe=True)
     movie = models.ForeignKey(Movie, on_delete = models.CASCADE)
     showtime = models.DateTimeField()
-    room = models.CharField(max_length=200)
-    
+    room = models.ForeignKey(ShowRoom, on_delete=models.CASCADE)
+    seats = models.ManyToManyField(SeatInShowing)
+
     def __str__(self):
         return f"{self.movie} - {self.showtime}"
-    
-
