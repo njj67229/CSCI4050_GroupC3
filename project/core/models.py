@@ -69,7 +69,7 @@ class PhysicalSeat(models.Model):
         return f"{self.pk}"
 
 class SeatInShowing(models.Model):
-    physical_seat = models.ForeignKey(PhysicalSeat, primary_key=True)
+    physical_seat = models.ForeignKey(PhysicalSeat, primary_key=True, on_delete=models.CASCADE)
     reserved = models.BooleanField()    
 
     def __str__(self):
@@ -83,7 +83,7 @@ class ShowRoom(models.Model):
         return f"{self.pk}"
 
 class Showing(models.Model):
-    show_id = models.IntegerField(primary_key=True, uniqe=True)
+    show_id = models.IntegerField(primary_key=True, unique=True)
     movie = models.ForeignKey(Movie, on_delete = models.CASCADE)
     showtime = models.DateTimeField()
     room = models.ForeignKey(ShowRoom, on_delete=models.CASCADE)

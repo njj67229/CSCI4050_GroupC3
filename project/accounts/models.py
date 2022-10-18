@@ -27,17 +27,17 @@ class Address(models.Model):
         verbose_name_plural = "Address"
 
 class PaymentCard(models.Model):
+    card_id = models.IntegerField(primry_key=True, unique=True)
     name = models.CharField(max_length=120, default='',verbose_name= ('Name on Card'))
-    # cc_number = CardNumberField(('card number'))
-    cc_number = EncryptedCharField(max_length=16, verbose_name= ('Card Number'), primary_key=True)
+    cc_number = EncryptedCharField(max_length=16, verbose_name= ('Card Number'))
     cc_expiry = CardExpiryField(('Expiration Date'))
     cc_code = SecurityCodeField(('Security Code'))
-    
+    billing_address = models.ForeignKey(Address, on_delete=models.PROTECT)
     
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
     address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
-    # paymentcards = models.ManyToManyField(PaymentCard, blank=True, symmetrical = False)
+    paymentcards = models.ManyToManyField(PaymentCard, null=True, blank=True)
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField('checkout.Booking')
 
