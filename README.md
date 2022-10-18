@@ -24,7 +24,10 @@ python3 manage.py loaddata movie_data.json
 
 ## FRONT-END TODO STUFF
 
-Make checkout base, header, footer templates available for all apps
-Make login form neater
-Make navigation links in navbar work
-Switch login to logout and vice versa
+<ul>
+<li>Make login form neater</li>
+<li>Make navigation links in navbar work</li>
+<li>Switch login to logout and vice versa</li>
+<li>Adding more information to movie cards (runtime, release date)</li>
+<li>Look into getting movie details from database</li>
+</ul>
