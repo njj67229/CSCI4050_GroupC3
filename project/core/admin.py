@@ -1,10 +1,11 @@
 from django.contrib import admin
-from core.models import Movie, Promo, Showing, Genre, MPAA, Profile
+from core.models import Movie, Promo, Showing, Genre, MPAA
 
 # Register your models here.
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['title', 'rating', 'poster', 'release_date']
+    search_fields = ['title', 'id']
 
 @admin.register(Promo)
 class PromoAdmin(admin.ModelAdmin):
@@ -20,8 +21,4 @@ class Genre(admin.ModelAdmin):
 
 @admin.register(MPAA)
 class MPAA(admin.ModelAdmin):
-    pass
-
-@admin.register(Profile)
-class Profile(admin.ModelAdmin):
     pass
