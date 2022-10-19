@@ -36,6 +36,7 @@ class PaymentCard(models.Model):
     
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
+    profile_pic = models.ImageField(upload_to="profiles/", blank=True, default='profiles/default_profile.jpg') 
     address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
     paymentcard1 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_1")
     paymentcard2 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_2")
@@ -48,5 +49,4 @@ class CustomUser(AbstractUser):
        
     def __str__(self):
         return self.username
-
 

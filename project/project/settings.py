@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'home.apps.HomeConfig',
     'encrypted_model_fields',
+    'accounts',
     'core',
     "members",
-    'accounts',
     'crispy_forms',
     'django_email_verification',
 ]
