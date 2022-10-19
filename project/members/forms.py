@@ -33,13 +33,14 @@ class EditProfileForm(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'readonly':'readonly'}))
     first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    receive_promos = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
+    receive_promos = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'receive_promos', 'password',)
         help_texts = {
             'username': None,
         }
+
 
 class PasswordChangeForm(PasswordChangeForm):
     old_password = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password'}))
