@@ -11,6 +11,8 @@
         <form method="POST">
             {% csrf_token %}
             {{ form | crispy }}
+            <a href="{% url 'password'%}">Change Password</a>
+            <br>
             <button class="btn btn secondary">Update Profile</button>
         </form>
     </div>

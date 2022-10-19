@@ -11,7 +11,7 @@ urlpatterns = [
    path('edit_address/', edit_address, name='edit_address'),
    path('del_address/', del_address, name='del_address'),
    path('add_payment/', add_payment, name='add_payment'),
-   path('password/', PasswordsChangeView.as_view(template_name='registration/change-password.html')),
+   path('password/', PasswordsChangeView.as_view(template_name='registration/change-password.html'), name='password'),
    path('login/', user_login, name='login'),
    path('email/', include(email_urls)),
    
