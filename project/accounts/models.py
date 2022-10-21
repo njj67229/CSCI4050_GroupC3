@@ -21,7 +21,6 @@ class Address(models.Model):
     city = models.CharField(verbose_name= ('City'), max_length=1024, default='')
     state = USStateField(verbose_name= ('State'), max_length=2, default='' )
     zip_code = models.CharField(verbose_name= ('Postal Code'), max_length=12, default='' )
-    # country = models.CharField(verbose_name= ('Country'), max_length=1024, blank=True, null=True )
     
     class Meta:
         verbose_name_plural = "Address"
