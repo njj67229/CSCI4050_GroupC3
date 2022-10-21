@@ -8,7 +8,8 @@
     <br/>
     <div class="form-group">
         {% include './messages.html' %}
-        <form method="POST">
+        <img src="{{request.user.profile_pic.url}}" alt="">
+        <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
             <a href="{% url 'password'%}">Change Password</a>

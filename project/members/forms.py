@@ -35,9 +35,10 @@ class EditProfileForm(UserChangeForm):
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     receive_promos = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
     password = None
+    profile_pic = forms.ImageField(required=False)
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'receive_promos',)
+        fields = ('username', 'first_name', 'last_name', 'email', 'receive_promos','profile_pic')
         exclude = ('password',)
         help_texts = {
             'username': None,
