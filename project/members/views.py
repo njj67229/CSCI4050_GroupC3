@@ -11,6 +11,11 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
+from accounts.models import CustomUser
+from accounts.forms import AddressForm
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def add_payment(request):
@@ -42,16 +47,6 @@ class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
 
-class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
-    template_name = 'registration/password_reset.html'
-    email_template_name = 'registration/password_reset_email.html'
-    subject_template_name = 'registration/password_reset_subject'
-    success_message = "We've emailed you instructions for setting your password, " \
-                      "if an account exists with the email you entered. You should receive them shortly." \
-                      " If you don't receive an email, " \
-                      "please make sure you've entered the address you registered with, and check your spam folder."
-    success_url = reverse_lazy('index')
-
 class UserRegisterView(SuccessMessageMixin, LoginRequiredMixin, generic.CreateView):
     form_class = SignUpForm
     template_name = 'registration/register.html'
@@ -82,6 +77,32 @@ class UserEditView(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
     
     def get_object(self):
         return self.request.user
+
+@login_required (login_url='/members/login/')
+def edit_address(request): 
+    # instance = get_object_or_404(CustomUser, address=request.user.address)
+    if request.user.address:
+        instance = get_object_or_404(CustomUser, address=request.user.address)
+        instance = instance.address
+    else:
+        instance = None
+    form = AddressForm(request.POST or None, instance=instance)
+    if form.is_valid():
+          form.save()
+          messages.success(request,'your address has been updated')
+          return redirect('edit_address')
+    return render(request,'registration/edit_address.html',{'form':form})
+
+@login_required
+def del_address(request):
+    if not request.user.address:
+        messages.error(request,'you have no saved address to your profile')
+        return redirect(reverse('edit_address'))
+        
+    instance = get_object_or_404(CustomUser, address=request.user.address) #user
+    instance.address.delete()
+    messages.success(request,'your address has been deleted')
+    return redirect('edit_address')
 
 def user_login(request):
     if request.method == 'POST':

@@ -21,7 +21,6 @@ class Address(models.Model):
     city = models.CharField(verbose_name= ('City'), max_length=1024, default='')
     state = USStateField(verbose_name= ('State'), max_length=2, default='' )
     zip_code = models.CharField(verbose_name= ('Postal Code'), max_length=12, default='' )
-    # country = models.CharField(verbose_name= ('Country'), max_length=1024, blank=True, null=True )
     
     class Meta:
         verbose_name_plural = "Address"
@@ -36,7 +35,8 @@ class PaymentCard(models.Model):
     
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
-    address = models.ForeignKey(Address, on_delete = models.CASCADE, null=True, blank=True)
+    profile_pic = models.ImageField(upload_to="profiles/", blank=True, default='profiles/default_profile.jpg') 
+    address = models.ForeignKey(Address, on_delete = models.SET_NULL, null=True, blank=True)
     paymentcard1 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_1")
     paymentcard2 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_2")
     paymentcard3 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_3")
@@ -48,5 +48,4 @@ class CustomUser(AbstractUser):
        
     def __str__(self):
         return self.username
-
 

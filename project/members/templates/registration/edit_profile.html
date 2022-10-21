@@ -8,9 +8,12 @@
     <br/>
     <div class="form-group">
         {% include './messages.html' %}
-        <form method="POST">
+        <img src="{{request.user.profile_pic.url}}" alt="Profile Picture" class="mx-auto d-block" width="200" height="200>
+        <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
+            <a href="{% url 'password'%}">Change Password</a>
+            <br>
             <button class="btn btn secondary">Update Profile</button>
         </form>
     </div>
