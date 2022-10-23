@@ -26,18 +26,15 @@
             </ul>
         </div>
 
-        <div class="btn-group" role="group" aria-label="Basic example">
-            {% if request.user.is_authenticated %}
-            <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Logout</a>
-            {% else %}
-            <!-- HOW DO I LOGOUT??? -->
-            <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
-            {% endif %}
-        </div>
-
+        {% if request.user.is_authenticated %}
         {% load static %}
-        <a class="navbar-brand ml-3" href="#">
-            <img src="{% static 'placeholder.png' %}" width="50" height="50" alt="" />
-        </a>
+        <img src="{% static 'placeholder.png' %}" width="50" height="50" alt="" />
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-danger" href="{% url 'profile' %}" role="button">Profile</a>
+            <a class="btn btn-secondary" href="{% url 'logout' %}" role="button">Logout</a>
+        </div>
+        {% else %}
+        <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
+        {% endif %}
     </nav>
 </header>
