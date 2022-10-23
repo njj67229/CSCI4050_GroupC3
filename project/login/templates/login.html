@@ -1,26 +1,27 @@
-{% extends "components/base.html" %}
+{% extends "base.html" %}
 {% block title %}Register Account{% endblock %}
 {% block content %}
+
 <body style="min-height: 400px;margin-bottom: 100px;clear: both; padding-top: 100px;">
-    <div class="container" style="padding-top:40px; width:50%;">
+  <div class="container" style="padding-top:40px; width:50%;">
     <form action="{% url 'index' %}">
-        <div class="form-outline mb-4">
-          <input type="email" id="inputEmail" class="form-control" />
-          <label class="form-label" for="inputEmail">Email address</label>
-        </div>
-      
-        <div class="form-outline mb-4">
-          <input type="password" id="inputPassword" class="form-control" />
-          <label class="form-label" for="inputPassword">Password</label>
-        </div>
-      
-        <button type="submit" id="signIn" class="btn btn-secondary btn-block mb-4">Sign in</button>
-      
-        <div class="text-center">
-          <p style="margin-bottom:2px">Not a member? <a href="{% url 'register' %}">Register</a></p>
-          <p><a href="#!">Forgot Password?</a></p>          
-        </div>
+      <div class="form-outline mb-4">
+        <input type="email" id="inputEmail" class="form-control" />
+        <label class="form-label" for="inputEmail">Email address</label>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="password" id="inputPassword" class="form-control" />
+        <label class="form-label" for="inputPassword">Password</label>
+      </div>
+
+      <button type="submit" id="signIn" class="btn btn-secondary btn-block mb-4">Sign in</button>
+
+      <div class="text-center">
+        <p style="margin-bottom:2px">Not a member? <a href="{% url 'register' %}">Register</a></p>
+        <p><a href="#!">Forgot Password?</a></p>
+      </div>
     </form>
-    </div>
+  </div>
 </body>
 {% endblock %}
