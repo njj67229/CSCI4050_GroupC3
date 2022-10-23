@@ -27,9 +27,11 @@
         </div>
 
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
             {% if request.user.is_authenticated %}
-            <button type="button" class="btn btn-danger">Buy <br> Tickets</button>
+            <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Logout</a>
+            {% else %}
+            <!-- HOW DO I LOGOUT??? -->
+            <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
             {% endif %}
         </div>
 
