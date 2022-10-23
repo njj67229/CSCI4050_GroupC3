@@ -1,8 +1,8 @@
-{% extends "components/base.html" %}
+{% extends "base.html" %}
 {% block title %}Edit Profile{% endblock %}
 {% block content %}
 
-<body style="margin-bottom: 100px;clear: both;">
+<body style="min-height: 400px;clear: both;">
     <div class="container" style="margin: auto; margin-bottom: 10px;">
         <h5 style="margin-top:20px;">John Doe's Profile</h5>
         <a href="#!">Update password</a>
@@ -153,7 +153,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputCCCity">City</label>
-                    <input type="text" class="form-control" id="inputCCCity" value="Athens" >
+                    <input type="text" class="form-control" id="inputCCCity" value="Athens">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputCCState">State</label>
@@ -220,8 +220,11 @@
                 <div class="form-group col-md-2">
                     <b>Add Additional Card</b>
                     <button type="button" class="btn btn-outline-secondary" style="padding-top: 2px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-plus" viewBox="0 0 16 16">
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
+                            </path>
                         </svg>
                     </button>
                 </div>
