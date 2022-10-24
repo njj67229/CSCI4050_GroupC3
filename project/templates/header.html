@@ -20,7 +20,9 @@
         {% if request.user.is_authenticated %}
             {% load static %} 
                 {% if request.user.profile_pic %}
-                <img src="{{request.user.profile_pic.url}}" width="50" height="50" alt="" />
+                <a title="Profile" href="{% url 'edit_profile' %}" role="button">
+                    <img src="{{request.user.profile_pic.url}}" width="50" height="50" alt="" />
+                </a>
                 {% else %}
                 <img src="{% static 'placeholder.png' %}" width="50" height="50" alt="" />
                 {% endif %}
