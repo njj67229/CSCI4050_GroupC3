@@ -1,8 +1,9 @@
-{% extends "components/base.html" %}
+{% extends "base.html" %}
 {%load crispy_forms_tags %} 
 {% block title %}Edit Profile{% endblock %}
 {% block content %}
 <body style="min-height: 400px;margin-bottom: 100px;clear: both;">
+    {% include "edit_crumbs.html" %}
     <h1>Edit Profile</h1>
     <br/>
     <br/>

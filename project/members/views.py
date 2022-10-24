@@ -11,7 +11,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
-from accounts.models import CustomUser
+from accounts.models import Address, CustomUser
 from accounts.forms import AddressForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -82,13 +82,18 @@ class UserEditView(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
 def edit_address(request): 
     # instance = get_object_or_404(CustomUser, address=request.user.address)
     if request.user.address:
-        instance = get_object_or_404(CustomUser, address=request.user.address)
+        instance = get_object_or_404(CustomUser, address=request.user.address) #address
         instance = instance.address
+        create = False
     else:
         instance = None
+        create = True
     form = AddressForm(request.POST or None, instance=instance)
     if form.is_valid():
-          form.save()
+          new_address = form.save() #added/updated to address table
+          if create: #need to add to user
+            request.user.address = new_address
+            request.user.save()
           messages.success(request,'your address has been updated')
           return redirect('edit_address')
     return render(request,'registration/edit_address.html',{'form':form})
@@ -114,6 +119,7 @@ def user_login(request):
             print(user.status)
             #check if super_user and redirect to admin portal
             if user.is_superuser:
+                login(request,user)
                 return redirect(('admin:index'))
             #check is user is active
             if user.status.id == 1:
@@ -134,3 +140,23 @@ def user_login(request):
     else:
         form = AuthenticationForm()
     return render(request,'registration/login.html',{'form':form})
+
+@login_required (login_url='/members/login/')
+def edit_payments(request): 
+    if request.user.paymentcard1:
+        instance = get_object_or_404(CustomUser, paymentcard1=request.user.paymentcard1) #user
+        card = instance.paymentcard1 #card1
+        create = False
+    else:
+        card = None
+        create = True
+    form = PaymentForm(request.POST or None, instance=card)
+    if form.is_valid():
+          new_card = form.save(commit=False) #add card to paymentcards table
+          if create:
+            request.user.paymentcard1 = new_card
+            request.user.save()
+          new_card.save()
+          messages.success(request,'your card has been updated')
+          return redirect('edit_payments')
+    return render(request,'registration/edit_payment.html',{'form':form})

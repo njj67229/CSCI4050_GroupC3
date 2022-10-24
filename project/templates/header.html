@@ -18,14 +18,19 @@
         </div>
 
         {% if request.user.is_authenticated %}
-        {% load static %}
-        <img src="{% static 'placeholder.png' %}" width="50" height="50" alt="" />
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <a class="btn btn-danger" href="{% url 'profile' %}" role="button">Profile</a>
-            <a class="btn btn-secondary" href="{% url 'logout' %}" role="button">Logout</a>
-        </div>
+            {% load static %} 
+                {% if request.user.profile_pic %}
+                <img src="{{request.user.profile_pic.url}}" width="50" height="50" alt="" />
+                {% else %}
+                <img src="{% static 'placeholder.png' %}" width="50" height="50" alt="" />
+                {% endif %}
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a class="btn btn-danger" href="{% url 'edit_profile' %}" role="button">Profile</a>
+                <a class="btn btn-secondary" href="{% url 'logout' %}" role="button">Logout</a>
+            </div>
         {% else %}
-        <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
+            <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
         {% endif %}
+        
     </nav>
 </header>
