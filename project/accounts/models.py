@@ -1,4 +1,5 @@
 from email.policy import default
+from enum import unique
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from localflavor.us.models import USStateField
@@ -42,6 +43,7 @@ class CustomUser(AbstractUser):
     paymentcard3 = models.ForeignKey(PaymentCard, blank=True, null=True, on_delete=models.PROTECT, related_name="card_3")
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField('checkout.Booking')
+    email = models.EmailField(unique=True, null=False)
 
     class Meta(AbstractUser.Meta):
        swappable = 'AUTH_USER_MODEL'
