@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -9,7 +8,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import EmailMessage
-from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
 from accounts.models import Address, CustomUser, CustomerSatus
