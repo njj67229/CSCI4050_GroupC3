@@ -1,6 +1,6 @@
 from re import template
 from django.urls import include, path
-from .views import PasswordsChangeView, UserRegisterView, UserEditView, add_payment, user_login, add_address, add_payment, edit_address, del_address
+from .views import PasswordsChangeView, UserRegisterView, UserEditView, add_payment, user_login, add_address, add_payment, edit_address, del_address, edit_payments
 from django_email_verification import urls as email_urls
 from django.contrib.auth import views as auth_views
 
@@ -11,7 +11,9 @@ urlpatterns = [
    path('add_address/', add_address, name='add_address'),
    path('edit_address/', edit_address, name='edit_address'),
    path('del_address/', del_address, name='del_address'),
+   path('del_address/', del_address, name='del_address'),
    path('add_payment/', add_payment, name='add_payment'),
+   path('edit_payments/', edit_payments, name='edit_payments'),
    path('password/', 
         PasswordsChangeView.as_view(template_name='registration/change-password.html'),
         name='password'),

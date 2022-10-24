@@ -16,10 +16,11 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ("username", "email")
 
 class PaymentForm(forms.ModelForm):
-    cc_code = forms.CharField(widget=forms.PasswordInput(), max_length=4)
+    cc_code = forms.CharField(widget=forms.PasswordInput(render_value = True), max_length=4, label='Security Code')
     class Meta:
         model = PaymentCard
-        fields = "__all__"
+        exclude = ('card_id',)
+    
 
 class AddressForm(forms.ModelForm):
     

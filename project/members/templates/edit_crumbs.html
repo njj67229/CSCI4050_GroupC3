@@ -1,7 +1,13 @@
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'edit_profile'%}">Personal Info</a></li>
-      <li class="breadcrumb-item" aria-current="page"><a href="{% url 'edit_address'%}">Edit Address</a></li>
-      <li class="breadcrumb-item"><a href="#">Edit Payment</a></li>
-    </ol>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{% url 'edit_profile'%}">Personal Info</a>
+    </li>
+    <li class="breadcrumb-item" aria-current="page">
+      <a href="{% url 'edit_address'%}">Edit Address</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="{% url 'edit_payments' %}">Edit Payment</a>
+    </li>
+  </ol>
 </nav>
