@@ -1,12 +1,15 @@
 from re import template
 from django.urls import include, path
-from .views import PasswordsChangeView, UserRegisterView, UserEditView, add_payment, user_login, add_address, add_payment, edit_address, del_address, edit_payments
+from .views import PasswordsChangeView, UserRegisterView, UserEditView, add_payment, user_login, add_address, add_payment, edit_address, del_address, edit_payments, signup, activate
 from django_email_verification import urls as email_urls
 from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
    path('register/', UserRegisterView.as_view(), name='register'),
+   path('signup/', signup, name='signup'),
+   path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        activate, name='activate'),
    path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
    path('add_address/', add_address, name='add_address'),
    path('edit_address/', edit_address, name='edit_address'),

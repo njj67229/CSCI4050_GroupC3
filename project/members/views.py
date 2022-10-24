@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -11,11 +12,14 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
-from accounts.models import Address, CustomUser
+from accounts.models import Address, CustomUser, CustomerSatus
 from accounts.forms import AddressForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
+from .tokens import account_activation_token
 
 # Create your views here.
 def add_payment(request):
@@ -53,21 +57,48 @@ class UserRegisterView(SuccessMessageMixin, generic.CreateView):
     success_url = reverse_lazy('add_address')
     success_message = 'Your account was successfully created'
     
-    def form_valid(self, form):
-        user = form.save()
-        returnVal = super(UserRegisterView, self).form_valid(form)
-        template = render_to_string('registration/mail_body.html', {'name': user.first_name})
-        print('here')
-        email = EmailMessage(
-            'Verify your Account',
-            template,
-            settings.EMAIL_HOST_USER,
-            [user.email]
-        )
-        email.fail_silently=False
-        email.send()
-        
-        return returnVal
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            #ADD REST OF THE FIELDS FOR USER
+            user.save()
+            current_site = get_current_site(request)
+            mail_subject = 'Verify your Account'
+            message = render_to_string('registration/mail_body.html', {
+                'user': user.first_name,
+                'domain': current_site.domain,
+                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+                'token':account_activation_token.make_token(user),
+            })
+            to_email = form.cleaned_data.get('email')
+            email = EmailMessage(
+                        mail_subject, message, to=[to_email]
+            )
+            email.send()
+            messages.info(request,'Please check your email address to complete the registration')
+            return redirect('login')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = CustomUser.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.status = CustomerSatus.objects.get(pk=2)
+        user.save()
+        # login(request, user)
+        # return redirect('home')
+        messages.success(request,'Thank you for your email confirmation. Now you can login your account.')
+        return redirect('login')
+    else:
+        messages.error(request,'Activation link is invalid!')
+        return redirect('signup')
   
 class UserEditView(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
     form_class = EditProfileForm
