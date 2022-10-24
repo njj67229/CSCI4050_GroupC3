@@ -48,16 +48,12 @@ def add_address(request):
     return render(request,'registration/add_address.html',{'form':form})
     
 class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
+    """Handles password change view"""
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
 
-class UserRegisterView(SuccessMessageMixin, generic.CreateView):
-    form_class = SignUpForm
-    template_name = 'registration/register.html'
-    success_url = reverse_lazy('add_address')
-    success_message = 'Your account was successfully created'
-    
 def signup(request):
+    "Handles Registration and sends activation email"
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -84,6 +80,7 @@ def signup(request):
     return render(request, 'registration/register.html', {'form': form})
 
 def activate(request, uidb64, token):
+    """Handles the verification process and sets status to active"""
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = CustomUser.objects.get(pk=uid)
@@ -92,8 +89,6 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.status = CustomerSatus.objects.get(pk=2)
         user.save()
-        # login(request, user)
-        # return redirect('home')
         messages.success(request,'Thank you for your email confirmation. Now you can login your account.')
         return redirect('login')
     else:
@@ -101,6 +96,7 @@ def activate(request, uidb64, token):
         return redirect('signup')
   
 class UserEditView(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
+    "Personal Info Edit View"
     form_class = EditProfileForm
     template_name = 'registration/edit_profile.html'
     success_url = reverse_lazy('edit_profile')
