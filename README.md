@@ -61,6 +61,10 @@ python3 manage.py loaddata movie_data.json
 ```
 
 ## Installations
+To download all necessary installations written below, run 
+'''
+python -m pip install -r requirements.txt
+'''
 
 ```
 pip install django-crispy-forms==1.14.0
