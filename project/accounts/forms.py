@@ -23,7 +23,6 @@ class PaymentForm(forms.ModelForm):
     
 
 class AddressForm(forms.ModelForm):
-    
     class Meta:
         model = Address
         fields = "__all__"
