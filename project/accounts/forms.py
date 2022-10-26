@@ -19,9 +19,8 @@ class PaymentForm(forms.ModelForm):
     cc_code = forms.CharField(widget=forms.PasswordInput(render_value = True), max_length=4, label='Security Code')
     class Meta:
         model = PaymentCard
-        exclude = ('card_id',)
+        exclude = ('card_id','card_owner','billing_address')
     
-
 class AddressForm(forms.ModelForm):
     
     class Meta:

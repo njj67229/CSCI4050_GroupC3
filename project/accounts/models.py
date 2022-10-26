@@ -31,6 +31,7 @@ class PaymentCard(models.Model):
     cc_expiry = CardExpiryField(('Expiration Date'))
     cc_code = SecurityCodeField(('Security Code'))
     billing_address = models.ForeignKey(Address, on_delete=models.PROTECT, default=None)
+    card_owner = models.ForeignKey('CustomUser', on_delete=models.PROTECT, default=None)
     
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
