@@ -21,7 +21,6 @@ urlpatterns = [
    path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         activate, name='activate'),
    path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
-#    path('edit_profile/', edit_profile, name='edit_profile'),
    path('add_address/', add_address, name='add_address'),
    path('edit_address/', edit_address, name='edit_address'),
    path('del_address/', del_address, name='del_address'),
