@@ -3,8 +3,14 @@
 {% block title %}Edit Profile{% endblock %}
 {% block content %}
 <body style="min-height: 400px;margin-bottom: 100px;clear: both;">
-    {% include "./edit_crumbs.html" %}
-    <h1>Edit Profile</h1>
+
+        <!-- Jumbotron -->
+    <div class="bg-image p-5 text-center text-white d-flex flex-column align-items-center justify-content-center" style="background-image: url(../../../media/images/seats_background.jpeg); background-size: cover; width: 100%; height: 50vh;">
+        <h1 class="mb-3 h2">Edit Profile</h1>
+        {% include "./edit_crumbs.html" %}
+    </div>
+
+
     <br/>
     <br/>
     <div class="form-group">
