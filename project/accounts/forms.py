@@ -22,7 +22,6 @@ class PaymentForm(forms.ModelForm):
         exclude = ('card_id','card_owner','billing_address')
     
 class AddressForm(forms.ModelForm):
-    
     class Meta:
         model = Address
         fields = "__all__"
