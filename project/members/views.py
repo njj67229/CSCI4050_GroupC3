@@ -102,7 +102,7 @@ class UserEditView(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
     
     def get_object(self):
         return self.request.user
-
+    
 @login_required (login_url='/members/login/')
 def edit_address(request): 
     # instance = get_object_or_404(CustomUser, address=request.user.address)
