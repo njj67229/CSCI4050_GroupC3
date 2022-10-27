@@ -10,7 +10,8 @@ from .views import (PasswordsChangeView,
                     del_address, 
                     edit_payments, 
                     signup, 
-                    activate )
+                    activate,
+                    )
 from django_email_verification import urls as email_urls
 from django.contrib.auth import views as auth_views
 
@@ -43,5 +44,4 @@ urlpatterns = [
         name="password_reset_complete"),
    path('login/', user_login, name='login'),
    path('email/', include(email_urls)),
-   
 ]

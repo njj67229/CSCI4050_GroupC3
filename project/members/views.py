@@ -10,28 +10,37 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
-from accounts.models import Address, CustomUser, CustomerSatus
+from accounts.models import Address, CustomUser, CustomerSatus, PaymentCard
 from accounts.forms import AddressForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
+from django.http import HttpResponse
+from django.template import loader
 from .tokens import account_activation_token
 
 # Create your views here.
 def add_payment(request):
     if request.method == 'POST':
         form = PaymentForm(request.POST)
-        if form.is_valid():
-            new_payment = form.save()
-            request.user.paymentcards = new_payment
-            request.user.paymentcards.set([new_payment])
-            request.user.save()
-            messages.success(request,'your payment information was successfully added')
+        address_form = AddressForm(request.POST)
+        if form.is_valid() and address_form.is_valid():
+            new_address = address_form.save()
+            new_payment = form.save(commit=False)
+            #form.billing_address = new_address  
+            instance = request.user
+            new_payment.card_owner = instance
+            new_payment.billing_address = new_address
+            new_payment = new_payment.save()
+            instance.paymentcards.set([new_payment])
+            instance = instance.save()
+            messages.success(request,'Your payment information was successfully added')
     else:
         form = PaymentForm()
-    return render(request,'registration/add_payment.html',{'form':form})
+        address_form = AddressForm()
+    return render(request,'registration/add_payment.html',{'form':form, 'address_form':address_form})
 
 def add_address(request):
     if request.method == 'POST':
@@ -57,6 +66,7 @@ def signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             #ADD REST OF THE FIELDS FOR USER
+            #CARD, ADDRESS ETC
             user.save()
             current_site = get_current_site(request)
             mail_subject = 'Verify your Account'
@@ -77,6 +87,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
 def activate(request, uidb64, token):
     """Handles the verification process and sets status to active"""
     try:
@@ -85,7 +96,7 @@ def activate(request, uidb64, token):
     except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
-        user.status = CustomerSatus.objects.get(pk=2)
+        user.status = CustomerSatus.objects.get(pk=1)
         user.save()
         messages.success(request,'Thank you for your email confirmation. Now you can login your account.')
         return redirect('login')
@@ -148,8 +159,12 @@ def user_login(request):
                 return redirect(('admin:index'))
             #check is user is active
             if user.status.id == 1:
-                login(request,user)
-                return redirect(reverse('index'))
+                if not user.last_login:
+                    login(request,user)
+                    return redirect(reverse("add_address"))
+                else:
+                    login(request,user)    
+                    return redirect(reverse('index'))
             # Check if inactive
             if user.status.id == 2:
                 print(user.status.id)
