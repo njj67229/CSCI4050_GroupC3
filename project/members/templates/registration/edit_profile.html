@@ -22,14 +22,14 @@
         <div class="card" style="background-color: #343a40;">
           <div class="card-body text-white" style="background-color: #343a40;">
             <div class="e-profile">
+              <form method="POST" enctype="multipart/form-data">
+              {% include './messages.html' %}
+              {% csrf_token %}
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
                   <div class="mx-auto" style="width: 100%;">
                     <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                        {% include './messages.html' %}
-                        {% csrf_token %}
                         <img src="{{request.user.profile_pic.url}}" alt="Profile Picture" class="mx-auto d-block" width="140" height="140"/>
-                        <form method="POST" enctype="multipart/form-data">
                     </div>
                   </div>
                 </div>
@@ -103,6 +103,7 @@
 
                 </div>
               </div>
+            </form>
             </div>
           </div>
         </div>
