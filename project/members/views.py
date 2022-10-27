@@ -182,21 +182,23 @@ def user_login(request):
     return render(request,'registration/login.html',{'form':form})
 
 @login_required (login_url='/members/login/')
-def edit_payments(request): 
-    if request.user.paymentcard1:
-        instance = get_object_or_404(CustomUser, paymentcard1=request.user.paymentcard1) #user
-        card = instance.paymentcard1 #card1
+def edit_payments(request):
+    if request.user.paymentcards.all():
+        instance = get_object_or_404(CustomUser, paymentcards=request.user.paymentcards.all()[0]) #user
+        card = instance.paymentcards #card1
         create = False
     else:
         card = None
+        address = None
         create = True
     form = PaymentForm(request.POST or None, instance=card)
+    address_form = AddressForm(request.POST or None, instance=address)
     if form.is_valid():
           new_card = form.save(commit=False) #add card to paymentcards table
           if create:
-            request.user.paymentcard1 = new_card
+            request.user.paymentcards.set([new_card])
             request.user.save()
           new_card.save()
           messages.success(request,'your card has been updated')
           return redirect('edit_payments')
-    return render(request,'registration/edit_payment.html',{'form':form})
+    return render(request,'registration/edit_payment.html',{'form':form, 'address_form':address_form})
