@@ -3,28 +3,14 @@
 {% block title %}Login{% endblock %} 
 {%block content %}
 <body style="min-height: 400px; margin-bottom: 100px; clear: both; background-color:#1e1c1c;">
-  <div class="text-light">
-
-    <div class="form-group">
-      {% include './messages.html' %}
-      <form method="POST">
-        {% csrf_token %} {{ form | crispy }}
-        <button class="btn btn secondary">Login</button>
-      </form>
-    </div>
-
-  </div>
-
-
-
+  
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
           <h1 class="text-center">Login</h1>
       </div>
       <div class="modal-body">
-          <form class="form col-md-12 center-block">
-            <form method="POST">
+          <form class="form col-md-12 center-block" method="POST">
             {% include './messages.html' %}
             {% csrf_token %}
             <div class="form-group">
