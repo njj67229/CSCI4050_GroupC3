@@ -14,10 +14,10 @@
             {% include './messages.html' %}
             {% csrf_token %}
             <div class="form-group">
-              {{ form.username }}
+              {{ form.username | as_crispy_field }}
             </div>
             <div class="form-group">
-              {{ form.password }}
+              {{ form.password | as_crispy_field }}
             </div>
             <div class="form-group">
               <button class="btn btn-secondary btn-lg btn-block">Login</button>
