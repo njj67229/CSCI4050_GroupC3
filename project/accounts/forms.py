@@ -3,24 +3,32 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from creditcards.forms import CardNumberField, CardExpiryField, SecurityCodeField
 from .models import CustomUser, Address, PaymentCard
 
-class CustomUserCreationForm(UserCreationForm):
 
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ("username", "email")
+
 
 class CustomUserChangeForm(UserChangeForm):
     receive_promos = forms.BooleanField(required=False)
+
     class Meta:
         model = CustomUser
         fields = ("username", "email")
 
+
 class PaymentForm(forms.ModelForm):
-    cc_code = forms.CharField(widget=forms.PasswordInput(render_value = True), max_length=4, label='Security Code')
+    cc_code = forms.CharField(
+        widget=forms.PasswordInput(render_value=True),
+        max_length=4,
+        label="Security Code",
+    )
+
     class Meta:
         model = PaymentCard
-        exclude = ('card_id',)
-    
+        exclude = ("card_id",)
+
 
 class AddressForm(forms.ModelForm):
     class Meta:
