@@ -11,6 +11,10 @@ from .views import (PasswordsChangeView,
                     edit_payments, 
                     signup, 
                     activate,
+                    edit_cards_1,
+                    edit_cards_2,
+                    edit_cards_3,
+                    del_payment
                     )
 from django_email_verification import urls as email_urls
 from django.contrib.auth import views as auth_views
@@ -24,7 +28,11 @@ urlpatterns = [
    path('add_address/', add_address, name='add_address'),
    path('edit_address/', edit_address, name='edit_address'),
    path('del_address/', del_address, name='del_address'),
-   path('del_address/', del_address, name='del_address'),
+   path('edit_cards_1/', edit_cards_1, name='edit_cards_1'),
+   path('edit_cards_2/', edit_cards_2, name='edit_cards_2'),
+   path('edit_cards_3/', edit_cards_3, name='edit_cards_3'),
+   path('del_payment/<int:parameter>/', del_payment, name='del_payment'),
+   path('del_payment/', del_payment, name='del_payment'),
    path('add_payment/', add_payment, name='add_payment'),
    path('edit_payments/', edit_payments, name='edit_payments'),
    path('password/', 

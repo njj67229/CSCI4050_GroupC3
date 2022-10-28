@@ -9,25 +9,45 @@
       {% include "./edit_crumbs.html" %}
   </div>
 
-  <br />
-  <br />
+  <br/>
+  <br/>
+
 
   <div class="form-group container text-white" style="background-color: #343a40;">
-    <br>
-    <form method="POST">
-      <h3>Select Card</h3>
-      {% csrf_token %} {{ card_form | crispy }}
-      <button class="btn btn secondary">Select Card</button>
-    </form>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-dark justify-content-center">
+        <li class="breadcrumb-item">
+          <a href="{% url 'edit_cards_1'%}" style="color: #eeeeee;">Card1</a>
+        </li>
+        <li class="breadcrumb-item" aria-current="page">
+          <a href="{% url 'edit_cards_2'%}" style="color: #eeeeee;">Card2</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{% url 'edit_cards_3' %}" style="color: #eeeeee;">Card3</a>
+        </li>
+        <!-- <li class="breadcrumb-item"><a href="{% url 'add_payment'%}">Add Payment</a></li> -->
+      </ol>
+    </nav>
+    </div>
+    <br/>
+    
   </div>
-  <div class="form-group">
+  <div class="form-group container text-white" style="background-color: #343a40;">
     {% include './messages.html' %}
     <form method="POST">
-      {% csrf_token %} {{ form | crispy }}
+      {% csrf_token %} 
+      {{ form | crispy }}
       <h3>Billing Address</h3>
       {% csrf_token %} {{ address_form | crispy }}
       <button class="btn btn secondary">Update Payment Info</button>
     </form>
+    <input type="hidden" name="content" value={{form.id.value}}>
+    <h1>{{form.id}}</h1>
+    <br>
+    <a href="{% url 'add_payment'%}"><button class="btn btn secondary">Add Payment</button></a>
+    {% if form.id.value %}
+      <a href="{% url 'del_payment' parameter=form.id.value %}"><button class="btn btn secondary">Delete</button></a>
+    {% endif %}
     <br>
   </div>
 </body>

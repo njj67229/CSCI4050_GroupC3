@@ -29,13 +29,15 @@ class PaymentForm(forms.ModelForm):
         max_length=4,
         label="Security Code",
     )
+    id = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     class Meta:
         model = PaymentCard
-        exclude = ('card_id','card_owner','billing_address')
+        exclude = ('card_owner','billing_address')
 
-class SelectCardForm(forms.ModelForm):
+# class SelectCardForm(forms.ModelForm):
     
-    class Meta:
-        model = CustomUser
-        fields = ("usercards",)
+#     class Meta:
+#         model = CustomUser
+#         fields = ("usercards",)
+
