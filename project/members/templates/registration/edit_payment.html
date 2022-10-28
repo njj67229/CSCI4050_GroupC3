@@ -2,19 +2,26 @@
 {%load crispy_forms_tags %} 
 {% block title %}Edit Payment{% endblock %} 
 {%block content %}
-<body style="min-height: 400px; margin-bottom: 100px; clear: both">
-  {% include "./edit_crumbs.html" %}
-  <h1>Edit Payment Method</h1>
-  <br />
-  <br />
-  <div class="form-group">
+<body style="min-height: 400px; margin-bottom: 100px; clear: both; background-color: #1e1c1c;">
+
+  <!-- Jumbotron -->
+  <div class="bg-image p-5 text-center text-white d-flex flex-column align-items-center justify-content-center" style="background-image: url(../../../media/images/seats_background.jpeg); background-size: cover; width: 100%; height: 50vh;">
+    <h1 class="mb-3 h2">Edit Payment</h1>
+      {% include "./edit_crumbs.html" %}
+  </div>
+  
+  <br/>
+  <br/>
+
+  <div class="form-group container text-white" style="background-color: #343a40;">
     <form method="POST">
       <h3>Select Card</h3>
       {% csrf_token %} {{ card_form | crispy }}
       <button class="btn btn secondary">Select Card</button>
     </form>
   </div>
-  <div class="form-group">
+  <div class="form-group container text-white" style="background-color: #343a40;">
+    <br>
     {% include './messages.html' %}
     <form method="POST">
       {% csrf_token %} {{ form | crispy }}
@@ -22,6 +29,7 @@
       {% csrf_token %} {{ address_form | crispy }}
       <button class="btn btn secondary">Update Payment Info</button>
     </form>
+    <br>
   </div>
 </body>
 {% endblock %}
