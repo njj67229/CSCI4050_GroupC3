@@ -2,27 +2,8 @@
 {%load crispy_forms_tags %} 
 {% block title %}Login{% endblock %} 
 {%block content %}
-<body style="min-height: 400px; margin-bottom: 100px; clear: both; background-color:#1e1c1c;">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{% url 'register'%}">Personal Info</a></li>
-          <li class="breadcrumb-item" aria-current="page"><a href="{% url 'add_address'%}">Add Address</a></li>
-          <li class="breadcrumb-item"><a href="{% url 'add_payment'%}">Add Payment</a></li>
-        </ol>
-    </nav>
 
-
-  <!-- Jumbotron -->
-    <div class="bg-image p-5 text-center text-white d-flex flex-column align-items-center justify-content-center" style="background-image: url(../../../media/images/seats_background.jpeg); background-size: cover; width: 100%; height: 50vh;">
-      <h1 class="mb-3 h2">New Account Registration</h1>
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-dark justify-content-center">
-            <li class="breadcrumb-item" aria-current="page"><a href="{% url 'signup'%}" style="color: #eeeeee;">Personal Info</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'add_address'%}" style="color: #eeeeee;">Add Address</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'add_payment'%}" style="color: #eeeeee;">Add Payment</a></li>
-          </ol>
-      </nav>
-  </div>
+{% include './jumbotron.html' %}
 
   <br>
   <h1 style="color:#eeeeee;" class="text-center">Add Address</h1>

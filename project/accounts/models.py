@@ -31,47 +31,22 @@ class Address(models.Model):
 
 
 class PaymentCard(models.Model):
-    card_id = models.IntegerField(primary_key=True, unique=True, default=None)
     name = models.CharField(max_length=120, default="", verbose_name=("Name on Card"))
     cc_number = EncryptedCharField(max_length=16, verbose_name=("Card Number"))
     cc_expiry = CardExpiryField(("Expiration Date"))
     cc_code = SecurityCodeField(("Security Code"))
-    billing_address = models.ForeignKey(Address, on_delete=models.PROTECT, default=None)
-
-
+    billing_address = models.ForeignKey(Address, on_delete=models.SET_NULL, default=None, null=True)
+    card_owner = models.ForeignKey('CustomUser', on_delete=models.SET_NULL, default=None, null=True)
+    
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
-    profile_pic = models.ImageField(
-        upload_to="profiles/", blank=True, default="profiles/default_profile.jpg"
-    )
-    address = models.ForeignKey(
-        Address, on_delete=models.SET_NULL, null=True, blank=True
-    )
-    paymentcard1 = models.ForeignKey(
-        PaymentCard,
-        blank=True,
-        null=True,
-        on_delete=models.PROTECT,
-        related_name="card_1",
-    )
-    paymentcard2 = models.ForeignKey(
-        PaymentCard,
-        blank=True,
-        null=True,
-        on_delete=models.PROTECT,
-        related_name="card_2",
-    )
-    paymentcard3 = models.ForeignKey(
-        PaymentCard,
-        blank=True,
-        null=True,
-        on_delete=models.PROTECT,
-        related_name="card_3",
-    )
+    profile_pic = models.ImageField(upload_to="profiles/", blank=True, default='profiles/default_profile.jpg') 
+    address = models.ForeignKey(Address, on_delete = models.SET_NULL, null=True, blank=True)
+    # usercards = models.ManyToManyField(PaymentCard, blank=True, null=True)
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField("checkout.Booking")
     email = models.EmailField(unique=True, null=False)
-
+    # selected_card = models.ForeignKey('PaymentCard', on_delete=models.CASCADE, default=None, null=True, related_name="current_selected_card")
     class Meta(AbstractUser.Meta):
         swappable = "AUTH_USER_MODEL"
 

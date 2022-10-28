@@ -1,3 +1,4 @@
+import this
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from creditcards.forms import CardNumberField, CardExpiryField, SecurityCodeField
@@ -17,6 +18,10 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ("username", "email")
 
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = "__all__"
 
 class PaymentForm(forms.ModelForm):
     cc_code = forms.CharField(
@@ -24,13 +29,15 @@ class PaymentForm(forms.ModelForm):
         max_length=4,
         label="Security Code",
     )
+    id = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     class Meta:
         model = PaymentCard
-        exclude = ("card_id",)
+        exclude = ('card_owner','billing_address')
 
+# class SelectCardForm(forms.ModelForm):
+    
+#     class Meta:
+#         model = CustomUser
+#         fields = ("usercards",)
 
-class AddressForm(forms.ModelForm):
-    class Meta:
-        model = Address
-        fields = "__all__"
