@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm, EditProfileForm, PasswordChangeForm,AuthenticationForm
-from accounts.forms import AddressForm, PaymentForm 
+from accounts.forms import AddressForm, PaymentForm, SelectCardForm
 from django.contrib.auth.views import PasswordChangeView, PasswordResetView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -10,28 +10,37 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.contrib.messages.views import SuccessMessageMixin
-from accounts.models import Address, CustomUser, CustomerSatus
+from accounts.models import Address, CustomUser, CustomerSatus, PaymentCard
 from accounts.forms import AddressForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
+from django.http import HttpResponse
+from django.template import loader
 from .tokens import account_activation_token
 
 # Create your views here.
 def add_payment(request):
     if request.method == 'POST':
         form = PaymentForm(request.POST)
-        if form.is_valid():
-            new_payment = form.save()
-            request.user.paymentcards = new_payment
-            request.user.paymentcards.set([new_payment])
-            request.user.save()
-            messages.success(request,'your payment information was successfully added')
+        address_form = AddressForm(request.POST)
+        if form.is_valid() and address_form.is_valid():
+            new_address = address_form.save()
+            new_payment = form.save(commit=False)
+    
+            instance = request.user
+            new_payment.card_owner = instance
+            new_payment.billing_address = new_address
+            new_payment = new_payment.save()
+            instance.usercards.set([new_payment])
+            instance = instance.save()
+            messages.success(request,'Your payment information was successfully added')
     else:
         form = PaymentForm()
-    return render(request,'registration/add_payment.html',{'form':form})
+        address_form = AddressForm()
+    return render(request,'registration/add_payment.html',{'form':form, 'address_form':address_form})
 
 def add_address(request):
     if request.method == 'POST':
@@ -57,6 +66,7 @@ def signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             #ADD REST OF THE FIELDS FOR USER
+            #CARD, ADDRESS ETC
             user.save()
             current_site = get_current_site(request)
             mail_subject = 'Verify your Account'
@@ -77,6 +87,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
 def activate(request, uidb64, token):
     """Handles the verification process and sets status to active"""
     try:
@@ -85,7 +96,7 @@ def activate(request, uidb64, token):
     except(TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
-        user.status = CustomerSatus.objects.get(pk=2)
+        user.status = CustomerSatus.objects.get(pk=1)
         user.save()
         messages.success(request,'Thank you for your email confirmation. Now you can login your account.')
         return redirect('login')
@@ -148,8 +159,12 @@ def user_login(request):
                 return redirect(('admin:index'))
             #check is user is active
             if user.status.id == 1:
-                login(request,user)
-                return redirect(reverse('index'))
+                if not user.last_login:
+                    login(request,user)
+                    return redirect(reverse("add_address"))
+                else:
+                    login(request,user)    
+                    return redirect(reverse('index'))
             # Check if inactive
             if user.status.id == 2:
                 print(user.status.id)
@@ -167,21 +182,32 @@ def user_login(request):
     return render(request,'registration/login.html',{'form':form})
 
 @login_required (login_url='/members/login/')
-def edit_payments(request): 
-    if request.user.paymentcard1:
-        instance = get_object_or_404(CustomUser, paymentcard1=request.user.paymentcard1) #user
-        card = instance.paymentcard1 #card1
-        create = False
+def edit_payments(request):
+    card = PaymentCard.objects.filter(card_owner=request.user).all()
+    select_card_form = SelectCardForm(request.POST or None)
+    if card:
+        instance = get_object_or_404(CustomUser, username=request.user.username) #user
+            #if instance.selected_card:
+        card = card[0]
+        address = card.billing_address
+            #ind = list(select_card_form.fields['usercards'].choices).index(str(card))
+            #select_card_form.fields['usercards'].initial = [ind]         
     else:
-        card = None
-        create = True
-    form = PaymentForm(request.POST or None, instance=card)
-    if form.is_valid():
-          new_card = form.save(commit=False) #add card to paymentcards table
-          if create:
-            request.user.paymentcard1 = new_card
-            request.user.save()
+        return redirect(reverse('add_payment'))
+        
+    payment_form = PaymentForm(request.POST or None, instance=card)
+    address_form = AddressForm(request.POST or None, instance=address)
+    #if select_card_form.is_valid() and not payment_form.is_valid():
+    #    select_card = select_card_form.save(commit=False)
+    #    instance.selected_card = select_card.usercards.all()[0]
+    #    return redirect('edit_payments')
+
+    if payment_form.is_valid():
+          new_card = payment_form.save(commit=False) #add card to paymentcards table
           new_card.save()
           messages.success(request,'your card has been updated')
           return redirect('edit_payments')
-    return render(request,'registration/edit_payment.html',{'form':form})
+    return render(request,'registration/edit_payment.html',{'form':payment_form, 'address_form':address_form, 'card_form':select_card_form})
+
+#@login_required (login_url='/members/login/')
+#def select_card(request)

@@ -26,6 +26,8 @@
     {% include './messages.html' %}
     <form method="POST">
       {% csrf_token %} {{ form | crispy }}
+      <h3>Billing Address</h3>
+      {% csrf_token %} {{ address_form | crispy }}
       <button class="btn btn secondary">Add Payment</button>
     </form>
     <br>

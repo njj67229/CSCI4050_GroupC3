@@ -37,6 +37,7 @@ class PaymentCard(models.Model):
     cc_expiry = CardExpiryField(("Expiration Date"))
     cc_code = SecurityCodeField(("Security Code"))
     billing_address = models.ForeignKey(Address, on_delete=models.PROTECT, default=None)
+<<<<<<< HEAD
 
 
 class CustomUser(AbstractUser):
@@ -68,10 +69,19 @@ class CustomUser(AbstractUser):
         on_delete=models.PROTECT,
         related_name="card_3",
     )
+=======
+    card_owner = models.ForeignKey('CustomUser', on_delete=models.SET_NULL, default=None, null=True)
+    
+class CustomUser(AbstractUser):
+    receive_promos = models.BooleanField(default=False, blank=True, null=True)
+    profile_pic = models.ImageField(upload_to="profiles/", blank=True, default='profiles/default_profile.jpg') 
+    address = models.ForeignKey(Address, on_delete = models.SET_NULL, null=True, blank=True)
+    usercards = models.ManyToManyField(PaymentCard)
+>>>>>>> d91c9392ecfee713befa11f632a9208191edbf3d
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField("checkout.Booking")
     email = models.EmailField(unique=True, null=False)
-
+    selected_card = models.ForeignKey('PaymentCard', on_delete=models.CASCADE, default=None, null=True, related_name="current_selected_card")
     class Meta(AbstractUser.Meta):
         swappable = "AUTH_USER_MODEL"
 

@@ -44,5 +44,4 @@ urlpatterns = [
         name="password_reset_complete"),
    path('login/', user_login, name='login'),
    path('email/', include(email_urls)),
-   
 ]
