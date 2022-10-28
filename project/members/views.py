@@ -161,10 +161,10 @@ def user_login(request):
                 return redirect(('admin:index'))
             #check is user is active
             if user.status.id == 1:
-                if not user.last_login:
-                    login(request,user)
-                    return redirect(reverse("add_address"))
-                else:
+                # if not user.last_login:
+                #     login(request,user)
+                #     return redirect(reverse("add_address"))
+                # else:
                     login(request,user)    
                     return redirect(reverse('index'))
             # Check if inactive
@@ -205,10 +205,10 @@ def edit_payments(request):
     #    return redirect('edit_payments')
 
     if payment_form.is_valid():
-          new_card = payment_form.save(commit=False) #add card to paymentcards table
-          new_card.save()
-          messages.success(request,'your card has been updated')
-          return redirect('edit_payments')
+            new_card = payment_form.save(commit=False) #add card to paymentcards table
+            new_card.save()
+            messages.success(request,'your card has been updated')
+            return redirect('edit_payments')
     return render(request,'registration/edit_payment.html',{'form':payment_form, 'address_form':address_form, 'card_form':select_card_form})
 
 #@login_required (login_url='/members/login/')
