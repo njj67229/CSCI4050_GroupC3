@@ -46,11 +46,12 @@ def signup(request):
             )
             email.send()
             messages.info(request,'Please check your email address to complete the registration')
-            return redirect('add_address')
+            return redirect('signup')
     else:
         form = SignUpForm()
     return render(request, 'registration/register.html', {'form': form})
 
+@login_required (login_url='/members/login/')
 def add_payment(request):
     cards = PaymentCard.objects.filter(card_owner=request.user).all()
     total_cards = cards.count()
@@ -75,6 +76,7 @@ def add_payment(request):
         address_form = AddressForm()
     return render(request,'registration/add_payment.html',{'form':form, 'address_form':address_form})
 
+@login_required (login_url='/members/login/')
 def add_address(request):
     if request.method == 'POST':
         form = AddressForm(request.POST)
@@ -103,8 +105,9 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.status = CustomerSatus.objects.get(pk=1)
         user.save()
-        messages.success(request,'Thank you for your email confirmation. Now you can login your account.')
-        return redirect('login')
+        messages.success(request,'Thank you for your email confirmation')
+        login(request,user)
+        return redirect('add_address')
     else:
         messages.error(request,'Activation link is invalid!')
         return redirect('signup')
