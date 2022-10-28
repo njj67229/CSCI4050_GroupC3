@@ -164,10 +164,10 @@ def user_login(request):
                 return redirect(('admin:index'))
             #check is user is active
             if user.status.id == 1:
-                # if not user.last_login:
-                #     login(request,user)
-                #     return redirect(reverse("add_address"))
-                # else:
+                if not user.last_login:
+                    login(request,user)
+                    return redirect(reverse("add_address"))
+                else:
                     login(request,user)    
                     return redirect(reverse('index'))
             # Check if inactive
