@@ -1,3 +1,4 @@
+from atexit import register
 from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -22,6 +23,35 @@ from django.template import loader
 from .tokens import account_activation_token
 
 # Create your views here.
+from django.views.decorators.http import condition
+def signup(request):
+    "Handles Registration and sends activation email"
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            #ADD REST OF THE FIELDS FOR USER
+            #CARD, ADDRESS ETC
+            user.save()
+            current_site = get_current_site(request)
+            mail_subject = 'Verify your Account'
+            message = render_to_string('registration/mail_body.html', {
+                'user': user.first_name,
+                'domain': current_site.domain,
+                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+                'token':account_activation_token.make_token(user),
+            })
+            to_email = form.cleaned_data.get('email')
+            email = EmailMessage(
+                        mail_subject, message, to=[to_email]
+            )
+            email.send()
+            messages.info(request,'Please check your email address to complete the registration')
+            return redirect('add_address')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/register.html', {'form': form})
+
 def add_payment(request):
     if request.method == 'POST':
         form = PaymentForm(request.POST)
@@ -58,34 +88,6 @@ class PasswordsChangeView(LoginRequiredMixin, PasswordChangeView):
     """Handles password change view"""
     form_class = PasswordChangeForm
     success_url = reverse_lazy('login')
-
-def signup(request):
-    "Handles Registration and sends activation email"
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            #ADD REST OF THE FIELDS FOR USER
-            #CARD, ADDRESS ETC
-            user.save()
-            current_site = get_current_site(request)
-            mail_subject = 'Verify your Account'
-            message = render_to_string('registration/mail_body.html', {
-                'user': user.first_name,
-                'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-                'token':account_activation_token.make_token(user),
-            })
-            to_email = form.cleaned_data.get('email')
-            email = EmailMessage(
-                        mail_subject, message, to=[to_email]
-            )
-            email.send()
-            messages.info(request,'Please check your email address to complete the registration')
-            return redirect('login')
-    else:
-        form = SignUpForm()
-    return render(request, 'registration/register.html', {'form': form})
 
 
 def activate(request, uidb64, token):

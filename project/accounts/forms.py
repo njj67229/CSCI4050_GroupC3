@@ -18,13 +18,10 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ("username", "email")
 
-<<<<<<< HEAD
-=======
 class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
         fields = "__all__"
->>>>>>> d91c9392ecfee713befa11f632a9208191edbf3d
 
 class PaymentForm(forms.ModelForm):
     cc_code = forms.CharField(
@@ -35,20 +32,10 @@ class PaymentForm(forms.ModelForm):
 
     class Meta:
         model = PaymentCard
-<<<<<<< HEAD
-        exclude = ("card_id",)
-
-=======
         exclude = ('card_id','card_owner','billing_address')
->>>>>>> d91c9392ecfee713befa11f632a9208191edbf3d
 
 class SelectCardForm(forms.ModelForm):
     
     class Meta:
-<<<<<<< HEAD
-        model = Address
-        fields = "__all__"
-=======
         model = CustomUser
         fields = ("usercards",)
->>>>>>> d91c9392ecfee713befa11f632a9208191edbf3d
