@@ -1,12 +1,19 @@
 {% extends "base.html" %} 
 {%load crispy_forms_tags %} 
-{% block title %}Edit Address{% endblock %} 
+{% block title %}Edit Payment{% endblock %} 
 {%block content %}
 <body style="min-height: 400px; margin-bottom: 100px; clear: both">
   {% include "./edit_crumbs.html" %}
   <h1>Edit Payment Method</h1>
   <br />
   <br />
+  <div class="form-group">
+    <form method="POST">
+      <h3>Select Card</h3>
+      {% csrf_token %} {{ card_form | crispy }}
+      <button class="btn btn secondary">Select Card</button>
+    </form>
+  </div>
   <div class="form-group">
     {% include './messages.html' %}
     <form method="POST">

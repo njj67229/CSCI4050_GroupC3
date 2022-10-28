@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm, EditProfileForm, PasswordChangeForm,AuthenticationForm
-from accounts.forms import AddressForm, PaymentForm 
+from accounts.forms import AddressForm, PaymentForm, SelectCardForm
 from django.contrib.auth.views import PasswordChangeView, PasswordResetView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -29,12 +29,12 @@ def add_payment(request):
         if form.is_valid() and address_form.is_valid():
             new_address = address_form.save()
             new_payment = form.save(commit=False)
-            #form.billing_address = new_address  
+    
             instance = request.user
             new_payment.card_owner = instance
             new_payment.billing_address = new_address
             new_payment = new_payment.save()
-            instance.paymentcards.set([new_payment])
+            instance.usercards.set([new_payment])
             instance = instance.save()
             messages.success(request,'Your payment information was successfully added')
     else:
@@ -183,22 +183,31 @@ def user_login(request):
 
 @login_required (login_url='/members/login/')
 def edit_payments(request):
-    if request.user.paymentcards.all():
-        instance = get_object_or_404(CustomUser, paymentcards=request.user.paymentcards.all()[0]) #user
-        card = instance.paymentcards #card1
-        create = False
+    card = PaymentCard.objects.filter(card_owner=request.user).all()
+    select_card_form = SelectCardForm(request.POST or None)
+    if card:
+        instance = get_object_or_404(CustomUser, username=request.user.username) #user
+            #if instance.selected_card:
+        card = card[0]
+        address = card.billing_address
+            #ind = list(select_card_form.fields['usercards'].choices).index(str(card))
+            #select_card_form.fields['usercards'].initial = [ind]         
     else:
-        card = None
-        address = None
-        create = True
-    form = PaymentForm(request.POST or None, instance=card)
+        return redirect(reverse('add_payment'))
+        
+    payment_form = PaymentForm(request.POST or None, instance=card)
     address_form = AddressForm(request.POST or None, instance=address)
-    if form.is_valid():
-          new_card = form.save(commit=False) #add card to paymentcards table
-          if create:
-            request.user.paymentcards.set([new_card])
-            request.user.save()
+    #if select_card_form.is_valid() and not payment_form.is_valid():
+    #    select_card = select_card_form.save(commit=False)
+    #    instance.selected_card = select_card.usercards.all()[0]
+    #    return redirect('edit_payments')
+
+    if payment_form.is_valid():
+          new_card = payment_form.save(commit=False) #add card to paymentcards table
           new_card.save()
           messages.success(request,'your card has been updated')
           return redirect('edit_payments')
-    return render(request,'registration/edit_payment.html',{'form':form, 'address_form':address_form})
+    return render(request,'registration/edit_payment.html',{'form':payment_form, 'address_form':address_form, 'card_form':select_card_form})
+
+#@login_required (login_url='/members/login/')
+#def select_card(request)

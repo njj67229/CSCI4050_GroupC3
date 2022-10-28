@@ -26,4 +26,9 @@ class PaymentForm(forms.ModelForm):
     class Meta:
         model = PaymentCard
         exclude = ('card_id','card_owner','billing_address')
+
+class SelectCardForm(forms.ModelForm):
     
+    class Meta:
+        model = CustomUser
+        fields = ("usercards",)

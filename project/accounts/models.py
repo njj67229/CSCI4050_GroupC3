@@ -37,11 +37,11 @@ class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
     profile_pic = models.ImageField(upload_to="profiles/", blank=True, default='profiles/default_profile.jpg') 
     address = models.ForeignKey(Address, on_delete = models.SET_NULL, null=True, blank=True)
-    paymentcards = models.ManyToManyField(PaymentCard)
+    usercards = models.ManyToManyField(PaymentCard)
     status = models.ForeignKey(CustomerSatus, default=2, on_delete=models.PROTECT)
     bookings = models.ManyToManyField('checkout.Booking')
     email = models.EmailField(unique=True, null=False)
-
+    selected_card = models.ForeignKey('PaymentCard', on_delete=models.CASCADE, default=None, null=True, related_name="current_selected_card")
     class Meta(AbstractUser.Meta):
        swappable = 'AUTH_USER_MODEL'
        
