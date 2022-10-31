@@ -1,0 +1,135 @@
+[
+    {
+      "model": "core.Genre",
+      "pk": "1",
+      "fields": {
+        "title": "Action"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "2",
+      "fields": {
+        "title": "Adventure"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "3",
+      "fields": {
+        "title": "Animation"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "4",
+      "fields": {
+        "title": "Comedy"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "5",
+      "fields": {
+        "title": "Crime"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "6",
+      "fields": {
+        "title": "Documentary"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "7",
+      "fields": {
+        "title": "Drama"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "8",
+      "fields": {
+        "title": "Family"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "9",
+      "fields": {
+        "title": "Fantasy"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "10",
+      "fields": {
+        "title": "History"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "11",
+      "fields": {
+        "title": "Horror"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "12",
+      "fields": {
+        "title": "Music"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "13",
+      "fields": {
+        "title": "Mystery"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "14",
+      "fields": {
+        "title": "Romance"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "15",
+      "fields": {
+        "title": "Science Fiction"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "16",
+      "fields": {
+        "title": "Thriller"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "17",
+      "fields": {
+        "title": "TV Movie"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "18",
+      "fields": {
+        "title": "War"
+      }
+    },
+    {
+      "model": "core.Genre",
+      "pk": "19",
+      "fields": {
+        "title": "Western"
+      }
+    }
+  ]

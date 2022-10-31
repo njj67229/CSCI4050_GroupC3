@@ -1,0 +1,44 @@
+[
+    {
+      "model": "core.MPAA",
+      "pk": "1",
+      "fields": {
+        "rating": "G"
+      }
+    },
+    {
+      "model": "core.MPAA",
+      "pk": "2",
+      "fields": {
+        "rating": "PG"
+      }
+    },
+    {
+      "model": "core.MPAA",
+      "pk": "3",
+      "fields": {
+        "rating": "PG-13"
+      }
+    },
+    {
+      "model": "core.MPAA",
+      "pk": "4",
+      "fields": {
+        "rating": "R"
+      }
+    },
+    {
+      "model": "core.MPAA",
+      "pk": "5",
+      "fields": {
+        "rating": "NC-17"
+      }
+    },
+    {
+      "model": "core.MPAA",
+      "pk": "6",
+      "fields": {
+        "rating": "NR"
+      }
+    }
+  ]
