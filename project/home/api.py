@@ -16,7 +16,6 @@ def get_actor_info(actor_id):
     query = BASE_URL + actor_id
     response = requests.get(query, params=params)
     info = response.json()
-    print(info)
 
     cast_img = BASE_URL_IMG + "w600_and_h900_bestv2/" + info["profile_path"]
 

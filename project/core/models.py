@@ -16,7 +16,7 @@ class Genre(models.Model):
     title = models.CharField(max_length=200, unique=True)
     
     def __str__(self):
-        return f"{self.title, self.pk}"
+        return f"{self.title}"
 
 class MPAA(models.Model):
     
