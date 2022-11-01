@@ -73,6 +73,7 @@ pip install django-credit-cards
 pip install django-encrypted-model-fields
 pip install django-email-verification
 pip install pillow
+pip install django-filter
 
 ```
 
