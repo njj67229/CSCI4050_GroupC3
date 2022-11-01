@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from core.models import Movie
+from .filters import MovieFilter
 
 
 def index(request):
@@ -18,8 +19,14 @@ def format_runtime(mins):
     
 
 def index2(request):
-    query = Movie.objects.all()[:6]
+    query = Movie.objects.all()
     movie_list = []
+    
+    movie_filter = MovieFilter(request.GET, queryset=Movie.objects.all())
+    filtered_movies = movie_filter.qs
+    if filtered_movies:
+        query = filtered_movies
+        
     for q in query.iterator():
         # genres_list = [x.title for x in q.genres.all().iterator()]
         movie_list.append({
@@ -32,4 +39,4 @@ def index2(request):
             'pic': q.pic
         })
     # movies = query.iterator
-    return render(request, "homepage2.html", {'movies': movie_list})
+    return render(request, "homepage2.html", {'movies': movie_list, 'movie_filter': movie_filter})
