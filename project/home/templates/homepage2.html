@@ -122,11 +122,20 @@
                 <p style="color: #707070; background-color: #003F64; color: #ffffff; padding: 0.5ex;">{{movie.runtime}}</p>
               </div>
               <div class="movieinfo" style="display: inline-block;">
+                <p style="color: #707070; background-color: #003F64; color: #ffffff; padding: 0.5ex;">{{movie.rating}}</p>
+              </div>
+              <div class="movieinfo" style="display: inline-block;">
                 <p>Released {{movie.release_date}}</p>
               </div>
+              <div class="movieinfo" style="display: inline-block;">
+                <p>{{movie.genres}}</p>
+              </div>
             </div>
-            <button type="button" class="btn button-danger"
+            <!-- <h1>{{movie.id}}</h1> -->
+            <a href={%url 'select_show_time' movie_id=movie.id %}>
+              <button type="button" class="btn button-danger"
               style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
+            </a>
           </div>
         </div>
       </div>

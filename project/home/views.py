@@ -28,7 +28,7 @@ def index2(request):
         query = filtered_movies
         
     for q in query.iterator():
-        # genres_list = [x.title for x in q.genres.all().iterator()]
+        genres_list = [x.title for x in q.genres.all().iterator()]
         movie_list.append({
             'id': q.id,
             'title': q.title,
@@ -36,7 +36,8 @@ def index2(request):
             'runtime': format_runtime(int(q.runtime)),
             'trailer_url': q.trailer_url,
             'release_date': q.release_date,
-            'pic': q.pic
+            'pic': q.pic,
+            'genres': genres_list
         })
     # movies = query.iterator
     return render(request, "homepage2.html", {'movies': movie_list, 'movie_filter': movie_filter})

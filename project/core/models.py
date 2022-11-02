@@ -26,7 +26,7 @@ class MPAA(models.Model):
         verbose_name_plural = "MPAA Rating"
     
     def __str__(self):
-        return f"{self.rating, self.pk}"
+        return f"{self.rating}"
     
 class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
