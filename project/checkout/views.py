@@ -1,10 +1,40 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import loader
+from core.models import Movie
+from home.views import format_runtime
+import json
+from .api import get_actor_info
 
+def get_actors(actor_ids):
+    """Returns a list of tuples with actor name, actor picture"""
+    #convert string list to list
+    actor_ids = json.loads(actor_ids)
+    actor_info = [get_actor_info(str(id)) for id in actor_ids]
+    return actor_info
 
-def select_show_time(request):
-    template = loader.get_template("select_show_time.html")
-    return HttpResponse(template.render())
+def select_show_time(request, movie_id):
+    movie = Movie.objects.get(pk=movie_id)
+    genres_list = [x.title for x in movie.genres.all().iterator()]
+    actor_info = get_actors(movie.actor_ids)
+    
+    movie_info = {
+            'id': movie_id,
+            'title': movie.title,
+            'tag': movie.tag,
+            'rating': movie.rating, 
+            'runtime': format_runtime(int(movie.runtime)),
+            'release_date': movie.release_date,
+            'synopsis': movie.synopsis,
+            'pic': movie.pic,
+            'trailer_url': movie.trailer_url,
+            'producer': movie.producer,
+            'director': movie.director,
+            'genres': genres_list,
+            'actors': actor_info,
+    }
+    
+    return render(request, "select_show_time.html", {'movie': movie_info})
 
 
 def select_tickets_and_age(request):
@@ -23,8 +53,7 @@ def order_summary(request):
 
 
 def checkout(request):
-    template = loader.get_template("checkout.html")
-    return HttpResponse(template.render())
+    return render(request, "checkout.html")
 
 
 def confirmation(request):

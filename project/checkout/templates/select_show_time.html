@@ -6,29 +6,41 @@
     <div class="col-md-2"></div>
     <div class="col-md-3">
       {% load static %}
-      <img src="{% static 'dc.jpg' %}" class="rounded" alt="" />
+      <img src="/media/{{movie.pic }}" class="rounded" alt="" style="width:250px;height:300px"/>
+      <a href="{{movie.trailer_url}}" target="_blank">Watch Trailer</a>
     </div>
     <div class="col-md-5 text-start">
       <h1 class="text-uppercase">Buy tickets for:</h1>
-      <h2 class="text-uppercase">DC League of Super Pets</h2>
+      <h2 class="text-uppercase">{{movie.title}}</h2>
       <ul class="list-inline">
-        <li class="list-inline-item">PG</li>
-        <li class="list-inline-item">1h 45m</li>
-        <li class="list-inline-item">Released: 07/09/22</li>
-      </ul>
-      <ul class="list-inline">
-        <li class="list-inline-item">Directed by: Jared Stern, Sam Levine</li>
-        <li class="list-inline-item">Cast: Dwayne Johnson, Kevin Hart, Vanessa Bayer</li>
+        <li class="list-inline-item">{{movie.rating}}</li>
+        <li class="list-inline-item">{{movie.runtime}}</li>
+        <li class="list-inline-item">{{movie.release_date}}</li>
+        <ul>
+          {% for item in movie.genres %}
+          <li>{{item}}</li>
+          {% endfor %}
+        </ul>
       </ul>
       <p>
-        In “DC League of Super-Pets,” Krypto the Super-Dog and Superman are
-        inseparable best friends, sharing the same superpowers and fighting
-        crime in Metropolis side by side. When Superman and the rest of the
-        Justice League are kidnapped, Krypto must convince a rag-tag shelter
-        pack—Ace the hound, PB the potbellied pig, Merton the turtle and Chip
-        the squirrel—to master their own newfound powers and help him rescue the
-        superheroes.
+        <i> {{movie.tag}}</i>
       </p>
+      <p>
+        {{movie.synopsis}}
+      </p>
+      <ul class="list-inline">
+        <li class="list-inline-item">Directed by: {{movie.director}}</li>
+        <li class="list-inline-item">Producer: {{movie.producer}}</li>
+        <br>
+        <li class="list-inline-item">Cast:
+          <div class="box" style="display:flex;flex-direction:row;width:100px;height:120px" >
+          {% for actor in movie.actors %}
+            <img src="{{actor.1}}" alt="">
+            <div> {{actor.0}} </div>
+          {% endfor %}
+        </div>
+      </li>
+      </ul>
       <p>Today - Tuesday 20 September</p>
       <button type="button" class="btn btn-light">4:30 PM</button>
       <p>Tomorrow - Wednesday 21 September</p>

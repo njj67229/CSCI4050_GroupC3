@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("", views.select_show_time, name="select_show_time"),
-    path("select-show-time", views.select_show_time, name="select_show_time"),
+    path("select_show_time/<int:movie_id>/", views.select_show_time, name="select_show_time"),
     path(
         "select-tickets-and-age",
         views.select_tickets_and_age,
