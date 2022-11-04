@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from core.models import Movie
+from core.models import Movie, Showing
 from .filters import MovieFilter
 
 
@@ -18,14 +18,25 @@ def format_runtime(mins):
     
     
 
-def index2(request):
+def index2(request, showing_type=None):
     query = Movie.objects.all()
+    if showing_type=='coming_soon':
+        #need to show coming soon movies
+        # showings = Showing.objects.all()
+        query = query.filter(showing__isnull=True)
+    elif showing_type=='now_showing':
+        query = query.filter(showing__isnull=False)
+        
+    message = ""
     movie_list = []
     
-    movie_filter = MovieFilter(request.GET, queryset=Movie.objects.all())
+    movie_filter = MovieFilter(request.GET, queryset=query)
     filtered_movies = movie_filter.qs
     if filtered_movies:
         query = filtered_movies
+    else:
+        #no results from query
+        message = 'Could not find any movies matching that query. Please try again...'
         
     for q in query.iterator():
         genres_list = [x.title for x in q.genres.all().iterator()]
@@ -40,4 +51,4 @@ def index2(request):
             'genres': genres_list
         })
     # movies = query.iterator
-    return render(request, "homepage2.html", {'movies': movie_list, 'movie_filter': movie_filter})
+    return render(request, "homepage2.html", {'movies': movie_list, 'movie_filter': movie_filter, 'msg': message})
