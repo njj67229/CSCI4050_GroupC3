@@ -1,2189 +1,1424 @@
 [
   {
-      "model": "core.Movie",
-      "pk": "616820",
-      "fields": {
-          "title": "Halloween Ends",
-          "tag": "This Halloween, their saga ends.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=i_mAWKyfj6c",
-          "release_date": "2022-10-12",
-          "director": "David Gordon Green",
-          "producer": "Malek Akkad",
-          "runtime": 111,
-          "synopsis": "Four years after the events of Halloween in 2018, Laurie has decided to liberate herself from fear and rage and embrace life. But when a young man is accused of killing a boy he was babysitting, it ignites a cascade of violence and terror that will force Laurie to finally confront the evil she can’t control, once and for all.",
-          "genres": [
-              11,
-              16
-          ],
-          "pic": "images/616820.jpg",
-          "actor_ids": [
-              8944,
-              1511997,
-              1196041,
-              883,
-              1267684
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "760161",
-      "fields": {
-          "title": "Orphan: First Kill",
-          "tag": "There's always been something wrong with Esther.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=_uX6of3vBu0",
-          "release_date": "2022-07-27",
-          "director": "William Brent Bell",
-          "producer": "James Tomlinson",
-          "runtime": 99,
-          "synopsis": "After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.",
-          "genres": [
-              11,
-              16
-          ],
-          "pic": "images/760161.jpg",
-          "actor_ids": [
-              77517,
-              12041,
-              58014,
-              2563029,
-              60719
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "575322",
-      "fields": {
-          "title": "Project Gemini",
-          "tag": "Love over space",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=Gi4Pobu1PWw",
-          "release_date": "2022-01-06",
-          "director": "Serik Beyseu",
-          "producer": "Vladimir Denisyuk",
-          "runtime": 98,
-          "synopsis": "After depleting Earth's resources for centuries, humankind's survival requires an exodus to outer space. An international expedition is quickly formed to find a suitable new planet, but when plans go awry, the crew is suddenly stranded without power on a strange planet, where something unimaginable lies in wait.",
-          "genres": [
-              15
-          ],
-          "pic": "images/575322.jpg",
-          "actor_ids": [
-              1280426,
-              1265148,
-              238523,
-              1745329,
-              177129
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "985939",
-      "fields": {
-          "title": "Fall",
-          "tag": "Fear reaches new heights.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=iSspRSGc4Dk",
-          "release_date": "2022-08-11",
-          "director": "Scott Mann",
-          "producer": "David Haring",
-          "runtime": 107,
-          "synopsis": "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights",
-          "genres": [
-              16
-          ],
-          "pic": "images/985939.jpg",
-          "actor_ids": [
-              54633,
-              1279279,
-              47296,
-              2174509,
-              945542
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "718930",
-      "fields": {
-          "title": "Bullet Train",
-          "tag": "The end of the line is just the beginning.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=0IOsk2Vlc4o",
-          "release_date": "2022-07-03",
-          "director": "David Leitch",
-          "producer": "Kelly McCormick",
-          "runtime": 127,
-          "synopsis": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
-          "genres": [
-              1,
-              4,
-              16
-          ],
-          "pic": "images/718930.jpg",
-          "actor_ids": [
-              287,
-              125025,
-              27428,
-              226366,
-              1658375
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "960704",
-      "fields": {
-          "title": "Fullmetal Alchemist: The Final Alchemy",
-          "tag": "",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=iOL7uUAbsUQ",
-          "release_date": "2022-06-24",
-          "director": "Fumihiko Sori",
-          "producer": null,
-          "runtime": 143,
-          "synopsis": "The Elric brothers’ long and winding journey comes to a close in this epic finale, where they must face off against an unworldly, nationwide threat.",
-          "genres": [
-              1,
-              2,
-              9
-          ],
-          "pic": "images/960704.jpg",
-          "actor_ids": [
-              1247874,
-              1488591,
-              1255487,
-              114725,
-              1462267
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "642885",
-      "fields": {
-          "title": "Hocus Pocus 2",
-          "tag": "Back and more glorious than ever.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=ecJRvz9nk-U",
-          "release_date": "2022-09-27",
-          "director": "Anne Fletcher",
-          "producer": "Lynn Harris",
-          "runtime": 107,
-          "synopsis": "It's been 29 years since someone lit the Black Flame Candle and resurrected the 17th-century sisters, and they are looking for revenge. Now it's up to three high-school students to stop the ravenous witches from wreaking a new kind of havoc on Salem before dawn on All Hallow's Eve.",
-          "genres": [
-              9,
-              4,
-              8
-          ],
-          "pic": "images/642885.jpg",
-          "actor_ids": [
-              73931,
-              520,
-              11074,
-              1842860,
-              2381442
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "852046",
-      "fields": {
-          "title": "Athena",
-          "tag": "",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=vRunUkdkK8s",
-          "release_date": "2022-09-09",
-          "director": "Romain Gavras",
-          "producer": "Mourad Belkeddar",
-          "runtime": 97,
-          "synopsis": "Hours after the tragic death of their youngest brother in unexplained circumstances, three siblings have their lives thrown into chaos.",
-          "genres": [
-              7,
-              1,
-              16
-          ],
-          "pic": "images/852046.jpg",
-          "actor_ids": [
-              1940747,
-              1660839,
-              1710851,
-              3163471,
-              3534961
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "791155",
-      "fields": {
-          "title": "Secret Headquarters",
-          "tag": "When the secret is out, the adventure begins.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=JR2hwFpllz4",
-          "release_date": "2022-08-12",
-          "director": "Ariel Schulman",
-          "producer": "Chad Oman",
-          "runtime": 104,
-          "synopsis": "While hanging out after school, Charlie and his friends discover the headquarters of the world’s most powerful superhero hidden beneath his home. When villains attack, they must team up to defend the headquarters and save the world.",
-          "genres": [
-              15,
-              2,
-              1
-          ],
-          "pic": "images/791155.jpg",
-          "actor_ids": [
-              887,
-              454,
-              2867506,
-              2298635,
-              2177190
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "916605",
-      "fields": {
-          "title": "The Infernal Machine",
-          "tag": "What he created will destroy him.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=q0vrecpxXZU",
-          "release_date": "2022-09-23",
-          "director": "Andrew Hunt",
-          "producer": "Lionel Hicks",
-          "runtime": 107,
-          "synopsis": "Reclusive and controversial author Bruce Cogburn is drawn out of hiding by an obsessive fan, forcing the novelist to confront a past that he thought he could escape, and to account for events set in motion by his bestseller decades earlier. Cogburn's search for who is behind the manipulation and mental torment he encounters leads to an emotional roller-coaster ride full of fear and danger, where things are not always as clear as they seem to be, and where past deeds can have dire consequences.",
-          "genres": [
-              16,
-              13
-          ],
-          "pic": "images/916605.jpg",
-          "actor_ids": [
-              529,
-              59860,
-              4654,
-              61363,
-              1658209
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "436270",
-      "fields": {
-          "title": "Black Adam",
-          "tag": "The world needed a hero. It got Black Adam.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=JaV7mmc9HGw",
-          "release_date": "2022-10-19",
-          "director": "Jaume Collet-Serra",
-          "producer": "Hiram Garcia",
-          "runtime": 125,
-          "synopsis": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
-          "genres": [
-              1,
-              9,
-              2
-          ],
-          "pic": "images/436270.jpg",
-          "actor_ids": [
-              18918,
-              83860,
-              517,
-              2042690,
-              1253353
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "717728",
-      "fields": {
-          "title": "Jeepers Creepers: Reborn",
-          "tag": "Evil rides again.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=eNH2bRZ6gJw",
-          "release_date": "2022-09-15",
-          "director": "Timo Vuorensola",
-          "producer": "Jake Seal",
-          "runtime": 88,
-          "synopsis": "Forced to travel with her boyfriend to a horror festival, Laine begins to experience disturbing visions associated with the urban legend of The Creeper. As the festival arrives and the blood-soaked entertainment builds to a frenzy, she becomes the center of it while something unearthly has been summoned.",
-          "genres": [
-              11,
-              16,
-              13
-          ],
-          "pic": "images/717728.jpg",
-          "actor_ids": [
-              1817397,
-              2738561,
-              3425159,
-              3326872,
-              1070855
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "886396",
-      "fields": {
-          "title": "Batman and Superman: Battle of the Super Sons",
-          "tag": "",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=ZDPK7I5BD3g",
-          "release_date": "2022-10-17",
-          "director": "Matt Peters",
-          "producer": "James Krieg",
-          "runtime": 79,
-          "synopsis": "After discovering he has powers, 11-year-old Jonathan Kent and assassin-turned-Boy-Wonder Damian Wayne must join forces to rescue their fathers (Superman & Batman) and save the planet from the malevolent alien force known as Starro.",
-          "genres": [
-              3,
-              1,
-              15
-          ],
-          "pic": "images/886396.jpg",
-          "actor_ids": [
-              1774679,
-              1277364,
-              75037,
-              963818,
-              1221888
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "884363",
-      "fields": {
-          "title": "Togo",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=ygHjAp3m2eU",
-          "release_date": "2022-10-05",
-          "director": "Adrián Caetano",
-          "producer": null,
-          "runtime": 95,
-          "synopsis": "Togo just wants to watch his neighbors' homes, wash their cars and clean up their sidewalks. But the drug traffickers want more from him.",
-          "genres": [
-              5,
-              7
-          ],
-          "pic": "images/884363.jpg",
-          "actor_ids": [
-              230222
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "429473",
-      "fields": {
-          "title": "Lou",
-          "tag": "",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=QILhvR4QPsQ",
-          "release_date": "2022-09-23",
-          "director": "Anna Foerster",
-          "producer": "Jon Cohen",
-          "runtime": 107,
-          "synopsis": "A young girl is kidnapped during a powerful storm. Her mother joins forces with her mysterious neighbour to set off in pursuit of the kidnapper. Their journey will test their limits and expose the dark secrets of their past.",
-          "genres": [
-              1,
-              16,
-              7
-          ],
-          "pic": "images/429473.jpg",
-          "actor_ids": [
-              19,
-              59017,
-              130253,
-              3296783,
-              13525
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "532639",
-      "fields": {
-          "title": "Pinocchio",
-          "tag": "The timeless classic.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=2vNVGZGlUok",
-          "release_date": "2022-09-07",
-          "director": "Robert Zemeckis",
-          "producer": "Derek Hogue",
-          "runtime": 105,
-          "synopsis": "A wooden puppet embarks on a thrilling adventure to become a real boy.",
-          "genres": [
-              9,
-              2,
-              8
-          ],
-          "pic": "images/532639.jpg",
-          "actor_ids": [
-              2382044,
-              31,
-              24045,
-              114019,
-              1765068
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "760741",
-      "fields": {
-          "title": "Beast",
-          "tag": "Fight for family.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=oQMc7Sq36mI",
-          "release_date": "2022-08-11",
-          "director": "Baltasar Kormákur",
-          "producer": "James Lopez",
-          "runtime": 93,
-          "synopsis": "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fight for survival when a bloodthirsty lion starts to stalk them.",
-          "genres": [
-              16,
-              2,
-              11
-          ],
-          "pic": "images/760741.jpg",
-          "actor_ids": [
-              17605,
-              1438277,
-              1877835,
-              82191,
-              2073065
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "335795",
-      "fields": {
-          "title": "Monster High: The Movie",
-          "tag": "Skull’s in session.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=Ghz0V5LegzI",
-          "release_date": "2022-10-06",
-          "director": "Todd Holland",
-          "producer": "David Magee",
-          "runtime": 91,
-          "synopsis": "Clawdeen Wolf, half human and half werewolf, has recently started attending Monster High, a school for monsters in all forms. After quickly befriending her classmates Frankie Stein and Draculaura, Clawdeen feels like she has finally found a place where she can truly be herself, or so she thinks. Soon, a devious plan to destroy Monster High threatens to reveal her real identity and Clawdeen must learn to embrace her true monster heart before it's too late.",
-          "genres": [
-              2,
-              8,
-              17
-          ],
-          "pic": "images/335795.jpg",
-          "actor_ids": [
-              3302924,
-              1630438,
-              2437835,
-              2209302,
-              2588282
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "616037",
-      "fields": {
-          "title": "Thor: Love and Thunder",
-          "tag": "The one is not the only.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=Go8nTmfrQd8",
-          "release_date": "2022-07-06",
-          "director": "Taika Waititi",
-          "producer": "Brad Winderbaum",
-          "runtime": 119,
-          "synopsis": "After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor Odinson enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher’s vengeance and stop him before it’s too late.",
-          "genres": [
-              9,
-              1,
-              4
-          ],
-          "pic": "images/616037.jpg",
-          "actor_ids": [
-              74568,
-              524,
-              3894,
-              62561,
-              55934
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1024530",
-      "fields": {
-          "title": "Grimcutty",
-          "tag": "Feed the frenzy.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=lb3FCMpMN4s",
-          "release_date": "2022-10-10",
-          "director": "John Ross",
-          "producer": "Arbi Pedrossian",
-          "runtime": 101,
-          "synopsis": "A suburban teen girl and her little brother must stop a terrifying internet meme brought to life by the hysteria of their parents.",
-          "genres": [
-              11
-          ],
-          "pic": "images/1024530.jpg",
-          "actor_ids": [
-              3620497,
-              27855,
-              1129806,
-              1753378,
-              30069
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "766507",
-      "fields": {
-          "title": "Prey",
-          "tag": "They hunt to live. It lives to hunt.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=wZ7LytagKlc",
-          "release_date": "2022-08-02",
-          "director": "Dan Trachtenberg",
-          "producer": "Jhane Myers",
-          "runtime": 100,
-          "synopsis": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal.",
-          "genres": [
-              16,
-              1,
-              15
-          ],
-          "pic": "images/766507.jpg",
-          "actor_ids": [
-              1654001,
-              3675371,
-              87126,
-              3316731,
-              1061054
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "993145",
-      "fields": {
-          "title": "Bullet Proof",
-          "tag": "Get out. Fast!",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=BqWv2yyopMM",
-          "release_date": "2022-08-19",
-          "director": "James Clayton",
-          "producer": null,
-          "runtime": 81,
-          "synopsis": "The Thief  pulls off the robbery of a lifetime when he robs the psychotic drug lord, Temple. The plan goes off without a hitch until the Thief discovers a stowaway in his getaway car - Temple's pregnant wife, Mia.",
-          "genres": [
-              1,
-              5
-          ],
-          "pic": "images/993145.jpg",
-          "actor_ids": [
-              980,
-              3302929,
-              1808592,
-              1820696,
-              1233165
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "744276",
-      "fields": {
-          "title": "After Ever Happy",
-          "tag": "",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=K7AL2OARpTo",
-          "release_date": "2022-08-24",
-          "director": "Castille Landon",
-          "producer": "Aron Levitz",
-          "runtime": 95,
-          "synopsis": "As a shocking truth about a couple's families emerges, the two lovers discover they are not so different from each other. Tessa is no longer the sweet, simple, good girl she was when she met Hardin — any more than he is the cruel, moody boy she fell so hard for.",
-          "genres": [
-              14,
-              7
-          ],
-          "pic": "images/744276.jpg",
-          "actor_ids": [
-              1753914,
-              1114487,
-              20805,
-              2035329,
-              20960
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "507086",
-      "fields": {
-          "title": "Jurassic World Dominion",
-          "tag": "The epic conclusion of the Jurassic era.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=fb5ELWi-ekk",
-          "release_date": "2022-06-01",
-          "director": "Colin Trevorrow",
-          "producer": "Patrick Crowley",
-          "runtime": 147,
-          "synopsis": "Four years after Isla Nublar was destroyed, dinosaurs now live—and hunt—alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history’s most fearsome creatures.",
-          "genres": [
-              2,
-              1,
-              15
-          ],
-          "pic": "images/507086.jpg",
-          "actor_ids": [
-              73457,
-              18997,
-              4784,
-              4785,
-              4783
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "894205",
-      "fields": {
-          "title": "Werewolf by Night",
-          "tag": "There's no escaping the night.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=bLEFqhS5WmI",
-          "release_date": "2022-09-25",
-          "director": "Michael Giacchino",
-          "producer": "Leeann Stonebreaker",
-          "runtime": 55,
-          "synopsis": "On a dark and somber night, a secret cabal of monster hunters emerge from the shadows and gather at the foreboding Bloodstone Temple following the death of their leader. In a strange and macabre memorial to the leader’s life, the attendees are thrust into a mysterious and deadly competition for a powerful relic—a hunt that will ultimately bring them face to face with a dangerous monster.",
-          "genres": [
-              1,
-              9,
-              11,
-              17
-          ],
-          "pic": "images/894205.jpg",
-          "actor_ids": [
-              258,
-              95706,
-              538,
-              145446,
-              1317693
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "366672",
-      "fields": {
-          "title": "Paws of Fury: The Legend of Hank",
-          "tag": "Time to mark some territory.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=A_hkjvjx2ek",
-          "release_date": "2022-07-14",
-          "director": "Mark Koetsier",
-          "producer": "Susan Purcell",
-          "runtime": 98,
-          "synopsis": "A hard-on-his-luck hound finds himself in a town full of cats in need of a hero to defend them from a ruthless villain's wicked plot to wipe their village off the map. With help from a reluctant mentor, our underdog must assume the role of town samurai and team up with the villagers to save the day.",
-          "genres": [
-              8,
-              4,
-              3,
-              1
-          ],
-          "pic": "images/366672.jpg",
-          "actor_ids": [
-              39995,
-              2231,
-              17835,
-              2897837,
-              14639
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "610150",
-      "fields": {
-          "title": "Dragon Ball Super: Super Hero",
-          "tag": "A super awakening and calamity is born.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=bFLt45xK3kU",
-          "release_date": "2022-06-11",
-          "director": "Tetsuro Kodama",
-          "producer": "Norihiro Hayashida",
-          "runtime": 99,
-          "synopsis": "The Red Ribbon Army, an evil organization that was once destroyed by Goku in the past, has been reformed by a group of people who have created new and mightier Androids, Gamma 1 and Gamma 2, and seek vengeance against Goku and his family.",
-          "genres": [
-              3,
-              15,
-              1
-          ],
-          "pic": "images/610150.jpg",
-          "actor_ids": [
-              90496,
-              85286,
-              90569,
-              93801,
-              93803
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1023086",
-      "fields": {
-          "title": "Devil's Workshop",
-          "tag": "We all have our demons.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=iSj2wqtQkc8",
-          "release_date": "2022-09-30",
-          "director": "Chris von Hoffmann",
-          "producer": "Joe Gallagher",
-          "runtime": 86,
-          "synopsis": "Desperate for a role as a demonologist, struggling actor Clayton contacts Eliza, an expert in devil lore, to help him prepare. As he spends the weekend at her home, Eliza forces Clayton to confront his troubling past, perform dark rituals, and sacrifice a goat. Does she want to help Clayton, seduce him—or destroy him?",
-          "genres": [
-              11
-          ],
-          "pic": "images/1023086.jpg",
-          "actor_ids": [
-              8329,
-              1493433,
-              46593,
-              1371878,
-              1703229
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "882598",
-      "fields": {
-          "title": "Smile",
-          "tag": "Once you see it, it’s too late.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=BcDK7lkzzsU",
-          "release_date": "2022-09-23",
-          "director": "Parker Finn",
-          "producer": "Isaac Klausner",
-          "runtime": 115,
-          "synopsis": "After witnessing a bizarre, traumatic incident involving a patient, Dr. Rose Cotter starts experiencing frightening occurrences that she can't explain. As an overwhelming terror begins taking over her life, Rose must confront her troubling past in order to survive and escape her horrifying new reality.",
-          "genres": [
-              11,
-              13,
-              16
-          ],
-          "pic": "images/882598.jpg",
-          "actor_ids": [
-              1396124,
-              59219,
-              145245,
-              198847,
-              53493
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "870096",
-      "fields": {
-          "title": "Restart The Earth",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=eAOEHkyhIKw",
-          "release_date": "2022-08-04",
-          "director": "Lin Zhenzhao",
-          "producer": null,
-          "runtime": 89,
-          "synopsis": "When a drug to replicate plant cells creates a sentient form of flower, the planet is over taken by flora and humankind is depleted. A Chinese task force, a widowed father and his young daughter fight to survive in a mission to inject an antidote to the core of the plants to reverse their growth.",
-          "genres": [
-              15,
-              11,
-              1
-          ],
-          "pic": "images/870096.jpg",
-          "actor_ids": [
-              1102361,
-              93990,
-              120725,
-              2027719,
-              2477191
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "539681",
-      "fields": {
-          "title": "DC League of Super-Pets",
-          "tag": "Sit, stay, save the world.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=1jkw2JPCl18",
-          "release_date": "2022-07-27",
-          "director": "Jared Stern",
-          "producer": "Patricia Hicks",
-          "runtime": 105,
-          "synopsis": "When Superman and the rest of the Justice League are kidnapped, Krypto the Super-Dog must convince a rag-tag shelter pack - Ace the hound, PB the potbellied pig, Merton the turtle and Chip the squirrel - to master their own newfound powers and help him rescue the superheroes.",
-          "genres": [
-              3,
-              1,
-              8,
-              4,
-              15
-          ],
-          "pic": "images/539681.jpg",
-          "actor_ids": [
-              18918,
-              55638,
-              17697,
-              6384,
-              1240487
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "438148",
-      "fields": {
-          "title": "Minions: The Rise of Gru",
-          "tag": "A villain will rise.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=OCSnxXtjFL0",
-          "release_date": "2022-06-29",
-          "director": "Kyle Balda",
-          "producer": "Chris Renaud",
-          "runtime": 87,
-          "synopsis": "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
-          "genres": [
-              3,
-              8
-          ],
-          "pic": "images/438148.jpg",
-          "actor_ids": [
-              4495,
-              124747,
-              59919,
-              1903,
-              40036
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "361743",
-      "fields": {
-          "title": "Top Gun: Maverick",
-          "tag": "Feel the need... The need for speed.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=qSqVVswa420",
-          "release_date": "2022-05-24",
-          "director": "Joseph Kosinski",
-          "producer": "David Ellison",
-          "runtime": 131,
-          "synopsis": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
-          "genres": [
-              1,
-              7
-          ],
-          "pic": "images/361743.jpg",
-          "actor_ids": [
-              500,
-              996701,
-              6161,
-              65717,
-              83271
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "634649",
-      "fields": {
-          "title": "Spider-Man: No Way Home",
-          "tag": "The Multiverse unleashed.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=WgU7P6o-GkM",
-          "release_date": "2021-12-15",
-          "director": "Jon Watts",
-          "producer": "Amy Pascal",
-          "runtime": 148,
-          "synopsis": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
-          "genres": [
-              1,
-              2,
-              15
-          ],
-          "pic": "images/634649.jpg",
-          "actor_ids": [
-              1136406,
-              505710,
-              71580,
-              1649152,
-              15277
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "629176",
-      "fields": {
-          "title": "Samaritan",
-          "tag": "25 years ago the world's greatest hero vanished.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=9FKnTxSC16E",
-          "release_date": "2022-08-25",
-          "director": "Julius Avery",
-          "producer": "Braden Aftergood",
-          "runtime": 102,
-          "synopsis": "Thirteen year old Sam Cleary  suspects that his mysteriously reclusive neighbor Mr. Smith is actually the legendary vigilante Samaritan, who was reported dead 20 years ago. With crime on the rise and the city on the brink of chaos, Sam makes it his mission to coax his neighbor out of hiding to save the city from ruin.",
-          "genres": [
-              1,
-              7,
-              15
-          ],
-          "pic": "images/629176.jpg",
-          "actor_ids": [
-              2532098,
-              16483,
-              1026947,
-              57412,
-              90060
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "999205",
-      "fields": {
-          "title": "Stowaway",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=G3hnzGEu9Yo",
-          "release_date": "2022-08-31",
-          "director": "Declan Whitebloom",
-          "producer": null,
-          "runtime": 94,
-          "synopsis": "A tenacious party girl fights to survive after three thieves commandeer her luxury yacht. Unable to escape and trapped on the yacht at high seas, the prey becomes the hunter as she turns the tables on the intruders and takes matters into her own hands.",
-          "genres": [
-              16,
-              1
-          ],
-          "pic": "images/999205.jpg",
-          "actor_ids": [
-              1246972,
-              1053422,
-              81685,
-              2447500,
-              2729541
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "999722",
-      "fields": {
-          "title": "Old People",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=-EG8hNcRNwU",
-          "release_date": "2022-10-07",
-          "director": "Andy Fetscher",
-          "producer": "Florian Schneider",
-          "runtime": 101,
-          "synopsis": "A woman who's returned home with her two kids to attend her sister's wedding must suddenly defend their lives against older people on a killing spree.",
-          "genres": [
-              11
-          ],
-          "pic": "images/999722.jpg",
-          "actor_ids": [
-              57064,
-              43453,
-              2286787,
-              1026372
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1015724",
-      "fields": {
-          "title": "Trick or Treat Scooby-Doo!",
-          "tag": "Trick or trap?!",
-          "rating": 1,
-          "trailer_url": "https://www.youtube.com/watch?v=PQKHtdElMng",
-          "release_date": "2022-10-04",
-          "director": "Audie Harrison",
-          "producer": null,
-          "runtime": 78,
-          "synopsis": "Mystery Inc. has cracked the case to top all cases! They’ve tracked down Coco Diablo, the head of a notorious costume crime syndicate. With Coco and her kitty in prison, Mystery Inc. thinks that they can finally enjoy a break. Wrong! Suddenly, menacing doppelgänger ghosts of the Scooby crew and favorite classic foes show up in Coolsville to threaten Halloween. Now it’s up to the meddling kids to unmask the latest scoundrel and save Halloween!",
-          "genres": [
-              2,
-              13,
-              4,
-              3,
-              8
-          ],
-          "pic": "images/1015724.jpg",
-          "actor_ids": [
-              15831,
-              15761,
-              26457,
-              132354,
-              1360385
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "759507",
-      "fields": {
-          "title": "Blackout",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=QP3sxps6k0s",
-          "release_date": "2022-10-12",
-          "director": "Sam Macaroni",
-          "producer": "Jim Steele",
-          "runtime": 81,
-          "synopsis": "A man wakes in a hospital with no memory, and quickly finds himself on the run in a locked down hospital with the Cartel on his tail.",
-          "genres": [
-              1,
-              2,
-              16
-          ],
-          "pic": "images/759507.jpg",
-          "actor_ids": [
-              19536,
-              37260,
-              1134885,
-              1733,
-              1059040
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "756999",
-      "fields": {
-          "title": "The Black Phone",
-          "tag": "Never talk to strangers.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=3eGP6im8AZA",
-          "release_date": "2022-06-22",
-          "director": "Scott Derrickson",
-          "producer": "C. Robert Cargill",
-          "runtime": 103,
-          "synopsis": "Finney Blake, a shy but clever 13-year-old boy, is abducted by a sadistic killer and trapped in a soundproof basement where screaming is of little use. When a disconnected phone on the wall begins to ring, Finney discovers that he can hear the voices of the killer’s previous victims. And they are dead set on making sure that what happened to them doesn’t happen to Finney.",
-          "genres": [
-              11,
-              16
-          ],
-          "pic": "images/756999.jpg",
-          "actor_ids": [
-              2803710,
-              569,
-              1530558,
-              4654,
-              41020
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "453395",
-      "fields": {
-          "title": "Doctor Strange in the Multiverse of Madness",
-          "tag": "Enter a new dimension of Strange.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=aWzlQ2N6qqg",
-          "release_date": "2022-05-04",
-          "director": "Sam Raimi",
-          "producer": "Kevin Feige",
-          "runtime": 126,
-          "synopsis": "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.",
-          "genres": [
-              9,
-              1,
-              2
-          ],
-          "pic": "images/453395.jpg",
-          "actor_ids": [
-              71580,
-              550843,
-              5294,
-              30082,
-              1912381
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "723419",
-      "fields": {
-          "title": "Mr. Harrigan's Phone",
-          "tag": "Some connections never die.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=4Un_ker71dg",
-          "release_date": "2022-10-05",
-          "director": "John Lee Hancock",
-          "producer": "Carla Hacken",
-          "runtime": 105,
-          "synopsis": "Craig, a young boy living in a small town befriends an older, reclusive billionaire, Mr. Harrigan. The two form a bond over books and an iPhone, but when the man passes away the boy discovers that not everything dead is gone.",
-          "genres": [
-              16,
-              7,
-              11
-          ],
-          "pic": "images/723419.jpg",
-          "actor_ids": [
-              55636,
-              1274508,
-              1532312,
-              1664022,
-              2142587
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "675353",
-      "fields": {
-          "title": "Sonic the Hedgehog 2",
-          "tag": "Welcome to the next level.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=G5kzUpWAusI",
-          "release_date": "2022-03-30",
-          "director": "Jeff Fowler",
-          "producer": "Hitoshi Okuno",
-          "runtime": 122,
-          "synopsis": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
-          "genres": [
-              1,
-              2,
-              8,
-              4
-          ],
-          "pic": "images/675353.jpg",
-          "actor_ids": [
-              11006,
-              222121,
-              110742,
-              1546282,
-              115974
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "579974",
-      "fields": {
-          "title": "RRR",
-          "tag": "Rise, roar, revolt.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=xo1P2sQdhC0",
-          "release_date": "2022-03-24",
-          "director": "S. S. Rajamouli",
-          "producer": "DVV Danayya",
-          "runtime": 182,
-          "synopsis": "A fictional history of two legendary revolutionaries' journey away from home before they began fighting for their country in the 1920s.",
-          "genres": [
-              1,
-              7
-          ],
-          "pic": "images/579974.jpg",
-          "actor_ids": [
-              148037,
-              147023,
-              1108120,
-              42803,
-              56614
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "810693",
-      "fields": {
-          "title": "Jujutsu Kaisen 0",
-          "tag": "Fight what's within.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=Yl_f0sYMaGk",
-          "release_date": "2021-12-24",
-          "director": "Sunghoo Park",
-          "producer": "Tatsuro Hayashi",
-          "runtime": 105,
-          "synopsis": "Yuta Okkotsu is a nervous high school student who is suffering from a serious problem—his childhood friend Rika has turned into a curse and won't leave him alone. Since Rika is no ordinary curse, his plight is noticed by Satoru Gojo, a teacher at Jujutsu High, a school where fledgling exorcists learn how to combat curses. Gojo convinces Yuta to enroll, but can he learn enough in time to confront the curse that haunts him?",
-          "genres": [
-              3,
-              1,
-              9
-          ],
-          "pic": "images/810693.jpg",
-          "actor_ids": [
-              77927,
-              119143,
-              1221114,
-              9705,
-              1281498
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "508947",
-      "fields": {
-          "title": "Turning Red",
-          "tag": "Growing up is a beast.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=XdKzUbAiswE",
-          "release_date": "2022-02-07",
-          "director": "Domee Shi",
-          "producer": "Lindsey Collins",
-          "runtime": 100,
-          "synopsis": "Thirteen-year-old Mei is experiencing the awkwardness of being a teenager with a twist – when she gets too excited, she transforms into a giant red panda.",
-          "genres": [
-              3,
-              8,
-              4,
-              9
-          ],
-          "pic": "images/508947.jpg",
-          "actor_ids": [
-              3156344,
-              25540,
-              1373681,
-              2602879,
-              2719558
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "718789",
-      "fields": {
-          "title": "Lightyear",
-          "tag": "Infinity awaits.",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=BwPL0Md_QFQ",
-          "release_date": "2022-06-15",
-          "director": "Angus MacLane",
-          "producer": "Galyn Susman",
-          "runtime": 105,
-          "synopsis": "Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits and his robot companion Sox.",
-          "genres": [
-              3,
-              1,
-              2,
-              8,
-              15
-          ],
-          "pic": "images/718789.jpg",
-          "actor_ids": [
-              16828,
-              74688,
-              21198,
-              55934,
-              1102500
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "843633",
-      "fields": {
-          "title": "White Elephant",
-          "tag": "Live by a code. Die by a bullet.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=5zEPU7Ekz00",
-          "release_date": "2022-06-03",
-          "director": "Jesse V. Johnson",
-          "producer": "Corey Large",
-          "runtime": 93,
-          "synopsis": "An ex-marine enforcer must battle his conscience and code of honor when he is forced to do things for the mob.",
-          "genres": [
-              1,
-              5,
-              16
-          ],
-          "pic": "images/843633.jpg",
-          "actor_ids": [
-              12132,
-              62,
-              18182,
-              6949,
-              1450407
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "663712",
-      "fields": {
-          "title": "Terrifier 2",
-          "tag": "Who's Laughing Now?",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=x5DhuDSArTI",
-          "release_date": "2022-10-06",
-          "director": "Damien Leone",
-          "producer": "Jason Leavy",
-          "runtime": 138,
-          "synopsis": "After being resurrected by a sinister entity, Art the Clown returns to Miles County where he must hunt down and destroy a teenage girl and her younger brother on Halloween night.  As the body count rises, the siblings fight to stay alive while uncovering the true nature of Art's evil intent.",
-          "genres": [
-              11,
-              16
-          ],
-          "pic": "images/663712.jpg",
-          "actor_ids": [
-              1882502,
-              1880016,
-              2787720,
-              1676771,
-              1202687
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "960700",
-      "fields": {
-          "title": "Fullmetal Alchemist: The Revenge of Scar",
-          "tag": "",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=UIY5jTT_-lI",
-          "release_date": "2022-05-20",
-          "director": "Fumihiko Sori",
-          "producer": null,
-          "runtime": 125,
-          "synopsis": "The Elric brothers meet their toughest opponent yet — a lone serial killer with a large scar on his forehead.",
-          "genres": [
-              9,
-              1,
-              2
-          ],
-          "pic": "images/960700.jpg",
-          "actor_ids": [
-              1247874,
-              1488591,
-              1255487,
-              1129267,
-              119244
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "597922",
-      "fields": {
-          "title": "The Greatest Beer Run Ever",
-          "tag": "Friendship has no last call.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=NqxziDlZOIo",
-          "release_date": "2022-09-30",
-          "director": "Peter Farrelly",
-          "producer": "Andrew J. Muscato",
-          "runtime": 126,
-          "synopsis": "Chickie wants to support his friends fighting in Vietnam, so he does something wild—personally bring them American beer. What starts as a well-meaning journey quickly changes Chickie’s life and perspective. Based on a true story.",
-          "genres": [
-              7,
-              4,
-              18
-          ],
-          "pic": "images/597922.jpg",
-          "actor_ids": [
-              29222,
-              934,
-              1562074,
-              1532,
-              1456280
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "975120",
-      "fields": {
-          "title": "Father There Is Only One 3",
-          "tag": "This year the kings come",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=yvftz2RyXOI",
-          "release_date": "2022-07-15",
-          "director": "Santiago Segura",
-          "producer": "María Luisa Gutiérrez",
-          "runtime": 99,
-          "synopsis": "Christmas is coming. The children accidentally break a Nativity scene figurine from their father's collection and must by all means get an equal one, the problem is that it is a unique antique piece. Sara, the eldest daughter breaks up with her boyfriend, Ocho, who will try to recover her favors with the help of her father-in-law, Javier. Precisely Javier's father-in-law, Marisa's father, will be welcomed into the family home to spend the holidays after her recent separation, which will not leave Javier's mother, Milagros, indifferent. Rocío, the folklore of the family, who has been playing the Virgin for several Christmases, is relegated this year to playing the shepherdess, something that her father, Javier, is not willing to assume.",
-          "genres": [
-              4,
-              8
-          ],
-          "pic": "images/975120.jpg",
-          "actor_ids": [
-              10847,
-              93467,
-              1423088,
-              112607,
-              231486
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1007401",
-      "fields": {
-          "title": "Mortal Kombat Legends: Snow Blind",
-          "tag": "Evil is Unleashed!",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=vvqx3-1G9Rw",
-          "release_date": "2022-10-09",
-          "director": "Rick Morales",
-          "producer": "James Krieg",
-          "runtime": 82,
-          "synopsis": "Hellbent on taking over Earthrealm, Kano viciously attacks town after town with the aid of three cold-blooded Black Dragon mercenaries. Those who don’t submit are annihilated but one young man won’t bend the knee to Kano: Kenshi.",
-          "genres": [
-              3,
-              1,
-              9
-          ],
-          "pic": "images/1007401.jpg",
-          "actor_ids": [
-              1368795,
-              1371,
-              1509454,
-              127387,
-              66655
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "921360",
-      "fields": {
-          "title": "Wire Room",
-          "tag": "His first day as an agent could be his last.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=gUTjfOkVu7E",
-          "release_date": "2022-09-02",
-          "director": "Matt Eskandari",
-          "producer": "Noel Ashman",
-          "runtime": 97,
-          "synopsis": "New recruit Justin Rosa must monitor arms-smuggling cartel member Eddie Flynn — and keep him alive at all costs. When a SWAT team descends on Flynn’s home, Rosa breaks protocol and contacts the gangster directly to save his life. As gunmen break into the Wire Room and chaos erupts, Mueller and Rosa make a final, desperate stand against the corrupt agents and officials who seek to destroy evidence and kill them both.",
-          "genres": [
-              1,
-              5,
-              16
-          ],
-          "pic": "images/921360.jpg",
-          "actor_ids": [
-              6863,
-              62,
-              1395206,
-              53185,
-              84315
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1015602",
-      "fields": {
-          "title": "Welcome to the Club",
-          "tag": "It’s not easy being mean… or is it?",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-09-08",
-          "director": "David Silverman",
-          "producer": "Denise Sirkot",
-          "runtime": 4,
-          "synopsis": "Heart set on becoming a princess, Lisa Simpson is surprised to learn being bad might be more fun.",
-          "genres": [
-              3,
-              4
-          ],
-          "pic": "images/1015602.jpg",
-          "actor_ids": [
-              5586,
-              34983,
-              200,
-              91606,
-              87819
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "799546",
-      "fields": {
-          "title": "Luckiest Girl Alive",
-          "tag": "",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=B_XUlbPW-eY",
-          "release_date": "2022-09-30",
-          "director": "Mike Barker",
-          "producer": "Jeanne Snow",
-          "runtime": 113,
-          "synopsis": "A successful woman in New York City finds her life upended when she is forced to confront a dark truth that threatens to unravel her meticulously crafted life.",
-          "genres": [
-              7,
-              16,
-              13
-          ],
-          "pic": "images/799546.jpg",
-          "actor_ids": [
-              18973,
-              168877,
-              59233,
-              1590225,
-              1540601
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "585511",
-      "fields": {
-          "title": "Luck",
-          "tag": "Sometimes all you need is for everything to go wrong.",
-          "rating": 1,
-          "trailer_url": "https://www.youtube.com/watch?v=xSG5UX0EQVg",
-          "release_date": "2022-08-05",
-          "director": "Peggy Holmes",
-          "producer": "David Ellison",
-          "runtime": 105,
-          "synopsis": "Suddenly finding herself in the never-before-seen Land of Luck, the unluckiest person in the world must unite with the magical creatures there to turn her luck around.",
-          "genres": [
-              3,
-              2,
-              4,
-              9
-          ],
-          "pic": "images/585511.jpg",
-          "actor_ids": [
-              1684452,
-              11108,
-              6352,
-              2395,
-              1471841
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "338953",
-      "fields": {
-          "title": "Fantastic Beasts: The Secrets of Dumbledore",
-          "tag": "Return to the magic.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=Y9dr2zw-TXQ",
-          "release_date": "2022-04-06",
-          "director": "David Yates",
-          "producer": "Lionel Wigram",
-          "runtime": 142,
-          "synopsis": "Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist Newt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old and new beasts as they clash with Grindelwald's growing legion of followers.",
-          "genres": [
-              9,
-              2,
-              1
-          ],
-          "pic": "images/338953.jpg",
-          "actor_ids": [
-              37632,
-              9642,
-              1019,
-              132157,
-              58873
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "354912",
-      "fields": {
-          "title": "Coco",
-          "tag": "The celebration of a lifetime",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=xlnPHQ3TLX8",
-          "release_date": "2017-10-27",
-          "director": "Lee Unkrich",
-          "producer": "Darla K. Anderson",
-          "runtime": 105,
-          "synopsis": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
-          "genres": [
-              8,
-              3,
-              9,
-              12,
-              4,
-              2
-          ],
-          "pic": "images/354912.jpg",
-          "actor_ids": [
-              1193391,
-              258,
-              4589,
-              10402,
-              154004
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "772450",
-      "fields": {
-          "title": "Presences",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-09-07",
-          "director": "Luis Mandoki",
-          "producer": "Cher Constantine",
-          "runtime": 0,
-          "synopsis": "A man who loses his wife and goes to seclude himself in a cabin in the woods, where strange things happen.",
-          "genres": [
-              11
-          ],
-          "pic": "images/772450.jpg",
-          "actor_ids": [
-              110424,
-              1775557,
-              2681456,
-              234069,
-              1211042
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "762504",
-      "fields": {
-          "title": "Nope",
-          "tag": "What’s a bad miracle?",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=In8fuzj3gck",
-          "release_date": "2022-07-20",
-          "director": "Jordan Peele",
-          "producer": "Ian Cooper",
-          "runtime": 130,
-          "synopsis": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
-          "genres": [
-              11,
-              13,
-              15,
-              16
-          ],
-          "pic": "images/762504.jpg",
-          "actor_ids": [
-              206919,
-              74688,
-              1602972,
-              215055,
-              7486
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "635302",
-      "fields": {
-          "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
-          "tag": "With your blade, bring an end to the nightmare.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=ATJYac_dORw",
-          "release_date": "2020-10-16",
-          "director": "Haruo Sotozaki",
-          "producer": "Yuma Takahashi",
-          "runtime": 117,
-          "synopsis": "Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
-          "genres": [
-              3,
-              1,
-              2,
-              9
-          ],
-          "pic": "images/635302.jpg",
-          "actor_ids": [
-              1256603,
-              1563442,
-              119145,
-              233590,
-              224413
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "924482",
-      "fields": {
-          "title": "The Ledge",
-          "tag": "Don't lose your grip.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=lI5QB-BOWNo",
-          "release_date": "2022-02-18",
-          "director": "Howard J. Ford",
-          "producer": "Milos Djukelic",
-          "runtime": 86,
-          "synopsis": "A rock climbing adventure between two friends turns into a terrifying nightmare. After Kelly captures the murder of her best friend on camera, she becomes the next target of a tight knit group of friends who will stop at nothing to destroy the evidence and anyone in their way. Desperate for her safety, she begins a treacherous climb up a mountain cliff and her survival instincts are put to the test when she becomes trapped with the killers just 20 feet away.",
-          "genres": [
-              16,
-              2,
-              13,
-              1,
-              5
-          ],
-          "pic": "images/924482.jpg",
-          "actor_ids": [
-              1197948,
-              1173231,
-              2931841,
-              1414117,
-              1085939
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "773975",
-      "fields": {
-          "title": "End of the Road",
-          "tag": "There's no turning back.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=202KkD12AuI",
-          "release_date": "2022-09-09",
-          "director": "Millicent Shelton",
-          "producer": "Brad Kaplan",
-          "runtime": 89,
-          "synopsis": "Recently widowed mom Brenda fights to protect her family during a harrowing road trip when a murder and a missing bag of cash plunge them into danger.",
-          "genres": [
-              16,
-              7,
-              5
-          ],
-          "pic": "images/773975.jpg",
-          "actor_ids": [
-              15758,
-              8171,
-              2056270,
-              3227332,
-              2222
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "414906",
-      "fields": {
-          "title": "The Batman",
-          "tag": "Unmask the truth.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=NLOp_6uPccQ",
-          "release_date": "2022-03-01",
-          "director": "Matt Reeves",
-          "producer": "Dylan Clark",
-          "runtime": 177,
-          "synopsis": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
-          "genres": [
-              5,
-              13,
-              16
-          ],
-          "pic": "images/414906.jpg",
-          "actor_ids": [
-              11288,
-              37153,
-              17142,
-              2954,
-              1241
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "831410",
-      "fields": {
-          "title": "Bring It On: Cheer or Die",
-          "tag": "Bring on the thrills. Bring on the kills. Bring on the cheer.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=XpSyonkPJiQ",
-          "release_date": "2022-09-27",
-          "director": "Karen Lam",
-          "producer": "Griff Furst",
-          "runtime": 91,
-          "synopsis": "When a cheer squad practices their routines on Halloween weekend in an abandoned school, they are picked off one by one by an unknown killer.",
-          "genres": [
-              16,
-              11,
-              4,
-              17
-          ],
-          "pic": "images/831410.jpg",
-          "actor_ids": [
-              1617121,
-              892734,
-              1294,
-              1089929,
-              2346247
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "773867",
-      "fields": {
-          "title": "Seoul Vibe",
-          "tag": "Drive back to 1988.",
-          "rating": 4,
-          "trailer_url": "https://www.youtube.com/watch?v=H94Vfb12Hkw",
-          "release_date": "2022-08-26",
-          "director": "Moon Hyun-sung",
-          "producer": "Kim Ji-hoon",
-          "runtime": 140,
-          "synopsis": "Chasing speed, dreams and money, a team of drivers get involved in the slush fund investigation of a powerful figure during the 1988 Seoul Olympics.",
-          "genres": [
-              1,
-              5,
-              4,
-              2
-          ],
-          "pic": "images/773867.jpg",
-          "actor_ids": [
-              572225,
-              1257601,
-              1916075,
-              2633250,
-              1988291
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "19995",
-      "fields": {
-          "title": "Avatar",
-          "tag": "Enter the world of Pandora.",
-          "rating": 3,
-          "trailer_url": "https://www.youtube.com/watch?v=5PSNL1qE6VY",
-          "release_date": "2009-12-15",
-          "director": "James Cameron",
-          "producer": "Jon Landau",
-          "runtime": 162,
-          "synopsis": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
-          "genres": [
-              1,
-              2,
-              9,
-              15
-          ],
-          "pic": "images/19995.jpg",
-          "actor_ids": [
-              65731,
-              8691,
-              10205,
-              32747,
-              17647
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "568124",
-      "fields": {
-          "title": "Encanto",
-          "tag": "There's a little magic in all of us ...almost all of us.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=CaimKeDcudo",
-          "release_date": "2021-10-13",
-          "director": "Jared Bush",
-          "producer": "Yvett Merino Flores",
-          "runtime": 102,
-          "synopsis": "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto. The magic of the Encanto has blessed every child in the family—every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
-          "genres": [
-              3,
-              4,
-              8,
-              9
-          ],
-          "pic": "images/568124.jpg",
-          "actor_ids": [
-              968367,
-              2521631,
-              5723,
-              3150235,
-              2489411
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "420634",
-      "fields": {
-          "title": "Terrifier",
-          "tag": "There is nothing more frightening than a clown after midnight.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=1EyzlnWsZCk",
-          "release_date": "2016-10-15",
-          "director": "Damien Leone",
-          "producer": "Phil Falcone",
-          "runtime": 84,
-          "synopsis": "On Halloween night, a young woman finds herself as the obsession of a sadistic murderer known as Art the Clown.",
-          "genres": [
-              11,
-              16
-          ],
-          "pic": "images/420634.jpg",
-          "actor_ids": [
-              1880016,
-              1303873,
-              1676771,
-              1190554,
-              1526694
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "781099",
-      "fields": {
-          "title": "Inexorable",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-04-06",
-          "director": "Fabrice Du Welz",
-          "producer": "Cassandre Warnauts",
-          "runtime": 98,
-          "synopsis": "Desperately seeking inspiration for the follow-up novel to his bestseller \"Inexorable\", Marcel Bellmer moves in his wife's old family mansion with his family.",
-          "genres": [
-              16
-          ],
-          "pic": "images/781099.jpg",
-          "actor_ids": [
-              47820,
-              26107,
-              67532,
-              1295194,
-              82288
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "576925",
-      "fields": {
-          "title": "My Sweet Monster",
-          "tag": "Cutie and the beast",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=hSCqtzcMeEg",
-          "release_date": "2022-01-27",
-          "director": "Viktor Glukhushin",
-          "producer": "Sergei Selyanov",
-          "runtime": 98,
-          "synopsis": "A scandal in the royal family: the wayward princess Barbara escaped from the palace and went through the forest in search of a handsome prince. However, instead of the cherished meeting with her beloved, she is captured by Buka, the most dangerous robber of the kingdom. But it quickly becomes clear that the brisk princess is ready to turn Buka's life into a nightmare, just to reach her goal. So the restless Varvara begins to establish her own order in the forest.",
-          "genres": [
-              3,
-              2,
-              8
-          ],
-          "pic": "images/576925.jpg",
-          "actor_ids": [
-              1318905,
-              1287199,
-              2365556,
-              1947592,
-              1177033
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "936897",
-      "fields": {
-          "title": "Curious Caterer: Dying for Chocolate",
-          "tag": "",
-          "rating": 2,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-04-10",
-          "director": "Anthony C. Metchie",
-          "producer": "Cynde Harmon",
-          "runtime": 84,
-          "synopsis": "Goldy is a spirited single mom who’s thrust into the role of town sleuth to help solve a friend’s mysterious death. With the clock ticking to find the culprit, Goldy strikes up an unlikely partnership with Detective Tom Schultz, who leans into Goldy’s local knowledge. As their relationship shows signs of becoming something more, the suspect list rises. Will Goldy narrow in on the killer before the killer narrows in on her?",
-          "genres": [
-              17,
-              13
-          ],
-          "pic": "images/936897.jpg",
-          "actor_ids": [
-              59750,
-              134673,
-              2352125,
-              116047,
-              58058
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "801071",
-      "fields": {
-          "title": "The Jack in the Box: Awakening",
-          "tag": "Once you open the box... you can't escape it.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=7InYvYQq8DU",
-          "release_date": "2022-02-24",
-          "director": "Lawrence Fowler",
-          "producer": "Geoff Fowler",
-          "runtime": 89,
-          "synopsis": "When a vintage Jack-in-the-box is opened by a dying woman, she enters into a deal with the demon within that would see her illness cured in return for helping it claim six innocent victims.",
-          "genres": [
-              11
-          ],
-          "pic": "images/801071.jpg",
-          "actor_ids": [
-              1733286,
-              2992685,
-              2215526,
-              216988,
-              1759040
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "836225",
-      "fields": {
-          "title": "The Exorcism of God",
-          "tag": "God and the Devil cannot exist in the same body.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=VdLI8I4jZD0",
-          "release_date": "2022-03-11",
-          "director": "Alejandro Hidalgo",
-          "producer": "Karim Kabche",
-          "runtime": 98,
-          "synopsis": "An American priest working in Mexico is considered a saint by many local parishioners. However, due to a botched exorcism, he carries a secret that’s eating him alive until he gets an opportunity to face his demon one final time.",
-          "genres": [
-              11
-          ],
-          "pic": "images/836225.jpg",
-          "actor_ids": [
-              58942,
-              1601451,
-              1050186,
-              1212803,
-              133766
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1022206",
-      "fields": {
-          "title": "Someone Borrowed",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-10-11",
-          "director": "Cris D'amato",
-          "producer": null,
-          "runtime": 107,
-          "synopsis": "To fulfill his mother’s dying wish and avoid being removed from her will, an inflexible bachelor hires an actress to play his fiancée.",
-          "genres": [
-              4,
-              14
-          ],
-          "pic": "images/1022206.jpg",
-          "actor_ids": [
-              583626,
-              1499308,
-              1185619,
-              112184,
-              1831299
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "752623",
-      "fields": {
-          "title": "The Lost City",
-          "tag": "The adventure is real. The heroes are not.",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=awHyqJv3WKE",
-          "release_date": "2022-03-24",
-          "director": "Aaron Nee",
-          "producer": "Seth Gordon",
-          "runtime": 112,
-          "synopsis": "Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a handsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric billionaire who hopes she can lead him to the ancient city's lost treasure that featured in her latest story. Alan, determined to prove he can be a hero in real life and not just on the pages of her books, sets off to rescue her.",
-          "genres": [
-              1,
-              2,
-              4
-          ],
-          "pic": "images/752623.jpg",
-          "actor_ids": [
-              18277,
-              38673,
-              10980,
-              287,
-              1180099
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "76600",
-      "fields": {
-          "title": "Avatar: The Way of Water",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-12-14",
-          "director": "James Cameron",
-          "producer": "Jon Landau",
-          "runtime": 0,
-          "synopsis": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
-          "genres": [
-              15,
-              1,
-              2
-          ],
-          "pic": "images/76600.jpg",
-          "actor_ids": [
-              65731,
-              8691,
-              10205,
-              204,
-              32747
-          ]
-      }
-  },
-  {
-      "model": "core.Movie",
-      "pk": "1014226",
-      "fields": {
-          "title": "Sonríe",
-          "tag": "",
-          "rating": 6,
-          "trailer_url": "https://www.youtube.com/watch?v=",
-          "release_date": "2022-08-18",
-          "director": "Vicente Garibay Lijanova",
-          "producer": null,
-          "runtime": 0,
-          "synopsis": "",
-          "genres": [
-              16,
-              11
-          ],
-          "pic": "images/1014226.jpg",
-          "actor_ids": []
-      }
+    "model": "core.Movie",
+    "pk": "616820",
+    "fields": {
+      "title": "Halloween Ends",
+      "tag": "This Halloween, their saga ends.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=i_mAWKyfj6c",
+      "release_date": "2022-10-12",
+      "director": "David Gordon Green",
+      "producer": "Malek Akkad",
+      "runtime": 111,
+      "synopsis": "Four years after the events of Halloween in 2018, Laurie has decided to liberate herself from fear and rage and embrace life. But when a young man is accused of killing a boy he was babysitting, it ignites a cascade of violence and terror that will force Laurie to finally confront the evil she can’t control, once and for all.",
+      "genres": [11, 16],
+      "pic": "images/616820.jpg",
+      "actor_ids": [8944, 1511997, 1196041, 883, 1267684]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "760161",
+    "fields": {
+      "title": "Orphan: First Kill",
+      "tag": "There's always been something wrong with Esther.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=_uX6of3vBu0",
+      "release_date": "2022-07-27",
+      "director": "William Brent Bell",
+      "producer": "James Tomlinson",
+      "runtime": 99,
+      "synopsis": "After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.",
+      "genres": [11, 16],
+      "pic": "images/760161.jpg",
+      "actor_ids": [77517, 12041, 58014, 2563029, 60719]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "575322",
+    "fields": {
+      "title": "Project Gemini",
+      "tag": "Love over space",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=Gi4Pobu1PWw",
+      "release_date": "2022-01-06",
+      "director": "Serik Beyseu",
+      "producer": "Vladimir Denisyuk",
+      "runtime": 98,
+      "synopsis": "After depleting Earth's resources for centuries, humankind's survival requires an exodus to outer space. An international expedition is quickly formed to find a suitable new planet, but when plans go awry, the crew is suddenly stranded without power on a strange planet, where something unimaginable lies in wait.",
+      "genres": [15],
+      "pic": "images/575322.jpg",
+      "actor_ids": [1280426, 1265148, 238523, 1745329, 177129]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "985939",
+    "fields": {
+      "title": "Fall",
+      "tag": "Fear reaches new heights.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=iSspRSGc4Dk",
+      "release_date": "2022-08-11",
+      "director": "Scott Mann",
+      "producer": "David Haring",
+      "runtime": 107,
+      "synopsis": "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights",
+      "genres": [16],
+      "pic": "images/985939.jpg",
+      "actor_ids": [54633, 1279279, 47296, 2174509, 945542]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "718930",
+    "fields": {
+      "title": "Bullet Train",
+      "tag": "The end of the line is just the beginning.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=0IOsk2Vlc4o",
+      "release_date": "2022-07-03",
+      "director": "David Leitch",
+      "producer": "Kelly McCormick",
+      "runtime": 127,
+      "synopsis": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
+      "genres": [1, 4, 16],
+      "pic": "images/718930.jpg",
+      "actor_ids": [287, 125025, 27428, 226366, 1658375]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "960704",
+    "fields": {
+      "title": "Fullmetal Alchemist: The Final Alchemy",
+      "tag": "",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=iOL7uUAbsUQ",
+      "release_date": "2022-06-24",
+      "director": "Fumihiko Sori",
+      "producer": null,
+      "runtime": 143,
+      "synopsis": "The Elric brothers’ long and winding journey comes to a close in this epic finale, where they must face off against an unworldly, nationwide threat.",
+      "genres": [1, 2, 9],
+      "pic": "images/960704.jpg",
+      "actor_ids": [1247874, 1488591, 1255487, 114725, 1462267]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "642885",
+    "fields": {
+      "title": "Hocus Pocus 2",
+      "tag": "Back and more glorious than ever.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=ecJRvz9nk-U",
+      "release_date": "2022-09-27",
+      "director": "Anne Fletcher",
+      "producer": "Lynn Harris",
+      "runtime": 107,
+      "synopsis": "It's been 29 years since someone lit the Black Flame Candle and resurrected the 17th-century sisters, and they are looking for revenge. Now it's up to three high-school students to stop the ravenous witches from wreaking a new kind of havoc on Salem before dawn on All Hallow's Eve.",
+      "genres": [9, 4, 8],
+      "pic": "images/642885.jpg",
+      "actor_ids": [73931, 520, 11074, 1842860, 2381442]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "852046",
+    "fields": {
+      "title": "Athena",
+      "tag": "",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=vRunUkdkK8s",
+      "release_date": "2022-09-09",
+      "director": "Romain Gavras",
+      "producer": "Mourad Belkeddar",
+      "runtime": 97,
+      "synopsis": "Hours after the tragic death of their youngest brother in unexplained circumstances, three siblings have their lives thrown into chaos.",
+      "genres": [7, 1, 16],
+      "pic": "images/852046.jpg",
+      "actor_ids": [1940747, 1660839, 1710851, 3163471, 3534961]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "791155",
+    "fields": {
+      "title": "Secret Headquarters",
+      "tag": "When the secret is out, the adventure begins.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=JR2hwFpllz4",
+      "release_date": "2022-08-12",
+      "director": "Ariel Schulman",
+      "producer": "Chad Oman",
+      "runtime": 104,
+      "synopsis": "While hanging out after school, Charlie and his friends discover the headquarters of the world’s most powerful superhero hidden beneath his home. When villains attack, they must team up to defend the headquarters and save the world.",
+      "genres": [15, 2, 1],
+      "pic": "images/791155.jpg",
+      "actor_ids": [887, 454, 2867506, 2298635, 2177190]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "916605",
+    "fields": {
+      "title": "The Infernal Machine",
+      "tag": "What he created will destroy him.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=q0vrecpxXZU",
+      "release_date": "2022-09-23",
+      "director": "Andrew Hunt",
+      "producer": "Lionel Hicks",
+      "runtime": 107,
+      "synopsis": "Reclusive and controversial author Bruce Cogburn is drawn out of hiding by an obsessive fan, forcing the novelist to confront a past that he thought he could escape, and to account for events set in motion by his bestseller decades earlier. Cogburn's search for who is behind the manipulation and mental torment he encounters leads to an emotional roller-coaster ride full of fear and danger, where things are not always as clear as they seem to be, and where past deeds can have dire consequences.",
+      "genres": [16, 13],
+      "pic": "images/916605.jpg",
+      "actor_ids": [529, 59860, 4654, 61363, 1658209]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "436270",
+    "fields": {
+      "title": "Black Adam",
+      "tag": "The world needed a hero. It got Black Adam.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=JaV7mmc9HGw",
+      "release_date": "2022-10-19",
+      "director": "Jaume Collet-Serra",
+      "producer": "Hiram Garcia",
+      "runtime": 125,
+      "synopsis": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+      "genres": [1, 9, 2],
+      "pic": "images/436270.jpg",
+      "actor_ids": [18918, 83860, 517, 2042690, 1253353]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "717728",
+    "fields": {
+      "title": "Jeepers Creepers: Reborn",
+      "tag": "Evil rides again.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=eNH2bRZ6gJw",
+      "release_date": "2022-09-15",
+      "director": "Timo Vuorensola",
+      "producer": "Jake Seal",
+      "runtime": 88,
+      "synopsis": "Forced to travel with her boyfriend to a horror festival, Laine begins to experience disturbing visions associated with the urban legend of The Creeper. As the festival arrives and the blood-soaked entertainment builds to a frenzy, she becomes the center of it while something unearthly has been summoned.",
+      "genres": [11, 16, 13],
+      "pic": "images/717728.jpg",
+      "actor_ids": [1817397, 2738561, 3425159, 3326872, 1070855]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "886396",
+    "fields": {
+      "title": "Batman and Superman: Battle of the Super Sons",
+      "tag": "",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=ZDPK7I5BD3g",
+      "release_date": "2022-10-17",
+      "director": "Matt Peters",
+      "producer": "James Krieg",
+      "runtime": 79,
+      "synopsis": "After discovering he has powers, 11-year-old Jonathan Kent and assassin-turned-Boy-Wonder Damian Wayne must join forces to rescue their fathers (Superman & Batman) and save the planet from the malevolent alien force known as Starro.",
+      "genres": [3, 1, 15],
+      "pic": "images/886396.jpg",
+      "actor_ids": [1774679, 1277364, 75037, 963818, 1221888]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "884363",
+    "fields": {
+      "title": "Togo",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=ygHjAp3m2eU",
+      "release_date": "2022-10-05",
+      "director": "Adrián Caetano",
+      "producer": null,
+      "runtime": 95,
+      "synopsis": "Togo just wants to watch his neighbors' homes, wash their cars and clean up their sidewalks. But the drug traffickers want more from him.",
+      "genres": [5, 7],
+      "pic": "images/884363.jpg",
+      "actor_ids": [230222]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "429473",
+    "fields": {
+      "title": "Lou",
+      "tag": "",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=QILhvR4QPsQ",
+      "release_date": "2022-09-23",
+      "director": "Anna Foerster",
+      "producer": "Jon Cohen",
+      "runtime": 107,
+      "synopsis": "A young girl is kidnapped during a powerful storm. Her mother joins forces with her mysterious neighbour to set off in pursuit of the kidnapper. Their journey will test their limits and expose the dark secrets of their past.",
+      "genres": [1, 16, 7],
+      "pic": "images/429473.jpg",
+      "actor_ids": [19, 59017, 130253, 3296783, 13525]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "532639",
+    "fields": {
+      "title": "Pinocchio",
+      "tag": "The timeless classic.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=2vNVGZGlUok",
+      "release_date": "2022-09-07",
+      "director": "Robert Zemeckis",
+      "producer": "Derek Hogue",
+      "runtime": 105,
+      "synopsis": "A wooden puppet embarks on a thrilling adventure to become a real boy.",
+      "genres": [9, 2, 8],
+      "pic": "images/532639.jpg",
+      "actor_ids": [2382044, 31, 24045, 114019, 1765068]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "760741",
+    "fields": {
+      "title": "Beast",
+      "tag": "Fight for family.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=oQMc7Sq36mI",
+      "release_date": "2022-08-11",
+      "director": "Baltasar Kormákur",
+      "producer": "James Lopez",
+      "runtime": 93,
+      "synopsis": "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fight for survival when a bloodthirsty lion starts to stalk them.",
+      "genres": [16, 2, 11],
+      "pic": "images/760741.jpg",
+      "actor_ids": [17605, 1438277, 1877835, 82191, 2073065]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "335795",
+    "fields": {
+      "title": "Monster High: The Movie",
+      "tag": "Skull’s in session.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=Ghz0V5LegzI",
+      "release_date": "2022-10-06",
+      "director": "Todd Holland",
+      "producer": "David Magee",
+      "runtime": 91,
+      "synopsis": "Clawdeen Wolf, half human and half werewolf, has recently started attending Monster High, a school for monsters in all forms. After quickly befriending her classmates Frankie Stein and Draculaura, Clawdeen feels like she has finally found a place where she can truly be herself, or so she thinks. Soon, a devious plan to destroy Monster High threatens to reveal her real identity and Clawdeen must learn to embrace her true monster heart before it's too late.",
+      "genres": [2, 8, 17],
+      "pic": "images/335795.jpg",
+      "actor_ids": [3302924, 1630438, 2437835, 2209302, 2588282]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "616037",
+    "fields": {
+      "title": "Thor: Love and Thunder",
+      "tag": "The one is not the only.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=Go8nTmfrQd8",
+      "release_date": "2022-07-06",
+      "director": "Taika Waititi",
+      "producer": "Brad Winderbaum",
+      "runtime": 119,
+      "synopsis": "After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor Odinson enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher’s vengeance and stop him before it’s too late.",
+      "genres": [9, 1, 4],
+      "pic": "images/616037.jpg",
+      "actor_ids": [74568, 524, 3894, 62561, 55934]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1024530",
+    "fields": {
+      "title": "Grimcutty",
+      "tag": "Feed the frenzy.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=lb3FCMpMN4s",
+      "release_date": "2022-10-10",
+      "director": "John Ross",
+      "producer": "Arbi Pedrossian",
+      "runtime": 101,
+      "synopsis": "A suburban teen girl and her little brother must stop a terrifying internet meme brought to life by the hysteria of their parents.",
+      "genres": [11],
+      "pic": "images/1024530.jpg",
+      "actor_ids": [3620497, 27855, 1129806, 1753378, 30069]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "766507",
+    "fields": {
+      "title": "Prey",
+      "tag": "They hunt to live. It lives to hunt.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=wZ7LytagKlc",
+      "release_date": "2022-08-02",
+      "director": "Dan Trachtenberg",
+      "producer": "Jhane Myers",
+      "runtime": 100,
+      "synopsis": "When danger threatens her camp, the fierce and highly skilled Comanche warrior Naru sets out to protect her people. But the prey she stalks turns out to be a highly evolved alien predator with a technically advanced arsenal.",
+      "genres": [16, 1, 15],
+      "pic": "images/766507.jpg",
+      "actor_ids": [1654001, 3675371, 87126, 3316731, 1061054]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "993145",
+    "fields": {
+      "title": "Bullet Proof",
+      "tag": "Get out. Fast!",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=BqWv2yyopMM",
+      "release_date": "2022-08-19",
+      "director": "James Clayton",
+      "producer": null,
+      "runtime": 81,
+      "synopsis": "The Thief  pulls off the robbery of a lifetime when he robs the psychotic drug lord, Temple. The plan goes off without a hitch until the Thief discovers a stowaway in his getaway car - Temple's pregnant wife, Mia.",
+      "genres": [1, 5],
+      "pic": "images/993145.jpg",
+      "actor_ids": [980, 3302929, 1808592, 1820696, 1233165]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "744276",
+    "fields": {
+      "title": "After Ever Happy",
+      "tag": "",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=K7AL2OARpTo",
+      "release_date": "2022-08-24",
+      "director": "Castille Landon",
+      "producer": "Aron Levitz",
+      "runtime": 95,
+      "synopsis": "As a shocking truth about a couple's families emerges, the two lovers discover they are not so different from each other. Tessa is no longer the sweet, simple, good girl she was when she met Hardin — any more than he is the cruel, moody boy she fell so hard for.",
+      "genres": [14, 7],
+      "pic": "images/744276.jpg",
+      "actor_ids": [1753914, 1114487, 20805, 2035329, 20960]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "507086",
+    "fields": {
+      "title": "Jurassic World Dominion",
+      "tag": "The epic conclusion of the Jurassic era.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=fb5ELWi-ekk",
+      "release_date": "2022-06-01",
+      "director": "Colin Trevorrow",
+      "producer": "Patrick Crowley",
+      "runtime": 147,
+      "synopsis": "Four years after Isla Nublar was destroyed, dinosaurs now live—and hunt—alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history’s most fearsome creatures.",
+      "genres": [2, 1, 15],
+      "pic": "images/507086.jpg",
+      "actor_ids": [73457, 18997, 4784, 4785, 4783]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "894205",
+    "fields": {
+      "title": "Werewolf by Night",
+      "tag": "There's no escaping the night.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=bLEFqhS5WmI",
+      "release_date": "2022-09-25",
+      "director": "Michael Giacchino",
+      "producer": "Leeann Stonebreaker",
+      "runtime": 55,
+      "synopsis": "On a dark and somber night, a secret cabal of monster hunters emerge from the shadows and gather at the foreboding Bloodstone Temple following the death of their leader. In a strange and macabre memorial to the leader’s life, the attendees are thrust into a mysterious and deadly competition for a powerful relic—a hunt that will ultimately bring them face to face with a dangerous monster.",
+      "genres": [1, 9, 11, 17],
+      "pic": "images/894205.jpg",
+      "actor_ids": [258, 95706, 538, 145446, 1317693]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "366672",
+    "fields": {
+      "title": "Paws of Fury: The Legend of Hank",
+      "tag": "Time to mark some territory.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=A_hkjvjx2ek",
+      "release_date": "2022-07-14",
+      "director": "Mark Koetsier",
+      "producer": "Susan Purcell",
+      "runtime": 98,
+      "synopsis": "A hard-on-his-luck hound finds himself in a town full of cats in need of a hero to defend them from a ruthless villain's wicked plot to wipe their village off the map. With help from a reluctant mentor, our underdog must assume the role of town samurai and team up with the villagers to save the day.",
+      "genres": [8, 4, 3, 1],
+      "pic": "images/366672.jpg",
+      "actor_ids": [39995, 2231, 17835, 2897837, 14639]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "610150",
+    "fields": {
+      "title": "Dragon Ball Super: Super Hero",
+      "tag": "A super awakening and calamity is born.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=bFLt45xK3kU",
+      "release_date": "2022-06-11",
+      "director": "Tetsuro Kodama",
+      "producer": "Norihiro Hayashida",
+      "runtime": 99,
+      "synopsis": "The Red Ribbon Army, an evil organization that was once destroyed by Goku in the past, has been reformed by a group of people who have created new and mightier Androids, Gamma 1 and Gamma 2, and seek vengeance against Goku and his family.",
+      "genres": [3, 15, 1],
+      "pic": "images/610150.jpg",
+      "actor_ids": [90496, 85286, 90569, 93801, 93803]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1023086",
+    "fields": {
+      "title": "Devil's Workshop",
+      "tag": "We all have our demons.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=iSj2wqtQkc8",
+      "release_date": "2022-09-30",
+      "director": "Chris von Hoffmann",
+      "producer": "Joe Gallagher",
+      "runtime": 86,
+      "synopsis": "Desperate for a role as a demonologist, struggling actor Clayton contacts Eliza, an expert in devil lore, to help him prepare. As he spends the weekend at her home, Eliza forces Clayton to confront his troubling past, perform dark rituals, and sacrifice a goat. Does she want to help Clayton, seduce him—or destroy him?",
+      "genres": [11],
+      "pic": "images/1023086.jpg",
+      "actor_ids": [8329, 1493433, 46593, 1371878, 1703229]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "882598",
+    "fields": {
+      "title": "Smile",
+      "tag": "Once you see it, it’s too late.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=BcDK7lkzzsU",
+      "release_date": "2022-09-23",
+      "director": "Parker Finn",
+      "producer": "Isaac Klausner",
+      "runtime": 115,
+      "synopsis": "After witnessing a bizarre, traumatic incident involving a patient, Dr. Rose Cotter starts experiencing frightening occurrences that she can't explain. As an overwhelming terror begins taking over her life, Rose must confront her troubling past in order to survive and escape her horrifying new reality.",
+      "genres": [11, 13, 16],
+      "pic": "images/882598.jpg",
+      "actor_ids": [1396124, 59219, 145245, 198847, 53493]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "870096",
+    "fields": {
+      "title": "Restart The Earth",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=eAOEHkyhIKw",
+      "release_date": "2022-08-04",
+      "director": "Lin Zhenzhao",
+      "producer": null,
+      "runtime": 89,
+      "synopsis": "When a drug to replicate plant cells creates a sentient form of flower, the planet is over taken by flora and humankind is depleted. A Chinese task force, a widowed father and his young daughter fight to survive in a mission to inject an antidote to the core of the plants to reverse their growth.",
+      "genres": [15, 11, 1],
+      "pic": "images/870096.jpg",
+      "actor_ids": [1102361, 93990, 120725, 2027719, 2477191]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "539681",
+    "fields": {
+      "title": "DC League of Super-Pets",
+      "tag": "Sit, stay, save the world.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=1jkw2JPCl18",
+      "release_date": "2022-07-27",
+      "director": "Jared Stern",
+      "producer": "Patricia Hicks",
+      "runtime": 105,
+      "synopsis": "When Superman and the rest of the Justice League are kidnapped, Krypto the Super-Dog must convince a rag-tag shelter pack - Ace the hound, PB the potbellied pig, Merton the turtle and Chip the squirrel - to master their own newfound powers and help him rescue the superheroes.",
+      "genres": [3, 1, 8, 4, 15],
+      "pic": "images/539681.jpg",
+      "actor_ids": [18918, 55638, 17697, 6384, 1240487]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "438148",
+    "fields": {
+      "title": "Minions: The Rise of Gru",
+      "tag": "A villain will rise.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=OCSnxXtjFL0",
+      "release_date": "2022-06-29",
+      "director": "Kyle Balda",
+      "producer": "Chris Renaud",
+      "runtime": 87,
+      "synopsis": "A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions.",
+      "genres": [3, 8],
+      "pic": "images/438148.jpg",
+      "actor_ids": [4495, 124747, 59919, 1903, 40036]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "361743",
+    "fields": {
+      "title": "Top Gun: Maverick",
+      "tag": "Feel the need... The need for speed.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=qSqVVswa420",
+      "release_date": "2022-05-24",
+      "director": "Joseph Kosinski",
+      "producer": "David Ellison",
+      "runtime": 131,
+      "synopsis": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+      "genres": [1, 7],
+      "pic": "images/361743.jpg",
+      "actor_ids": [500, 996701, 6161, 65717, 83271]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "634649",
+    "fields": {
+      "title": "Spider-Man: No Way Home",
+      "tag": "The Multiverse unleashed.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=WgU7P6o-GkM",
+      "release_date": "2021-12-15",
+      "director": "Jon Watts",
+      "producer": "Amy Pascal",
+      "runtime": 148,
+      "synopsis": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+      "genres": [1, 2, 15],
+      "pic": "images/634649.jpg",
+      "actor_ids": [1136406, 505710, 71580, 1649152, 15277]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "629176",
+    "fields": {
+      "title": "Samaritan",
+      "tag": "25 years ago the world's greatest hero vanished.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=9FKnTxSC16E",
+      "release_date": "2022-08-25",
+      "director": "Julius Avery",
+      "producer": "Braden Aftergood",
+      "runtime": 102,
+      "synopsis": "Thirteen year old Sam Cleary  suspects that his mysteriously reclusive neighbor Mr. Smith is actually the legendary vigilante Samaritan, who was reported dead 20 years ago. With crime on the rise and the city on the brink of chaos, Sam makes it his mission to coax his neighbor out of hiding to save the city from ruin.",
+      "genres": [1, 7, 15],
+      "pic": "images/629176.jpg",
+      "actor_ids": [2532098, 16483, 1026947, 57412, 90060]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "999205",
+    "fields": {
+      "title": "Stowaway",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=G3hnzGEu9Yo",
+      "release_date": "2022-08-31",
+      "director": "Declan Whitebloom",
+      "producer": null,
+      "runtime": 94,
+      "synopsis": "A tenacious party girl fights to survive after three thieves commandeer her luxury yacht. Unable to escape and trapped on the yacht at high seas, the prey becomes the hunter as she turns the tables on the intruders and takes matters into her own hands.",
+      "genres": [16, 1],
+      "pic": "images/999205.jpg",
+      "actor_ids": [1246972, 1053422, 81685, 2447500, 2729541]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "999722",
+    "fields": {
+      "title": "Old People",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=-EG8hNcRNwU",
+      "release_date": "2022-10-07",
+      "director": "Andy Fetscher",
+      "producer": "Florian Schneider",
+      "runtime": 101,
+      "synopsis": "A woman who's returned home with her two kids to attend her sister's wedding must suddenly defend their lives against older people on a killing spree.",
+      "genres": [11],
+      "pic": "images/999722.jpg",
+      "actor_ids": [57064, 43453, 2286787, 1026372]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1015724",
+    "fields": {
+      "title": "Trick or Treat Scooby-Doo!",
+      "tag": "Trick or trap?!",
+      "rating": 1,
+      "trailer_url": "https://www.youtube.com/watch?v=PQKHtdElMng",
+      "release_date": "2022-10-04",
+      "director": "Audie Harrison",
+      "producer": null,
+      "runtime": 78,
+      "synopsis": "Mystery Inc. has cracked the case to top all cases! They’ve tracked down Coco Diablo, the head of a notorious costume crime syndicate. With Coco and her kitty in prison, Mystery Inc. thinks that they can finally enjoy a break. Wrong! Suddenly, menacing doppelgänger ghosts of the Scooby crew and favorite classic foes show up in Coolsville to threaten Halloween. Now it’s up to the meddling kids to unmask the latest scoundrel and save Halloween!",
+      "genres": [2, 13, 4, 3, 8],
+      "pic": "images/1015724.jpg",
+      "actor_ids": [15831, 15761, 26457, 132354, 1360385]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "759507",
+    "fields": {
+      "title": "Blackout",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=QP3sxps6k0s",
+      "release_date": "2022-10-12",
+      "director": "Sam Macaroni",
+      "producer": "Jim Steele",
+      "runtime": 81,
+      "synopsis": "A man wakes in a hospital with no memory, and quickly finds himself on the run in a locked down hospital with the Cartel on his tail.",
+      "genres": [1, 2, 16],
+      "pic": "images/759507.jpg",
+      "actor_ids": [19536, 37260, 1134885, 1733, 1059040]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "756999",
+    "fields": {
+      "title": "The Black Phone",
+      "tag": "Never talk to strangers.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=3eGP6im8AZA",
+      "release_date": "2022-06-22",
+      "director": "Scott Derrickson",
+      "producer": "C. Robert Cargill",
+      "runtime": 103,
+      "synopsis": "Finney Blake, a shy but clever 13-year-old boy, is abducted by a sadistic killer and trapped in a soundproof basement where screaming is of little use. When a disconnected phone on the wall begins to ring, Finney discovers that he can hear the voices of the killer’s previous victims. And they are dead set on making sure that what happened to them doesn’t happen to Finney.",
+      "genres": [11, 16],
+      "pic": "images/756999.jpg",
+      "actor_ids": [2803710, 569, 1530558, 4654, 41020]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "453395",
+    "fields": {
+      "title": "Doctor Strange in the Multiverse of Madness",
+      "tag": "Enter a new dimension of Strange.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=aWzlQ2N6qqg",
+      "release_date": "2022-05-04",
+      "director": "Sam Raimi",
+      "producer": "Kevin Feige",
+      "runtime": 126,
+      "synopsis": "Doctor Strange, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.",
+      "genres": [9, 1, 2],
+      "pic": "images/453395.jpg",
+      "actor_ids": [71580, 550843, 5294, 30082, 1912381]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "723419",
+    "fields": {
+      "title": "Mr. Harrigan's Phone",
+      "tag": "Some connections never die.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=4Un_ker71dg",
+      "release_date": "2022-10-05",
+      "director": "John Lee Hancock",
+      "producer": "Carla Hacken",
+      "runtime": 105,
+      "synopsis": "Craig, a young boy living in a small town befriends an older, reclusive billionaire, Mr. Harrigan. The two form a bond over books and an iPhone, but when the man passes away the boy discovers that not everything dead is gone.",
+      "genres": [16, 7, 11],
+      "pic": "images/723419.jpg",
+      "actor_ids": [55636, 1274508, 1532312, 1664022, 2142587]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "675353",
+    "fields": {
+      "title": "Sonic the Hedgehog 2",
+      "tag": "Welcome to the next level.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=G5kzUpWAusI",
+      "release_date": "2022-03-30",
+      "director": "Jeff Fowler",
+      "producer": "Hitoshi Okuno",
+      "runtime": 122,
+      "synopsis": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
+      "genres": [1, 2, 8, 4],
+      "pic": "images/675353.jpg",
+      "actor_ids": [11006, 222121, 110742, 1546282, 115974]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "579974",
+    "fields": {
+      "title": "RRR",
+      "tag": "Rise, roar, revolt.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=xo1P2sQdhC0",
+      "release_date": "2022-03-24",
+      "director": "S. S. Rajamouli",
+      "producer": "DVV Danayya",
+      "runtime": 182,
+      "synopsis": "A fictional history of two legendary revolutionaries' journey away from home before they began fighting for their country in the 1920s.",
+      "genres": [1, 7],
+      "pic": "images/579974.jpg",
+      "actor_ids": [148037, 147023, 1108120, 42803, 56614]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "810693",
+    "fields": {
+      "title": "Jujutsu Kaisen 0",
+      "tag": "Fight what's within.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=Yl_f0sYMaGk",
+      "release_date": "2021-12-24",
+      "director": "Sunghoo Park",
+      "producer": "Tatsuro Hayashi",
+      "runtime": 105,
+      "synopsis": "Yuta Okkotsu is a nervous high school student who is suffering from a serious problem—his childhood friend Rika has turned into a curse and won't leave him alone. Since Rika is no ordinary curse, his plight is noticed by Satoru Gojo, a teacher at Jujutsu High, a school where fledgling exorcists learn how to combat curses. Gojo convinces Yuta to enroll, but can he learn enough in time to confront the curse that haunts him?",
+      "genres": [3, 1, 9],
+      "pic": "images/810693.jpg",
+      "actor_ids": [77927, 119143, 1221114, 9705, 1281498]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "508947",
+    "fields": {
+      "title": "Turning Red",
+      "tag": "Growing up is a beast.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=XdKzUbAiswE",
+      "release_date": "2022-02-07",
+      "director": "Domee Shi",
+      "producer": "Lindsey Collins",
+      "runtime": 100,
+      "synopsis": "Thirteen-year-old Mei is experiencing the awkwardness of being a teenager with a twist – when she gets too excited, she transforms into a giant red panda.",
+      "genres": [3, 8, 4, 9],
+      "pic": "images/508947.jpg",
+      "actor_ids": [3156344, 25540, 1373681, 2602879, 2719558]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "718789",
+    "fields": {
+      "title": "Lightyear",
+      "tag": "Infinity awaits.",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=BwPL0Md_QFQ",
+      "release_date": "2022-06-15",
+      "director": "Angus MacLane",
+      "producer": "Galyn Susman",
+      "runtime": 105,
+      "synopsis": "Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits and his robot companion Sox.",
+      "genres": [3, 1, 2, 8, 15],
+      "pic": "images/718789.jpg",
+      "actor_ids": [16828, 74688, 21198, 55934, 1102500]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "843633",
+    "fields": {
+      "title": "White Elephant",
+      "tag": "Live by a code. Die by a bullet.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=5zEPU7Ekz00",
+      "release_date": "2022-06-03",
+      "director": "Jesse V. Johnson",
+      "producer": "Corey Large",
+      "runtime": 93,
+      "synopsis": "An ex-marine enforcer must battle his conscience and code of honor when he is forced to do things for the mob.",
+      "genres": [1, 5, 16],
+      "pic": "images/843633.jpg",
+      "actor_ids": [12132, 62, 18182, 6949, 1450407]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "663712",
+    "fields": {
+      "title": "Terrifier 2",
+      "tag": "Who's Laughing Now?",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=x5DhuDSArTI",
+      "release_date": "2022-10-06",
+      "director": "Damien Leone",
+      "producer": "Jason Leavy",
+      "runtime": 138,
+      "synopsis": "After being resurrected by a sinister entity, Art the Clown returns to Miles County where he must hunt down and destroy a teenage girl and her younger brother on Halloween night.  As the body count rises, the siblings fight to stay alive while uncovering the true nature of Art's evil intent.",
+      "genres": [11, 16],
+      "pic": "images/663712.jpg",
+      "actor_ids": [1882502, 1880016, 2787720, 1676771, 1202687]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "960700",
+    "fields": {
+      "title": "Fullmetal Alchemist: The Revenge of Scar",
+      "tag": "",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=UIY5jTT_-lI",
+      "release_date": "2022-05-20",
+      "director": "Fumihiko Sori",
+      "producer": null,
+      "runtime": 125,
+      "synopsis": "The Elric brothers meet their toughest opponent yet — a lone serial killer with a large scar on his forehead.",
+      "genres": [9, 1, 2],
+      "pic": "images/960700.jpg",
+      "actor_ids": [1247874, 1488591, 1255487, 1129267, 119244]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "597922",
+    "fields": {
+      "title": "The Greatest Beer Run Ever",
+      "tag": "Friendship has no last call.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=NqxziDlZOIo",
+      "release_date": "2022-09-30",
+      "director": "Peter Farrelly",
+      "producer": "Andrew J. Muscato",
+      "runtime": 126,
+      "synopsis": "Chickie wants to support his friends fighting in Vietnam, so he does something wild—personally bring them American beer. What starts as a well-meaning journey quickly changes Chickie’s life and perspective. Based on a true story.",
+      "genres": [7, 4, 18],
+      "pic": "images/597922.jpg",
+      "actor_ids": [29222, 934, 1562074, 1532, 1456280]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "975120",
+    "fields": {
+      "title": "Father There Is Only One 3",
+      "tag": "This year the kings come",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=yvftz2RyXOI",
+      "release_date": "2022-07-15",
+      "director": "Santiago Segura",
+      "producer": "María Luisa Gutiérrez",
+      "runtime": 99,
+      "synopsis": "Christmas is coming. The children accidentally break a Nativity scene figurine from their father's collection and must by all means get an equal one, the problem is that it is a unique antique piece. Sara, the eldest daughter breaks up with her boyfriend, Ocho, who will try to recover her favors with the help of her father-in-law, Javier. Precisely Javier's father-in-law, Marisa's father, will be welcomed into the family home to spend the holidays after her recent separation, which will not leave Javier's mother, Milagros, indifferent. Rocío, the folklore of the family, who has been playing the Virgin for several Christmases, is relegated this year to playing the shepherdess, something that her father, Javier, is not willing to assume.",
+      "genres": [4, 8],
+      "pic": "images/975120.jpg",
+      "actor_ids": [10847, 93467, 1423088, 112607, 231486]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1007401",
+    "fields": {
+      "title": "Mortal Kombat Legends: Snow Blind",
+      "tag": "Evil is Unleashed!",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=vvqx3-1G9Rw",
+      "release_date": "2022-10-09",
+      "director": "Rick Morales",
+      "producer": "James Krieg",
+      "runtime": 82,
+      "synopsis": "Hellbent on taking over Earthrealm, Kano viciously attacks town after town with the aid of three cold-blooded Black Dragon mercenaries. Those who don’t submit are annihilated but one young man won’t bend the knee to Kano: Kenshi.",
+      "genres": [3, 1, 9],
+      "pic": "images/1007401.jpg",
+      "actor_ids": [1368795, 1371, 1509454, 127387, 66655]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "921360",
+    "fields": {
+      "title": "Wire Room",
+      "tag": "His first day as an agent could be his last.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=gUTjfOkVu7E",
+      "release_date": "2022-09-02",
+      "director": "Matt Eskandari",
+      "producer": "Noel Ashman",
+      "runtime": 97,
+      "synopsis": "New recruit Justin Rosa must monitor arms-smuggling cartel member Eddie Flynn — and keep him alive at all costs. When a SWAT team descends on Flynn’s home, Rosa breaks protocol and contacts the gangster directly to save his life. As gunmen break into the Wire Room and chaos erupts, Mueller and Rosa make a final, desperate stand against the corrupt agents and officials who seek to destroy evidence and kill them both.",
+      "genres": [1, 5, 16],
+      "pic": "images/921360.jpg",
+      "actor_ids": [6863, 62, 1395206, 53185, 84315]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1015602",
+    "fields": {
+      "title": "Welcome to the Club",
+      "tag": "It’s not easy being mean… or is it?",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-09-08",
+      "director": "David Silverman",
+      "producer": "Denise Sirkot",
+      "runtime": 4,
+      "synopsis": "Heart set on becoming a princess, Lisa Simpson is surprised to learn being bad might be more fun.",
+      "genres": [3, 4],
+      "pic": "images/1015602.jpg",
+      "actor_ids": [5586, 34983, 200, 91606, 87819]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "799546",
+    "fields": {
+      "title": "Luckiest Girl Alive",
+      "tag": "",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=B_XUlbPW-eY",
+      "release_date": "2022-09-30",
+      "director": "Mike Barker",
+      "producer": "Jeanne Snow",
+      "runtime": 113,
+      "synopsis": "A successful woman in New York City finds her life upended when she is forced to confront a dark truth that threatens to unravel her meticulously crafted life.",
+      "genres": [7, 16, 13],
+      "pic": "images/799546.jpg",
+      "actor_ids": [18973, 168877, 59233, 1590225, 1540601]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "585511",
+    "fields": {
+      "title": "Luck",
+      "tag": "Sometimes all you need is for everything to go wrong.",
+      "rating": 1,
+      "trailer_url": "https://www.youtube.com/watch?v=xSG5UX0EQVg",
+      "release_date": "2022-08-05",
+      "director": "Peggy Holmes",
+      "producer": "David Ellison",
+      "runtime": 105,
+      "synopsis": "Suddenly finding herself in the never-before-seen Land of Luck, the unluckiest person in the world must unite with the magical creatures there to turn her luck around.",
+      "genres": [3, 2, 4, 9],
+      "pic": "images/585511.jpg",
+      "actor_ids": [1684452, 11108, 6352, 2395, 1471841]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "338953",
+    "fields": {
+      "title": "Fantastic Beasts: The Secrets of Dumbledore",
+      "tag": "Return to the magic.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=Y9dr2zw-TXQ",
+      "release_date": "2022-04-06",
+      "director": "David Yates",
+      "producer": "Lionel Wigram",
+      "runtime": 142,
+      "synopsis": "Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist Newt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old and new beasts as they clash with Grindelwald's growing legion of followers.",
+      "genres": [9, 2, 1],
+      "pic": "images/338953.jpg",
+      "actor_ids": [37632, 9642, 1019, 132157, 58873]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "354912",
+    "fields": {
+      "title": "Coco",
+      "tag": "The celebration of a lifetime",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=xlnPHQ3TLX8",
+      "release_date": "2017-10-27",
+      "director": "Lee Unkrich",
+      "producer": "Darla K. Anderson",
+      "runtime": 105,
+      "synopsis": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+      "genres": [8, 3, 9, 12, 4, 2],
+      "pic": "images/354912.jpg",
+      "actor_ids": [1193391, 258, 4589, 10402, 154004]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "772450",
+    "fields": {
+      "title": "Presences",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-09-07",
+      "director": "Luis Mandoki",
+      "producer": "Cher Constantine",
+      "runtime": 0,
+      "synopsis": "A man who loses his wife and goes to seclude himself in a cabin in the woods, where strange things happen.",
+      "genres": [11],
+      "pic": "images/772450.jpg",
+      "actor_ids": [110424, 1775557, 2681456, 234069, 1211042]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "762504",
+    "fields": {
+      "title": "Nope",
+      "tag": "What’s a bad miracle?",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=In8fuzj3gck",
+      "release_date": "2022-07-20",
+      "director": "Jordan Peele",
+      "producer": "Ian Cooper",
+      "runtime": 130,
+      "synopsis": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
+      "genres": [11, 13, 15, 16],
+      "pic": "images/762504.jpg",
+      "actor_ids": [206919, 74688, 1602972, 215055, 7486]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "635302",
+    "fields": {
+      "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+      "tag": "With your blade, bring an end to the nightmare.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=ATJYac_dORw",
+      "release_date": "2020-10-16",
+      "director": "Haruo Sotozaki",
+      "producer": "Yuma Takahashi",
+      "runtime": 117,
+      "synopsis": "Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
+      "genres": [3, 1, 2, 9],
+      "pic": "images/635302.jpg",
+      "actor_ids": [1256603, 1563442, 119145, 233590, 224413]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "924482",
+    "fields": {
+      "title": "The Ledge",
+      "tag": "Don't lose your grip.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=lI5QB-BOWNo",
+      "release_date": "2022-02-18",
+      "director": "Howard J. Ford",
+      "producer": "Milos Djukelic",
+      "runtime": 86,
+      "synopsis": "A rock climbing adventure between two friends turns into a terrifying nightmare. After Kelly captures the murder of her best friend on camera, she becomes the next target of a tight knit group of friends who will stop at nothing to destroy the evidence and anyone in their way. Desperate for her safety, she begins a treacherous climb up a mountain cliff and her survival instincts are put to the test when she becomes trapped with the killers just 20 feet away.",
+      "genres": [16, 2, 13, 1, 5],
+      "pic": "images/924482.jpg",
+      "actor_ids": [1197948, 1173231, 2931841, 1414117, 1085939]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "773975",
+    "fields": {
+      "title": "End of the Road",
+      "tag": "There's no turning back.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=202KkD12AuI",
+      "release_date": "2022-09-09",
+      "director": "Millicent Shelton",
+      "producer": "Brad Kaplan",
+      "runtime": 89,
+      "synopsis": "Recently widowed mom Brenda fights to protect her family during a harrowing road trip when a murder and a missing bag of cash plunge them into danger.",
+      "genres": [16, 7, 5],
+      "pic": "images/773975.jpg",
+      "actor_ids": [15758, 8171, 2056270, 3227332, 2222]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "414906",
+    "fields": {
+      "title": "The Batman",
+      "tag": "Unmask the truth.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=NLOp_6uPccQ",
+      "release_date": "2022-03-01",
+      "director": "Matt Reeves",
+      "producer": "Dylan Clark",
+      "runtime": 177,
+      "synopsis": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+      "genres": [5, 13, 16],
+      "pic": "images/414906.jpg",
+      "actor_ids": [11288, 37153, 17142, 2954, 1241]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "831410",
+    "fields": {
+      "title": "Bring It On: Cheer or Die",
+      "tag": "Bring on the thrills. Bring on the kills. Bring on the cheer.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=XpSyonkPJiQ",
+      "release_date": "2022-09-27",
+      "director": "Karen Lam",
+      "producer": "Griff Furst",
+      "runtime": 91,
+      "synopsis": "When a cheer squad practices their routines on Halloween weekend in an abandoned school, they are picked off one by one by an unknown killer.",
+      "genres": [16, 11, 4, 17],
+      "pic": "images/831410.jpg",
+      "actor_ids": [1617121, 892734, 1294, 1089929, 2346247]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "773867",
+    "fields": {
+      "title": "Seoul Vibe",
+      "tag": "Drive back to 1988.",
+      "rating": 4,
+      "trailer_url": "https://www.youtube.com/watch?v=H94Vfb12Hkw",
+      "release_date": "2022-08-26",
+      "director": "Moon Hyun-sung",
+      "producer": "Kim Ji-hoon",
+      "runtime": 140,
+      "synopsis": "Chasing speed, dreams and money, a team of drivers get involved in the slush fund investigation of a powerful figure during the 1988 Seoul Olympics.",
+      "genres": [1, 5, 4, 2],
+      "pic": "images/773867.jpg",
+      "actor_ids": [572225, 1257601, 1916075, 2633250, 1988291]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "19995",
+    "fields": {
+      "title": "Avatar",
+      "tag": "Enter the world of Pandora.",
+      "rating": 3,
+      "trailer_url": "https://www.youtube.com/watch?v=5PSNL1qE6VY",
+      "release_date": "2009-12-15",
+      "director": "James Cameron",
+      "producer": "Jon Landau",
+      "runtime": 162,
+      "synopsis": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+      "genres": [1, 2, 9, 15],
+      "pic": "images/19995.jpg",
+      "actor_ids": [65731, 8691, 10205, 32747, 17647]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "568124",
+    "fields": {
+      "title": "Encanto",
+      "tag": "There's a little magic in all of us ...almost all of us.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=CaimKeDcudo",
+      "release_date": "2021-10-13",
+      "director": "Jared Bush",
+      "producer": "Yvett Merino Flores",
+      "runtime": 102,
+      "synopsis": "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto. The magic of the Encanto has blessed every child in the family—every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
+      "genres": [3, 4, 8, 9],
+      "pic": "images/568124.jpg",
+      "actor_ids": [968367, 2521631, 5723, 3150235, 2489411]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "420634",
+    "fields": {
+      "title": "Terrifier",
+      "tag": "There is nothing more frightening than a clown after midnight.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=1EyzlnWsZCk",
+      "release_date": "2016-10-15",
+      "director": "Damien Leone",
+      "producer": "Phil Falcone",
+      "runtime": 84,
+      "synopsis": "On Halloween night, a young woman finds herself as the obsession of a sadistic murderer known as Art the Clown.",
+      "genres": [11, 16],
+      "pic": "images/420634.jpg",
+      "actor_ids": [1880016, 1303873, 1676771, 1190554, 1526694]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "781099",
+    "fields": {
+      "title": "Inexorable",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-04-06",
+      "director": "Fabrice Du Welz",
+      "producer": "Cassandre Warnauts",
+      "runtime": 98,
+      "synopsis": "Desperately seeking inspiration for the follow-up novel to his bestseller \"Inexorable\", Marcel Bellmer moves in his wife's old family mansion with his family.",
+      "genres": [16],
+      "pic": "images/781099.jpg",
+      "actor_ids": [47820, 26107, 67532, 1295194, 82288]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "576925",
+    "fields": {
+      "title": "My Sweet Monster",
+      "tag": "Cutie and the beast",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=hSCqtzcMeEg",
+      "release_date": "2022-01-27",
+      "director": "Viktor Glukhushin",
+      "producer": "Sergei Selyanov",
+      "runtime": 98,
+      "synopsis": "A scandal in the royal family: the wayward princess Barbara escaped from the palace and went through the forest in search of a handsome prince. However, instead of the cherished meeting with her beloved, she is captured by Buka, the most dangerous robber of the kingdom. But it quickly becomes clear that the brisk princess is ready to turn Buka's life into a nightmare, just to reach her goal. So the restless Varvara begins to establish her own order in the forest.",
+      "genres": [3, 2, 8],
+      "pic": "images/576925.jpg",
+      "actor_ids": [1318905, 1287199, 2365556, 1947592, 1177033]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "936897",
+    "fields": {
+      "title": "Curious Caterer: Dying for Chocolate",
+      "tag": "",
+      "rating": 2,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-04-10",
+      "director": "Anthony C. Metchie",
+      "producer": "Cynde Harmon",
+      "runtime": 84,
+      "synopsis": "Goldy is a spirited single mom who’s thrust into the role of town sleuth to help solve a friend’s mysterious death. With the clock ticking to find the culprit, Goldy strikes up an unlikely partnership with Detective Tom Schultz, who leans into Goldy’s local knowledge. As their relationship shows signs of becoming something more, the suspect list rises. Will Goldy narrow in on the killer before the killer narrows in on her?",
+      "genres": [17, 13],
+      "pic": "images/936897.jpg",
+      "actor_ids": [59750, 134673, 2352125, 116047, 58058]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "801071",
+    "fields": {
+      "title": "The Jack in the Box: Awakening",
+      "tag": "Once you open the box... you can't escape it.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=7InYvYQq8DU",
+      "release_date": "2022-02-24",
+      "director": "Lawrence Fowler",
+      "producer": "Geoff Fowler",
+      "runtime": 89,
+      "synopsis": "When a vintage Jack-in-the-box is opened by a dying woman, she enters into a deal with the demon within that would see her illness cured in return for helping it claim six innocent victims.",
+      "genres": [11],
+      "pic": "images/801071.jpg",
+      "actor_ids": [1733286, 2992685, 2215526, 216988, 1759040]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "836225",
+    "fields": {
+      "title": "The Exorcism of God",
+      "tag": "God and the Devil cannot exist in the same body.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=VdLI8I4jZD0",
+      "release_date": "2022-03-11",
+      "director": "Alejandro Hidalgo",
+      "producer": "Karim Kabche",
+      "runtime": 98,
+      "synopsis": "An American priest working in Mexico is considered a saint by many local parishioners. However, due to a botched exorcism, he carries a secret that’s eating him alive until he gets an opportunity to face his demon one final time.",
+      "genres": [11],
+      "pic": "images/836225.jpg",
+      "actor_ids": [58942, 1601451, 1050186, 1212803, 133766]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1022206",
+    "fields": {
+      "title": "Someone Borrowed",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-10-11",
+      "director": "Cris D'amato",
+      "producer": null,
+      "runtime": 107,
+      "synopsis": "To fulfill his mother’s dying wish and avoid being removed from her will, an inflexible bachelor hires an actress to play his fiancée.",
+      "genres": [4, 14],
+      "pic": "images/1022206.jpg",
+      "actor_ids": [583626, 1499308, 1185619, 112184, 1831299]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "752623",
+    "fields": {
+      "title": "The Lost City",
+      "tag": "The adventure is real. The heroes are not.",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=awHyqJv3WKE",
+      "release_date": "2022-03-24",
+      "director": "Aaron Nee",
+      "producer": "Seth Gordon",
+      "runtime": 112,
+      "synopsis": "Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a handsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric billionaire who hopes she can lead him to the ancient city's lost treasure that featured in her latest story. Alan, determined to prove he can be a hero in real life and not just on the pages of her books, sets off to rescue her.",
+      "genres": [1, 2, 4],
+      "pic": "images/752623.jpg",
+      "actor_ids": [18277, 38673, 10980, 287, 1180099]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "76600",
+    "fields": {
+      "title": "Avatar: The Way of Water",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-12-14",
+      "director": "James Cameron",
+      "producer": "Jon Landau",
+      "runtime": 0,
+      "synopsis": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+      "genres": [15, 1, 2],
+      "pic": "images/76600.jpg",
+      "actor_ids": [65731, 8691, 10205, 204, 32747]
+    }
+  },
+  {
+    "model": "core.Movie",
+    "pk": "1014226",
+    "fields": {
+      "title": "Sonríe",
+      "tag": "",
+      "rating": 6,
+      "trailer_url": "https://www.youtube.com/watch?v=",
+      "release_date": "2022-08-18",
+      "director": "Vicente Garibay Lijanova",
+      "producer": null,
+      "runtime": 0,
+      "synopsis": "",
+      "genres": [16, 11],
+      "pic": "images/1014226.jpg",
+      "actor_ids": []
+    }
   }
 ]
