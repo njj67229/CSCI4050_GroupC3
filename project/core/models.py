@@ -28,6 +28,18 @@ class MPAA(models.Model):
     def __str__(self):
         return f"{self.rating}"
     
+class Actor(models.Model):
+    id = models.IntegerField(primary_key=True, unique=True)
+    name = models.CharField(max_length=200)
+    pic = models.ImageField(blank=True, null=True, upload_to='actors/')
+    
+    def __str__(self):
+        return f"{self.name}"
+    
+    def actor_pic(self):
+                if self.pic != '':
+                    return mark_safe('<img src="%s%s" width="50" height="75" />' % (f'{settings.MEDIA_URL}', self.pic))
+    
 class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     title = models.CharField(max_length=200)
@@ -41,7 +53,8 @@ class Movie(models.Model):
     producer = models.CharField(max_length=200, blank=True, null=True)
     director = models.CharField(max_length=200, blank=True, null=True)
     genres = models.ManyToManyField(Genre)
-    actor_ids = models.CharField(max_length=200, null=True)
+    # actor_ids = models.CharField(max_length=200, null=True, help_text='Ex: [id1, id2, id3, id4, id5]')
+    actor_ids = models.ManyToManyField(Actor)
     
     class Meta:
         verbose_name_plural = "Movies"
