@@ -16,7 +16,8 @@ def get_actors(actor_ids):
 def select_show_time(request, movie_id):
     movie = Movie.objects.get(pk=movie_id)
     genres_list = [x.title for x in movie.genres.all().iterator()]
-    actor_info = get_actors(movie.actor_ids)
+    actor_info = [(x.name, x.pic) for x in movie.actor_ids.all().iterator()]
+    # actor_info = get_actors(movie.actor_ids)
     if movie.producer is None:
         producer = 'N/a'
     else:
