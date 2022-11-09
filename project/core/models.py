@@ -31,7 +31,7 @@ class MPAA(models.Model):
 class Actor(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=200)
-    pic = models.ImageField(blank=True, null=True, upload_to='actors/')
+    pic = models.ImageField(upload_to='actors/')
     
     def __str__(self):
         return f"{self.name}"
@@ -43,18 +43,18 @@ class Actor(models.Model):
 class Movie(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     title = models.CharField(max_length=200)
-    tag = models.TextField(default="")
+    tag = models.TextField()
     rating = models.ForeignKey(MPAA, on_delete = models.CASCADE)
-    runtime = models.CharField(max_length=200, null=True)
+    runtime = models.CharField(max_length=200, null=True, help_text='in mins')
     release_date = models.DateField(null=True)
-    synopsis = models.TextField(blank=True, null=True)
-    pic = models.ImageField(blank=True, null=True, upload_to='images/')
-    trailer_url = models.URLField(blank=True, null=True)
-    producer = models.CharField(max_length=200, blank=True, null=True)
-    director = models.CharField(max_length=200, blank=True, null=True)
+    synopsis = models.TextField()
+    pic = models.ImageField(upload_to='images/')
+    trailer_url = models.URLField(default="www.youtube.com")
+    producer = models.CharField(max_length=200)
+    director = models.CharField(max_length=200)
     genres = models.ManyToManyField(Genre)
     # actor_ids = models.CharField(max_length=200, null=True, help_text='Ex: [id1, id2, id3, id4, id5]')
-    actor_ids = models.ManyToManyField(Actor)
+    actor_ids = models.ManyToManyField(Actor, verbose_name='Actors', null=True, blank=True)
     
     class Meta:
         verbose_name_plural = "Movies"
