@@ -19,7 +19,6 @@
         <ul class="list-inline">
           <div style="display: flex; flex-direction: row;">
             {% for item in movie.genres %}
-            <!-- <li class="list-inline-item">{{item}}</li> -->
             <button type="button" class="list-inline-item btn btn-dark btn-rounded text-uppercase mt-2"
               style="border-radius: 40px;">{{item}}</button>
             {% endfor %}
@@ -37,10 +36,12 @@
         <li class="list-inline-item">Producer: {{movie.producer}}</li>
         <br>
         <li class="list-inline-item">Cast:
-          <div class="box" style="display:flex;flex-direction:row;width:100px;height:120px">
+          <div style="display:flex;flex-direction:row;">
             {% for actor in movie.actors %}
-            <img src="/media/{{actor.1}}" alt="">
-            <div> {{actor.0}} </div>
+            <figure class="mx-2">
+              <img src="/media/{{actor.1}}" style="width: 100px;height:120px" alt="">
+              <figcaption>{{actor.0}}</figcaption>
+            </figure>
             {% endfor %}
           </div>
         </li>
