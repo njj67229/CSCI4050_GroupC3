@@ -3,11 +3,15 @@
 {% block content %}
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
       {% load static %}
-      <img src="/media/{{movie.pic }}" class="rounded" alt="" style="width:250px;height:300px" />
-      <a href="{{movie.trailer_url}}" target="_blank">Watch Trailer</a>
+      <figure>
+        <img src="/media/{{movie.pic }}" class="rounded" alt="" style="width:90%;height:auto" />
+        <figcaption>
+          <a class="font-weight-bold" href="{{movie.trailer_url}}" target="_blank">Watch Trailer</a>
+        </figcaption>
+      </figure>
     </div>
     <div class="col-md-5 text-start">
       <h1 class="text-uppercase">Buy tickets for:</h1>
