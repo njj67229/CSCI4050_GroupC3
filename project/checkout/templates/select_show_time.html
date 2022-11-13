@@ -40,7 +40,9 @@
           <div style="display:flex;flex-direction:row;">
             {% for actor in movie.actors %}
             <figure class="mx-2">
-              <img src="/media/{{actor.1}}" style="width: 100px;height:120px" alt="">
+              <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border-radius: 50%;">
+                <img src="/media/{{actor.1}}" style="width: 100%; height: auto;" alt="">
+              </div>
               <figcaption class="font-weight-bold">{{actor.0}}</figcaption>
             </figure>
             {% endfor %}

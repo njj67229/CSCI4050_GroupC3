@@ -6,7 +6,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 
-urlpatterns = [path("", views.index, name="index"),
+urlpatterns = [path("", views.index2, name="index"),
                path("home/", views.index2, name='index2'),
                path("home/<str:showing_type>/", views.index2, name='index2')]
 
