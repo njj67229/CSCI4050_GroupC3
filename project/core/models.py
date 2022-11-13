@@ -50,7 +50,7 @@ class Movie(models.Model):
     synopsis = models.TextField()
     pic = models.ImageField(upload_to='images/')
     trailer_url = models.URLField(default="www.youtube.com")
-    producer = models.CharField(max_length=200)
+    producer = models.CharField(max_length=200, null=True)
     director = models.CharField(max_length=200)
     genres = models.ManyToManyField(Genre)
     # actor_ids = models.CharField(max_length=200, null=True, help_text='Ex: [id1, id2, id3, id4, id5]')

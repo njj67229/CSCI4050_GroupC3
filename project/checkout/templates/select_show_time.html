@@ -3,23 +3,30 @@
 {% block content %}
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
       {% load static %}
-      <img src="/media/{{movie.pic }}" class="rounded" alt="" style="width:250px;height:300px"/>
-      <a href="{{movie.trailer_url}}" target="_blank">Watch Trailer</a>
+      <figure>
+        <img src="/media/{{movie.pic }}" class="rounded" alt="" style="width:90%;height:auto" />
+        <figcaption>
+          <a class="font-weight-bold" href="{{movie.trailer_url}}" target="_blank">Watch Trailer</a>
+        </figcaption>
+      </figure>
     </div>
     <div class="col-md-5 text-start">
       <h1 class="text-uppercase">Buy tickets for:</h1>
-      <h2 class="text-uppercase">{{movie.title}}</h2>
-      <ul class="list-inline">
+      <h2 class="text-uppercase text-nowrap">{{movie.title}}</h2>
+      <ul class="list-inline font-weight-bold">
         <li class="list-inline-item">{{movie.rating}}</li>
         <li class="list-inline-item">{{movie.runtime}}</li>
         <li class="list-inline-item">{{movie.release_date}}</li>
-        <ul>
-          {% for item in movie.genres %}
-          <li>{{item}}</li>
-          {% endfor %}
+        <ul class="list-inline">
+          <div style="display: flex; flex-direction: row;">
+            {% for item in movie.genres %}
+            <button type="button" class="list-inline-item btn btn-dark btn-rounded text-uppercase mt-2"
+              style="border-radius: 40px;">{{item}}</button>
+            {% endfor %}
+          </div>
         </ul>
       </ul>
       <p>
@@ -29,18 +36,24 @@
         {{movie.synopsis}}
       </p>
       <ul class="list-inline">
-        <li class="list-inline-item">Directed by: {{movie.director}}</li>
-        <li class="list-inline-item">Producer: {{movie.producer}}</li>
+        <li class="list-inline-item">Directed by: <b>{{movie.director}}</b></li>
+        <li class="list-inline-item">Producer: <b>{{movie.producer}}</b></li>
+        <br>
         <br>
         <li class="list-inline-item">Cast:
-          <div class="box" style="display:flex;flex-direction:row;width:100px;height:120px" >
-          {% for actor in movie.actors %}
-            <img src="/media/{{actor.1}}" alt="">
-            <div> {{actor.0}} </div>
-          {% endfor %}
-        </div>
-      </li>
+          <div style="display:flex;flex-direction:row;">
+            {% for actor in movie.actors %}
+            <figure class="mx-2">
+              <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border-radius: 50%;">
+                <img src="/media/{{actor.1}}" style="width: 100%; height: auto;" alt="">
+              </div>
+              <figcaption class="font-weight-bold">{{actor.0}}</figcaption>
+            </figure>
+            {% endfor %}
+          </div>
+        </li>
       </ul>
+      <h3>Available Show Times</h3>
       <p>Today - Tuesday 20 September</p>
       <button type="button" class="btn btn-light">4:30 PM</button>
       <p>Tomorrow - Wednesday 21 September</p>
