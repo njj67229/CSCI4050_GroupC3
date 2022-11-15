@@ -6,7 +6,7 @@ from .filters import MovieFilter
 
 
 def index(request):
-    return render(request, "homepage.html")
+    return render(request, "homepage2.html")
 
 def format_runtime(mins):
     hours_total = mins // 60
