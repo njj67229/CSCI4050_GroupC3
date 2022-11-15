@@ -1,11 +1,17 @@
 from django.contrib import admin
-from core.models import Movie, Promo, Showing, Genre, PhysicalSeat, SeatInShowing, ShowRoom, MPAA
+from core.models import Movie, Promo, Showing, Genre, PhysicalSeat, SeatInShowing, ShowRoom, MPAA, Actor
 
 # Register your models here.
+@admin.register(Actor)
+class ActorAdmin(admin.ModelAdmin):
+    list_display = ['name', 'actor_pic', 'id']
+    search_fields = ['name', 'id']
+    
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['title', 'rating', 'poster', 'release_date']
     search_fields = ['title', 'id']
+    filter_horizontal = ('actor_ids',)
 
 @admin.register(Promo)
 class PromoAdmin(admin.ModelAdmin):
