@@ -34,7 +34,7 @@ def add_payment(request):
             new_payment.card_owner = instance
             new_payment.billing_address = new_address
             new_payment = new_payment.save()
-            instance.usercards.set([new_payment])
+            #instance.usercards.set([new_payment])
             instance = instance.save()
             messages.success(request,'Your payment information was successfully added')
     else:

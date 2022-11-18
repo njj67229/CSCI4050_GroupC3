@@ -16,7 +16,7 @@ class Ticket(models.Model):
     ticket_id = models.IntegerField(primary_key=True, unique=True)
     ticket_type = models.CharField(max_length=2, choices=TicketType.choices)
     showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
-    # seat = models.ForeignKey("core.SeatInShowing", on_delete=models.PROTECT)
+    seat = models.ForeignKey("core.SeatInShowing", null=True, on_delete=models.PROTECT, related_name="ticket_seat")
 
     def __str__(self):
         return f"{self.ticket_id}"
@@ -29,6 +29,8 @@ class Booking(models.Model):
     )
     showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
     tickets = models.ManyToManyField(Ticket)
+    user = models.ForeignKey("accounts.CustomUser", on_delete=models.CASCADE)
+    card_id = models.ForeignKey("accounts.PaymentCard", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f"{self.booking_id}"
