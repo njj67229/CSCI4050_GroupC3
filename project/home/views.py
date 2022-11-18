@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.template import loader
+from django.urls import reverse
 from core.models import Movie, Showing
 from .filters import MovieFilter
 
 
 def index(request):
-    return render(request, "homepage2.html")
+    # return render(request, "homepage2.html")
+    return redirect(reverse('index2'))
 
 def format_runtime(mins):
     hours_total = mins // 60
