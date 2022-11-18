@@ -4,6 +4,7 @@ from django.conf import settings
 import string
 import random
 from django.utils.html import mark_safe
+from django.core.exceptions import ValidationError
 
 User = settings.AUTH_USER_MODEL
 
@@ -103,5 +104,19 @@ class Showing(models.Model):
     showtime = models.DateTimeField()
     room = models.ForeignKey(ShowRoom, on_delete=models.CASCADE)
 
+    class Meta:
+        unique_together = ('showtime', 'room',)
+
     def __str__(self):
         return f"{self.movie} - {self.showtime}"
+
+    def clean(self):
+        showings = Showing.objects.all()
+        for showing in showings:
+            showingtime = showing.showtime
+            movie = showing.movie
+            runtime = movie.runtime
+            showdatetime = self.showtime
+            showingtime = showingtime+timedelta(minutes=int(runtime))
+            if(showdatetime < showingtime):
+                raise ValidationError({'showtime': "Movie Showings overlap"})
