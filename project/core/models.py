@@ -79,7 +79,9 @@ class Promo(models.Model):
         self.objects.filter(self.exp_date < datetime.datetime.now().date())
     
 class PhysicalSeat(models.Model):
-
+    seat_row = models.IntegerField(null=True)
+    seat_number = models.IntegerField(null=True)
+    seat_room = models.ForeignKey("core.ShowRoom", on_delete = models.CASCADE, null=True, blank=True)
     def __str__(self):
         return f"{self.pk}"
 
@@ -91,7 +93,7 @@ class SeatInShowing(models.Model):
         return f"{self.pk} - {self.reserved}"
 
 class ShowRoom(models.Model):
-    seats = models.ManyToManyField(PhysicalSeat)
+    seats = models.ManyToManyField(PhysicalSeat, null=True)
 
     def __str__(self):
         return f"{self.pk}"
@@ -100,7 +102,6 @@ class Showing(models.Model):
     movie = models.ForeignKey(Movie, on_delete = models.CASCADE)
     showtime = models.DateTimeField()
     room = models.ForeignKey(ShowRoom, on_delete=models.CASCADE)
-    seats = models.ManyToManyField(SeatInShowing)
 
     def __str__(self):
         return f"{self.movie} - {self.showtime}"

@@ -42,7 +42,7 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ("status", "receive_promos")
     actions = [send_promo]
     add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {'fields': ('email', 'first_name', 'last_name', 'profile_pic','address', 'status', 'receive_promos'),}),
+        (None, {'fields': ('email', 'first_name', 'last_name', 'profile_pic','address', 'status', 'usercards', 'receive_promos'),}),
     )
     fieldsets = UserAdmin.fieldsets + (
         (None,  {'fields': ('address','status', 'profile_pic' ,'receive_promos')}),
