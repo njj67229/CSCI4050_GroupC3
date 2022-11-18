@@ -80,11 +80,11 @@ class Promo(models.Model):
         self.objects.filter(self.exp_date < datetime.datetime.now().date())
     
 class PhysicalSeat(models.Model):
-    seat_row = models.IntegerField(null=True)
-    seat_number = models.IntegerField(null=True)
-    seat_room = models.ForeignKey("core.ShowRoom", on_delete = models.CASCADE, null=True, blank=True)
+    seat_row = models.CharField(max_length=1)
+    seat_number = models.IntegerField()
+    
     def __str__(self):
-        return f"{self.pk}"
+        return f"{self.seat_row + str(self.seat_number)}"
 
 class SeatInShowing(models.Model):
     physical_seat = models.OneToOneField(PhysicalSeat, primary_key=True, on_delete=models.CASCADE, unique=True)
