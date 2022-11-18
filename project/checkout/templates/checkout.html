@@ -14,15 +14,20 @@
                 Once you've made your payment, we'll email your tickets and order confirmation to you at the
                 email address provided below.
             </p>
-            <div class="mb-3">
+            <div class="mb-5">
                 <label for="inputEmail" class="form-label">Email my tickets to this address:</label>
                 <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
             </div>
+
+
+
             <h2 class="text-uppercase">Have a promo code?</h2>
-            <div class="mb-3">
-                <label for="inputPromoCode" class="form-label">Enter your code below to redeem it!</label>
-                <input type="email" class="form-control" id="inputPromoCode" aria-describedby="emailHelp">
-            </div>
+            <label for="inputPromoCode">Enter your code below to redeem it!</label>
+            <form class="form-inline mb-5">
+                <input type="email" class="form-control mr-2" id="inputPromoCode" style="width: 90%;">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
             <h2 class="text-uppercase">Enter Credit/Debit Card</h2>
             <p>
                 Please enter the details of the card you wish to use to make your payment.
