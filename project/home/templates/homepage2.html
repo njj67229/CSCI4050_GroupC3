@@ -97,49 +97,54 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
-      <form method="GET" class="d-flex">
+      <form method="GET" class="d-flex align-items-center" style="max-height: 50px;">
         {{movie_filter.form.as_p }}
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit" style="height:50%;">Search</button>
       </form>
 
     </div>
   </nav>
-
+  <br>
   <!--Movie Listings-->
   <h4>{{msg}}</h4>
-  <div class="row row-cols-md-auto">
+  <!-- Grid row -->
+  <div class="row row-cols-md-auto wow fadeIn">
   {% for movie in movies %}
-      <div class="col-mb-2">
+    <!--Single Object-->
+      <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card container">
-          <a href="{{movie.trailer_url}}" target="_blank">
-            <img src="/media/{{movie.pic }}" class="card-img-top" alt="..." style="padding-top: 1ex; height: 32ex;">
+          <a href="{{movie.trailer_url}}" target="_blank" class="d-flex justify-content-center">
+            <img src="/media/{{movie.pic }}" class="card-img-top" alt="..." style="position: relative;
+            height: 290px;
+            max-height: 290px;
+            width: auto;
+            margin-bottom: 20px;
+            overflow: hidden;
+            justify-content: center;">
           </a>
           <div class="card-body">
             <div class="container-fluid d-inline-flex justify-content-sm-between align-items-center">
+              <!-- Movie Title -->
               <div class="movieinfo" style="display: inline-block;">
                 <p>{{movie.title}}</p>
               </div>
-              <div class="movieinfo" style="display: inline-block;">
-                <p style="color: #707070; background-color: #003F64; color: #ffffff; padding: 0.5ex;">{{movie.runtime}}</p>
-              </div>
+              <!-- Movie Title -->
+              <!-- Movie Rating -->
               <div class="movieinfo" style="display: inline-block;">
                 <p style="color: #707070; background-color: #003F64; color: #ffffff; padding: 0.5ex;">{{movie.rating}}</p>
               </div>
-              <div class="movieinfo" style="display: inline-block;">
-                <p>Released {{movie.release_date}}</p>
-              </div>
-              <div class="movieinfo" style="display: inline-block;">
-                <p>{{movie.genres}}</p>
-              </div>
+              <!-- Movie Title -->
             </div>
-            <!-- <h1>{{movie.id}}</h1> -->
+            <!-- Select Showtime Button -->
             <a href={%url 'select_show_time' movie_id=movie.id %}>
               <button type="button" class="btn button-danger"
-              style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
+              style="background-color: #E10600; color: #ffffff; width: 100%;">SHOWTIMES</button>
             </a>
+            <!-- Select Showtime Button -->
           </div>
         </div>
       </div>
       {% endfor %}
   </div>
+  <!-- Grid row -->
   {% endblock %}

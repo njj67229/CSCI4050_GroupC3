@@ -102,11 +102,16 @@
   </nav>
 
   <!--Movie Listings-->
-  <div class="row row-cols-md-auto">
-    <div class="col mb-2">
-      <div class="card container">
+  <div class="row">
+      <!--Single Item-->
+      <div class="col-md-6 col-lg-4 col-xl-3">
         <a href="https://youtu.be/5PSNL1qE6VY">
-          <img src="./static/img/avatar.jpeg" class="card-img-top" alt="..." style="padding-top: 1ex; height: 32ex;">
+          <img src="./static/img/avatar.jpeg" class="card-img-top" alt="..." style="position: relative;
+          height: 290px;
+          max-height: 290px;
+          width: auto;
+          margin-bottom: 20px;
+          overflow: hidden;">
         </a>
         <div class="card-body">
           <div class="container-fluid d-inline-flex justify-content-sm-between align-items-center">
@@ -121,12 +126,16 @@
             style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
         </div>
       </div>
-    </div>
-    <div class="col mb-2">
-      <div class="card container">
+
+      <!--Single Item-->
+      <div class="col-md-6 col-lg-4 col-xl-3">
         <a href="https://youtu.be/Dr89pmKrqkI">
-          <img src="./static/img/barbarian.jpeg" class="card-img-top" alt="..." style="padding-top: 1ex; height: 32ex;">
-        </a>
+          <img src="./static/img/barbarian.jpeg" class="card-img-top" alt="..." style="position: relative;
+          height: 290px;
+          max-height: 290px;
+          width: auto;
+          margin-bottom: 20px;
+          overflow: hidden;">
         <div class="card-body">
           <div class="container-fluid d-inline-flex justify-content-sm-between align-items-center">
             <div class="movieinfo" style="display: inline-block;">
@@ -140,9 +149,9 @@
             style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
         </div>
       </div>
-    </div>
-    <div class="col mb-2">
-      <div class="card container">
+  
+      <!--Single Item-->
+      <div class="col-md-6 col-lg-4 col-xl-3">
         <a href="https://youtu.be/FgmnKsED-jU">
           <img src="./static/img/dont-worry-darling-vert.jpeg" class="card-img-top" alt="..."
             style="padding-top: 1ex; height: 29ex;">
@@ -160,28 +169,30 @@
             style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
         </div>
       </div>
-    </div>
-    <div class="col mb-2">
-      <div class="card container">
-        <a href="https://youtu.be/BQIeBB9XMe8">
-          <img src="./static/img/bros.jpeg" class="card-img-top" alt="... " style="padding-top: 1ex; height: 32ex;">
-        </a>
-        <div class="card-body">
-          <div class="container-fluid d-inline-flex justify-content-sm-between align-items-center">
-            <div class="movieinfo" style="display: inline-block;">
-              <p>Bros</p>
+
+      <!--Single Item-->
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="card container">
+          <a href="https://youtu.be/BQIeBB9XMe8">
+            <img src="./static/img/bros.jpeg" class="card-img-top" alt="... " style="padding-top: 1ex; height: 32ex;">
+          </a>
+          <div class="card-body">
+            <div class="container-fluid d-inline-flex justify-content-sm-between align-items-center">
+              <div class="movieinfo" style="display: inline-block;">
+                <p>Bros</p>
+              </div>
+              <div class="movieinfo" style="display: inline-block;">
+                <p style="color: #707070; background-color: #003F64; color: #ffffff; padding: 0.5ex;">R</p>
+              </div>
             </div>
-            <div class="movieinfo" style="display: inline-block;">
-              <p style="color: #707070; background-color: #003F64; color: #ffffff; padding: 0.5ex;">R</p>
-            </div>
+            <button type="button" class="btn button-danger"
+              style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
           </div>
-          <button type="button" class="btn button-danger"
-            style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
         </div>
       </div>
-    </div>
-    <div class="col mb-2">
-      <div class="card container">
+
+    <!--Single Item-->
+      <div class="col-md-6 col-lg-4 col-xl-3">
         <a href="https://youtu.be/BcDK7lkzzsU">
           <img src="./static/img/smile.jpeg" class="card-img-top" alt="..." style="padding-top: 1ex; height: 32ex;">
         </a>
@@ -198,9 +209,9 @@
             style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
         </div>
       </div>
-    </div>
-    <div class="col mb-2">
-      <div class="card container">
+
+    <!--Single Item-->
+    <div class="col-md-6 col-lg-4 col-xl-3">
         <a href="https://youtu.be/3RDaPV_rJ1Y">
           <img src="./static/img/the-woman-king-vert.jpeg" class="card-img-top" alt="..."
             style="padding-top: 1ex; height: 32ex;">
@@ -217,7 +228,6 @@
           <button type="button" class="btn button-danger"
             style="background-color: #E10600; color: #ffffff;">SHOWTIMES</button>
         </div>
-      </div>
     </div>
   </div>
   {% endblock %}
