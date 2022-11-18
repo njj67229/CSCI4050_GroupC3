@@ -27,7 +27,7 @@ def index2(request, showing_type=None):
         # showings = Showing.objects.all()
         query = query.filter(showing__isnull=True)
     elif showing_type=='now_showing':
-        query = query.filter(showing__isnull=False)
+        query = query.filter(showing__isnull=False).distinct()
         
     message = ""
     movie_list = []

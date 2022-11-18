@@ -4,6 +4,7 @@ from django.conf import settings
 import string
 import random
 from django.utils.html import mark_safe
+from django.core.exceptions import ValidationError
 
 User = settings.AUTH_USER_MODEL
 
@@ -79,11 +80,11 @@ class Promo(models.Model):
         self.objects.filter(self.exp_date < datetime.datetime.now().date())
     
 class PhysicalSeat(models.Model):
-    seat_row = models.IntegerField(null=True)
-    seat_number = models.IntegerField(null=True)
-    seat_room = models.ForeignKey("core.ShowRoom", on_delete = models.CASCADE, null=True, blank=True)
+    seat_row = models.CharField(max_length=1)
+    seat_number = models.IntegerField()
+    
     def __str__(self):
-        return f"{self.pk}"
+        return f"{self.seat_row + str(self.seat_number)}"
 
 class SeatInShowing(models.Model):
     physical_seat = models.OneToOneField(PhysicalSeat, primary_key=True, on_delete=models.CASCADE, unique=True)
@@ -103,5 +104,18 @@ class Showing(models.Model):
     showtime = models.DateTimeField()
     room = models.ForeignKey(ShowRoom, on_delete=models.CASCADE)
 
+    class Meta:
+        unique_together = ('showtime', 'room',)
+
     def __str__(self):
         return f"{self.movie} - {self.showtime}"
+
+    def clean(self):
+        showings = Showing.objects.all()
+        for showing in showings:
+            showingtime = showing.showtime
+            runtime = showing.movie.runtime
+            showdatetime = self.showtime
+            showingtime = showingtime+timedelta(minutes=int(runtime))
+            if(showdatetime < showingtime and showing.room == self.room):
+                raise ValidationError({'showtime': "Movie Showings overlap"})
