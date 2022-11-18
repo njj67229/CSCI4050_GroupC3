@@ -54,10 +54,14 @@
         </li>
       </ul>
       <h3>Available Show Times</h3>
-      {% for showing in showtimes %}
-      <p>{{showing.day}}</p>
-      <button type="button" class="btn btn-light">{{showing.time}}</button>
-      {% endfor %}
+      {% if showtimes %}
+        {% for showing in showtimes %}
+          <p>{{showing.day}}</p>
+          <button type="button" class="btn btn-light">{{showing.time}}</button>
+        {% endfor %}
+      {% else %}
+        <p>No Showings Available</p>
+      {% endif %}  
       <br>
       <div class="mt-4">
         <button type="button" class="btn btn-secondary text-uppercase btn-lg">
