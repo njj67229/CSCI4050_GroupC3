@@ -54,10 +54,10 @@
         </li>
       </ul>
       <h3>Available Show Times</h3>
-      <p>Today - Tuesday 20 September</p>
-      <button type="button" class="btn btn-light">4:30 PM</button>
-      <p>Tomorrow - Wednesday 21 September</p>
-      <button type="button" class="btn btn-light">4:30 PM</button>
+      {% for showing in showtimes %}
+      <p>{{showing.day}}</p>
+      <button type="button" class="btn btn-light">{{showing.time}}</button>
+      {% endfor %}
       <br>
       <div class="mt-4">
         <button type="button" class="btn btn-secondary text-uppercase btn-lg">
