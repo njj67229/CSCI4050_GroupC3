@@ -14,8 +14,7 @@
       </figure>
     </div>
     <div class="col-md-5 text-start">
-      <h1 class="text-uppercase">Buy tickets for:</h1>
-      <h2 class="text-uppercase text-nowrap">{{movie.title}}</h2>
+      <h1 class="text-uppercase">{{movie.title}}</h1>
       <ul class="list-inline font-weight-bold">
         <li class="list-inline-item">{{movie.rating}}</li>
         <li class="list-inline-item">{{movie.runtime}}</li>
@@ -54,10 +53,14 @@
         </li>
       </ul>
       <h3>Available Show Times</h3>
-      {% for showing in showtimes %}
-      <p>{{showing.day}}</p>
-      <button type="button" class="btn btn-light">{{showing.time}}</button>
-      {% endfor %}
+      {% if showtimes %}
+        {% for showing in showtimes %}
+          <p>{{showing.day}}</p>
+          <button type="button" class="btn btn-light">{{showing.time}}</button>
+        {% endfor %}
+      {% else %}
+        <p>No Showings Available</p>
+      {% endif %}  
       <br>
       <div class="mt-4">
         <button type="button" class="btn btn-secondary text-uppercase btn-lg">
