@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
-from core.models import Movie
+from core.models import Movie, Showing
 from home.views import format_runtime
 import json
 from .api import get_actor_info
@@ -37,8 +37,11 @@ def select_show_time(request, movie_id):
             'genres': genres_list,
             'actors': actor_info,
     }
-    
-    return render(request, "select_show_time.html", {'movie': movie_info})
+    showings = Showing.objects.filter(movie__pk=movie_id)
+    showtimes = []
+    for showing in showings:
+        showtimes.append({"day": showing.showtime.date, "time": showing.showtime.time})
+    return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 
 
 def select_tickets_and_age(request):
