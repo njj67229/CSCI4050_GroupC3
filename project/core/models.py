@@ -114,9 +114,8 @@ class Showing(models.Model):
         showings = Showing.objects.all()
         for showing in showings:
             showingtime = showing.showtime
-            movie = showing.movie
-            runtime = movie.runtime
+            runtime = showing.movie.runtime
             showdatetime = self.showtime
             showingtime = showingtime+timedelta(minutes=int(runtime))
-            if(showdatetime < showingtime):
+            if(showdatetime < showingtime and showing.room == self.room):
                 raise ValidationError({'showtime': "Movie Showings overlap"})
