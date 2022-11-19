@@ -11,7 +11,7 @@ urlpatterns = [
         views.select_tickets_and_age,
         name="select_tickets_and_age",
     ),
-    path("select-seats", views.select_seats, name="select_seats"),
+    path("select_seats", views.select_seats, name="select_seats"),
     path("order_summary", views.order_summary, name="order_summary"),
     path("checkout", views.checkout, name="checkout"),
     path("confirmation", views.confirmation, name="confirmation"),
