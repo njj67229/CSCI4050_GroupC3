@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <!-- Carousel -->
 <div class="bd-example">
@@ -98,7 +99,16 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
       <form method="GET" class="d-flex align-items-center" style="max-height: 50px;">
-        {{movie_filter.form.as_p }}
+        <li class="d-flex dropdown" style="padding-right: 1ex;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-expanded="false" style="color: #ffffff; background-color: #C4061A;">
+            Filter:
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            {{movie_filter.form.genres | as_crispy_field}}
+          </div>
+        </li>
+        {{movie_filter.form.title | as_crispy_field }}
         <button class="btn btn-outline-success" type="submit" style="height:50%;">Search</button>
       </form>
 
