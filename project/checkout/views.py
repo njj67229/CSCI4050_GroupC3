@@ -50,8 +50,9 @@ def select_tickets_and_age(request):
 
 
 def select_seats(request):
-    template = loader.get_template("select_seats.html")
-    return HttpResponse(template.render())
+    # template = loader.get_template("select_seats.html")
+    # return HttpResponse(template.render())
+    return render(request, "select_seats.html")
 
 
 def order_summary(request):

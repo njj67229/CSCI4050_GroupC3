@@ -56,7 +56,7 @@
                 <label for="inputAddress" class="form-label">Billing Address</label>
                 <input type="address" class="form-control" id="inputAddress" aria-describedby="emailHelp">
             </div>
-            <a href="{% url 'order_summary' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a>
+            <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
             <a href="{% url 'confirmation' %}" class="btn btn-success text-uppercase btn-lg">Submit payment</a>
         </div>
     </div>
