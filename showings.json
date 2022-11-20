@@ -1,0 +1,65 @@
+[
+    {
+        "model": "core.Showing",
+        "pk": "1",
+        "fields": {
+            "movie": "76600",
+            "showtime": "2022-11-21 17:30:00",
+            "room": "1"
+        }
+    },
+    {
+        "model": "core.Showing",
+        "pk": "2",
+        "fields": {
+            "movie": "76600",
+            "showtime": "2022-11-22 10:00:00",
+            "room": "2"
+        }
+    },
+    {
+        "model": "core.Showing",
+        "pk": "3",
+        "fields": {
+            "movie": "76600",
+            "showtime": "2022-11-21 17:00:00",
+            "room": "1"
+        }
+    },
+    {
+        "model": "core.Showing",
+        "pk": "4",
+        "fields": {
+            "movie": "361743",
+            "showtime": "2022-11-23 14:15:00",
+            "room": "5"
+        }
+    },
+    {
+        "model": "core.Showing",
+        "pk": "5",
+        "fields": {
+            "movie": "361743",
+            "showtime": "2022-11-26 13:30:00",
+            "room": "3"
+        }
+    },
+    {
+        "model": "core.Showing",
+        "pk": "6",
+        "fields": {
+            "movie": "361743",
+            "showtime": "2022-11-26 14:00:00",
+            "room": "4"
+        }
+    },
+    {
+        "model": "core.Showing",
+        "pk": "7",
+        "fields": {
+            "movie": "718930",
+            "showtime": "2022-11-24 9:00:00",
+            "room": "2"
+        }
+    }  
+]
