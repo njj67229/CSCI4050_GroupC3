@@ -55,7 +55,7 @@ class Movie(models.Model):
     director = models.CharField(max_length=200, default="")
     genres = models.ManyToManyField(Genre)
     # actor_ids = models.CharField(max_length=200, null=True, help_text='Ex: [id1, id2, id3, id4, id5]')
-    actor_ids = models.ManyToManyField(Actor, verbose_name='Actors', null=True, blank=True)
+    actor_ids = models.ManyToManyField(Actor, verbose_name='Actors')
     
     class Meta:
         verbose_name_plural = "Movies"
