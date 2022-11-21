@@ -56,7 +56,9 @@
       {% if showtimes %}
         {% for showing in showtimes %}
           <p>{{showing.day}}</p>
-          <button type="button" class="btn btn-light">{{showing.time}}</button>
+          {% for showtime in showing.time %}
+            <button type="button" class="btn btn-light">{{showtime}}</button>
+          {% endfor %}    
         {% endfor %}
       {% else %}
         <p>No Showings Available</p>
