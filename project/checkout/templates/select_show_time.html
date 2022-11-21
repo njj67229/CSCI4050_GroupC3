@@ -57,7 +57,7 @@
         {% for showing in showtimes %}
           <p>{{showing.day}}</p>
           {% for showtime in showing.time %}
-            <button type="button" class="btn btn-light">{{showtime}}</button>
+            <a href="#/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{showtime}}</a>
           {% endfor %}    
         {% endfor %}
       {% else %}
