@@ -15,10 +15,10 @@ def send_promo(modeladmin, request, queryset):
     """Sends Promos to Selected Users"""
     latest_promo = Promo.objects.last()
     email_list = [user.email for user in queryset]
-    email_body = "Hi {name}!\nEnjoy {discount}% off with code {code} on your next movie!\nOffer expires on {exp_date}"
+    email_body = "Hi User!\nEnjoy {discount}% off with code {code} on your next movie!\nOffer expires on {exp_date}"
     send_mail(
         "New Promo Code Added: {promo_name}".format(promo_name=latest_promo.name),
-        email_body.format(name=request.user.first_name, discount=str(latest_promo.discount*100), code=latest_promo.code, exp_date=latest_promo.exp_date),
+        email_body.format(discount=str(latest_promo.discount*100), code=latest_promo.code, exp_date=latest_promo.exp_date),
         "teamc3movies@gmail.com",
         email_list,
         fail_silently=False,
