@@ -81,8 +81,11 @@ def select_seats(request, show_id=None):
 def order_summary(request):
     template = loader.get_template("order_summary.html")
     t = TicketFactory('Child')
+    s = Showing.objects.get(pk=4) #particular showing
+    # t.type.__class__.objects.create(showing=s) #adds object to database
+    t.type.showing = s
     print(t.type.showing)
-    # print(t.price)
+    t.type.save()
     return HttpResponse(template.render())
 
 

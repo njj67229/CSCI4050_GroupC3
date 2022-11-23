@@ -15,7 +15,7 @@ class Ticket(models.Model):
         SENIOR = "SR", _("SENIOR")
 
     # ticket_type = models.CharField(max_length=2, choices=TicketType.choices)
-    showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE, default=4)
+    showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
     # seat = models.ForeignKey("core.SeatInShowing", on_delete=models.PROTECT)
     # price = models.DecimalField(default=0, decimal_places=2, max_digits=4)
 
@@ -55,9 +55,9 @@ class TicketFactory:
         "Senior": SeniorTicket,
         }
  
-        self.type = localizers[type]() #adult object
-        s = Showing.objects.get(pk=showing_id)
-        self.type.__class__.objects.create(showing=s)
+        self.type = localizers[type]() #adult/child/senior ticket object
+        # s = Showing.objects.get(pk=showing_id) #particular showing
+        # self.type.__class__.objects.create(showing=s) #adds object to database
         # self.type.showing = showing_id
  
     # def make_ticket(self):
