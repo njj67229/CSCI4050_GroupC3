@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 from core.models import Movie, Showing
+from checkout.models import TicketFactory
 from home.views import format_runtime
 import json
 from .api import get_actor_info
@@ -79,6 +80,9 @@ def select_seats(request, show_id=None):
 
 def order_summary(request):
     template = loader.get_template("order_summary.html")
+    t = TicketFactory('Child')
+    print(t.type.showing)
+    # print(t.price)
     return HttpResponse(template.render())
 
 
