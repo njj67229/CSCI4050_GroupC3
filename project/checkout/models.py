@@ -6,7 +6,6 @@ import random
 from django.utils.html import mark_safe
 from django.utils.translation import gettext_lazy as _
 
-
 class Ticket(models.Model):
     class TicketType(models.TextChoices):
         ADULT = "AD", _("ADULT")
