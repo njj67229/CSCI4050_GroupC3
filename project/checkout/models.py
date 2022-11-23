@@ -12,7 +12,7 @@ class Ticket(models.Model):
         CHILD = "CH", _("CHILD")
         SENIOR = "SR", _("SENIOR")
 
-    ticket_id = models.IntegerField(primary_key=True, unique=True)
+    # ticket_id = models.IntegerField(primary_key=True, unique=True)
     ticket_type = models.CharField(max_length=2, choices=TicketType.choices)
     showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
     # seat = models.ForeignKey("core.SeatInShowing", on_delete=models.PROTECT)
@@ -22,7 +22,7 @@ class Ticket(models.Model):
 
 
 class Booking(models.Model):
-    booking_id = models.IntegerField(primary_key=True, unique=True)
+    # booking_id = models.IntegerField(primary_key=True, unique=True)
     promo = models.ForeignKey(
         "core.Promo", blank=True, null=True, on_delete=models.PROTECT
     )
