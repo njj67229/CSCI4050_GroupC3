@@ -112,7 +112,7 @@ class Showing(models.Model):
         return f"{self.movie} - {self.showtime}"
 
     def clean(self):
-        showings = Showing.objects.all()
+        showings = Showing.objects.filter(movie__pk=self.movie.id)
         for showing in showings:
             showingtime = showing.showtime
             runtime = showing.movie.runtime
