@@ -18,7 +18,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .tokens import account_activation_token
 
@@ -154,6 +154,10 @@ def del_address(request):
     return redirect('edit_address')
 
 def user_login(request):
+    next = None
+    if 'next' in request.GET:
+        messages.info(request, 'You must be logged in to access this feature')
+        next = request.GET['next']
     if request.method == 'POST':
         form = AuthenticationForm(request.POST)
         username = request.POST['username']
@@ -171,7 +175,9 @@ def user_login(request):
                     login(request,user)
                     return redirect(reverse("add_address"))
                 else:
-                    login(request,user)    
+                    login(request,user)
+                    if next:
+                        return HttpResponseRedirect(next)    
                     return redirect(reverse('index'))
             # Check if inactive
             if user.status.id == 2:

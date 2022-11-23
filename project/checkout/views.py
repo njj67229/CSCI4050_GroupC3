@@ -1,10 +1,13 @@
+from django.conf import settings
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.template import loader
 from core.models import Movie, Showing
 from home.views import format_runtime
 import json
 from .api import get_actor_info
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def get_actors(actor_ids):
     """Returns a list of tuples with actor name, actor picture"""
@@ -40,6 +43,7 @@ def select_show_time(request, movie_id):
     showings = Showing.objects.filter(movie__pk=movie_id)
     showtimes = []
     for showing in showings:
+            print(showing.id)
             found = False
             for i,show in enumerate(showtimes):
                 if show["datetime"].strftime("%Y %m %d") == showing.showtime.strftime("%Y %m %d"):
@@ -50,18 +54,24 @@ def select_show_time(request, movie_id):
             if not found:
                 showtimes.append({"datetime": showing.showtime, "day": showing.showtime.date, "time": [showing.showtime.strftime("%H:%M:%S")]})  
     
+    print(showtimes)
+    
     return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 
-
+@login_required (login_url='/members/login/')
 def select_tickets_and_age(request):
     template = loader.get_template("select_tickets_and_age.html")
     return HttpResponse(template.render())
 
 
-def select_seats(request):
-    # template = loader.get_template("select_seats.html")
-    # return HttpResponse(template.render())
-    return render(request, "select_seats.html")
+@login_required (login_url='/members/login/')
+def select_seats(request, show_id=None):
+    if show_id:
+        showing = Showing.objects.get(pk=show_id)
+        print(showing)
+    else:
+        showing = None
+    return render(request, "select_seats.html", {'showing': showing})
 
 
 def order_summary(request):
