@@ -74,8 +74,9 @@ class Promo(models.Model):
     exp_date = models.DateField(default= datetime.now()+ timedelta(days=30))
     
     def __str__(self):
-        return f"{self.name}"       
-    
+        return f"{self.name}"   
+        
+    @property
     def is_expired(self):
         self.objects.filter(self.exp_date < datetime.datetime.now().date())
     

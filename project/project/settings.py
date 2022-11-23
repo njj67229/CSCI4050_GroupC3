@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'checkout.apps.CheckoutConfig',
-    'login.apps.LoginConfig',
+    # 'login.apps.LoginConfig',
     'home.apps.HomeConfig',
     'encrypted_model_fields',
     'accounts',

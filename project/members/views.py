@@ -156,7 +156,7 @@ def del_address(request):
 def user_login(request):
     next = None
     if 'next' in request.GET:
-        messages.info(request, 'You must be logged in to access this feature')
+        # messages.info(request, 'You must be logged in to access this feature')
         next = request.GET['next']
     if request.method == 'POST':
         form = AuthenticationForm(request.POST)
