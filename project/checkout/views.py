@@ -9,7 +9,7 @@ import json
 from .api import get_actor_info
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .decorators import login_required_message
+from .adapter import login_required_message
 
 def get_actors(actor_ids):
     """Returns a list of tuples with actor name, actor picture"""
@@ -19,7 +19,7 @@ def get_actors(actor_ids):
     return actor_info
 
 @login_required_message()
-@login_required (login_url='/members/login/')
+# @login_required (login_url='/members/login/')
 def select_show_time(request, movie_id):
     movie = Movie.objects.get(pk=movie_id)
     genres_list = [x.title for x in movie.genres.all().iterator()]

@@ -9,7 +9,7 @@ default_message = "Please log in, in order to see the requested page."
 
 def user_passes_test(test_func, message=default_message):
     """
-    Decorator for views that checks that the user passes the given test,
+    Python decorator for views that checks that the user passes the given test,
     setting a message in case of no success. The test should be a callable
     that takes the user object and returns True if the user passes.
     """
