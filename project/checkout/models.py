@@ -7,6 +7,7 @@ from django.utils.html import mark_safe
 from django.utils.translation import gettext_lazy as _
 from django.contrib.contenttypes.fields import GenericRelation
 from core.models import Showing
+from accounts.models import CustomUser
 
 class Ticket(models.Model):
     class TicketType(models.TextChoices):
@@ -44,7 +45,7 @@ class SeniorTicket(Ticket):
         return "Senior"
 
 class TicketFactory:
-    """Class that takes a string val for choice and creats a ticket type object
+    """Class that takes a string val for choice and creates a ticket type object
        Its type field will be of type Child, Adult, or Senior
     """
     def __init__(self, type = 'Adult', showing_id = 4):
@@ -75,12 +76,13 @@ class TicketFactory:
 
 class Booking(models.Model):
     
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     promo = models.ForeignKey(
         "core.Promo", blank=True, null=True, on_delete=models.PROTECT
     )
     showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
     # tickets = models.ManyToManyField(Ticket)
-    # tickets = GenericForeignKey()
+    
 
     def __str__(self):
         return f"{self.id}"

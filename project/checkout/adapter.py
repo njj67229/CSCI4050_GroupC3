@@ -26,6 +26,8 @@ def login_required_message(function=None, message=default_message):
     """
     Decorator for views that checks that the user is logged in, redirecting
     to the log-in page if necessary.
+    
+    Overrides the defuault to allow messages to be added to login_required: Adapater Pattern
     """
     actual_decorator = user_passes_test(
         lambda u: u.is_authenticated, #fixed by removing ()
