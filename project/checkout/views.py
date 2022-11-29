@@ -2,8 +2,8 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
-from core.models import Movie, Showing
-from checkout.models import TicketFactory
+from core.models import Movie, Showing, Promo
+from checkout.models import TicketFactory, Booking
 from home.views import format_runtime
 import json
 from .api import get_actor_info
@@ -79,14 +79,17 @@ def select_seats(request, show_id=None):
 
 
 def order_summary(request):
-    template = loader.get_template("order_summary.html")
-    t = TicketFactory('Child')
-    s = Showing.objects.get(pk=4) #particular showing
-    # t.type.__class__.objects.create(showing=s) #adds object to database
-    t.type.showing = s
-    print(t.type.showing)
-    t.type.save()
-    return HttpResponse(template.render())
+    t = TicketFactory('AD',4).get_ticket()
+    t.save()
+    #testing booking
+    p = Promo.objects.get(pk=1) 
+    booking = Booking(user=request.user, showing=t.showing, promo=p)
+    booking.save()
+    booking.tickets.set([t])
+    booking.save()
+    print(booking.caclculate_price())
+
+    return render(request,"order_summary.html" )
 
 
 def checkout(request):

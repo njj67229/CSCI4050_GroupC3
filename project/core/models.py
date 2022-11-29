@@ -77,8 +77,8 @@ class Promo(models.Model):
         return f"{self.name}"   
         
     @property
-    def is_expired(self):
-        self.objects.filter(self.exp_date < datetime.datetime.now().date())
+    def is_valid(self):
+        return self.promo.exp_date >= datetime.now().date()
     
 class PhysicalSeat(models.Model):
     seat_row = models.CharField(max_length=1)
