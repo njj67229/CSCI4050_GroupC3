@@ -22,79 +22,48 @@
                         <small>Occupied</small>
                     </li>
                 </ul>
-
+                
                 <div class="inner-container">
                     <div class="screen"></div>
-
-                    <div class="row">
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                    </div>
-                    <div class="row">
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                    </div>
-                    <div class="row">
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat occupied"></div>
-                    </div>
-                    <div class="row">
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                    </div>
-                    <div class="row">
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                    </div>
-                    <div class="row">
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat occupied"></div>
-                        <div class="seat"></div>
-                    </div>
-
-                    <p class="text">
-                        You have selected seat <span id="count">A5</span>
-                    </p>
+                    {% for row in seats %}
+                        <div class="row">
+                        {% for seat, showing_seat in row.1.items %}
+                            {% if showing_seat.reserved %}
+                                <div id={{row.0}}{{seat}} class="seat occupied" onclick="select_seat(this)"></div>
+                            {% else %}
+                                <div id={{row.0}}{{seat}} class="seat" onclick="select_seat(this)"></div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                    {% endfor %}
                 </div>
+                <p class="text">
+                    You have selected seat(s) <span id="count"></span>
+                </p>
             </div>
             <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
-            <a href="{% url 'select_tickets_and_age' %}" class="btn btn-primary text-uppercase btn-lg">Continue</a>
+            <a id="select_tickets" class="btn btn-primary text-uppercase btn-lg">Continue</a>
         </div>
     </div>
 </div>
+
+<script>
+    var select_tickets = document.getElementById("select_tickets") 
+    const selected = []
+    const count = document.getElementById("count");
+    function select_seat(button) {
+        if(!button.classList.contains("occupied")) {
+            if (button.classList.contains("selected")) {
+                button.classList.remove("selected")
+                selected.splice(selected.indexOf(button.id), 1)
+            } else {
+                button.classList.add("selected")
+                selected.push(button.id)
+            }
+        }
+        count.innerHTML = selected
+        href="{% url 'select_tickets_and_age' seats=selected}"
+    }
+
+</script>
 {% endblock %}

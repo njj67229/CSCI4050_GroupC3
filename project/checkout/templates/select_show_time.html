@@ -55,14 +55,13 @@
       <h3>Available Show Times</h3>
       {% if showtimes %}
         {% for showing in showtimes %}
-          <p>{{showing.day}}</p>
           {% for showtime in showing.time %}
-            <a href="{% url 'select_seats' show_id=7 %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{showtime}}</a>
+            <a href="{% url 'select_seats' show_id=showtime.id %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{showtime.time}}</a>
           {% endfor %}    
         {% endfor %}
       {% else %}
         <p>No Showings Available</p>
-      {% endif %}  
+      {% endif %}
       <br>
       <div class="mt-4">
         <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>

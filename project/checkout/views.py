@@ -2,7 +2,7 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
-from core.models import Movie, Showing, Promo
+from core.models import Movie, Showing, Promo, ShowRoom, SeatInShowing, PhysicalSeat
 from checkout.models import TicketFactory, Booking
 from home.views import format_runtime
 import json
@@ -47,23 +47,20 @@ def select_show_time(request, movie_id):
     showings = Showing.objects.filter(movie__pk=movie_id)
     showtimes = []
     for showing in showings:
-            print(showing.id)
             found = False
             for i,show in enumerate(showtimes):
                 if show["datetime"].strftime("%Y %m %d") == showing.showtime.strftime("%Y %m %d"):
                     found = True
-                    showtimes[i]["time"].append(showing.showtime.strftime("%H:%M:%S"))
-                    showtimes[i]["time"].sort()        
+                    showtimes[i]["time"].append({'time' : showing.showtime.strftime("%H:%M:%S"), 'id': showing.id})
+                    showtimes[i]["time"] = sorted(showtimes[i]["time"], key= lambda j: j['time'])
                     break
             if not found:
-                showtimes.append({"datetime": showing.showtime, "day": showing.showtime.date, "time": [showing.showtime.strftime("%H:%M:%S")]})  
-    
-    print(showtimes)
-    
+                showtimes.append({"datetime": showing.showtime, "day": showing.showtime.date, "time": [{'time': showing.showtime.strftime("%H:%M:%S"), 'id': showing.id}]})  
+
     return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 
 @login_required (login_url='/members/login/')
-def select_tickets_and_age(request):
+def select_tickets_and_age(request, seats=None):
     template = loader.get_template("select_tickets_and_age.html")
     return HttpResponse(template.render())
 
@@ -72,10 +69,18 @@ def select_tickets_and_age(request):
 def select_seats(request, show_id=None):
     if show_id:
         showing = Showing.objects.get(pk=show_id)
-        print(showing)
+        #room = ShowRoom.objects.get(pk=showing.room.pk)
+        showing_seats = showing.seats.all()
+        seats = {}
+        for i in range(len(showing_seats)):
+            if showing_seats[i].physical_seat.seat_row not in seats:
+                seats[showing_seats[i].physical_seat.seat_row] = {} 
+            seats[showing_seats[i].physical_seat.seat_row][showing_seats[i].physical_seat.seat_number] = showing_seats[i]    
+            
     else:
         showing = None
-    return render(request, "select_seats.html", {'showing': showing})
+        room = None
+    return render(request, "select_seats.html", {'showing': showing, 'seats': seats.items()})
 
 
 def order_summary(request):
