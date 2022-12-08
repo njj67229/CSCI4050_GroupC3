@@ -66,17 +66,6 @@ To download all necessary installations written below, run
 python -m pip install -r requirements.txt
 ``
 
-```
-pip install django-crispy-forms==1.14.0
-pip install django-localflavor
-pip install django-credit-cards
-pip install django-encrypted-model-fields
-pip install django-email-verification
-pip install pillow
-pip install django-filter
-
-```
-
 ## Notes and Resources
 
 https://pypi.org/project/django-credit-cards/
