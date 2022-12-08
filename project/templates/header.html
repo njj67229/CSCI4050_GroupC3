@@ -33,11 +33,18 @@
                 <a class="dropdown-item px-2" href="{% url 'edit_profile' %}">Edit profile</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item px-2" href="{% url 'logout' %}">Logout</a>
+                <div class="dropdown-divider"></div>
+
+                {% if request.user.is_superuser %}
+                <a class="dropdown-item px-2" href="{% url 'admin:index' %}""">Return to<br>Admin Portal</a>
+                {% endif %}
             </div>
         </div>
         {% else %}
         <a class="btn btn-secondary" href="{% url 'login' %}" role="button">Login</a>
-        {% endif %}
+
+</div>
+{% endif %}
 
     </nav>
 </header>
