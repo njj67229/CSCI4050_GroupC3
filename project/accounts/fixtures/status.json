@@ -1,0 +1,23 @@
+[
+    {
+      "model": "accounts.CustomerSatus",
+      "pk": "1",
+      "fields": {
+        "status": "Active"
+      }
+    },
+    {
+      "model": "accounts.CustomerSatus",
+      "pk": "2",
+      "fields": {
+        "status": "Inactive"
+      }
+    },
+    {
+      "model": "accounts.CustomerSatus",
+      "pk": "3",
+      "fields": {
+        "status": "Suspended"
+      }
+    }
+]

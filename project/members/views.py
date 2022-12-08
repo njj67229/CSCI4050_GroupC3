@@ -164,7 +164,7 @@ def user_login(request):
         password = request.POST['password']
         user = authenticate(username=username,password=password)
         if user:
-            print(user.status)
+            # print(user.status)
             #check if super_user and redirect to admin portal
             if user.is_superuser:
                 login(request,user)
@@ -274,8 +274,8 @@ def edit_payments(request):
 def edit_cards_1(request):
     cards = PaymentCard.objects.filter(card_owner=request.user).all()
     # select_card_form = SelectCardForm(request.POST or None)
-    try:
-        
+    create = 'No'
+    try: 
         if cards[0]:
             card = cards[0]
             address = card.billing_address

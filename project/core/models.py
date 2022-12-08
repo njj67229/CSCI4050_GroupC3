@@ -77,8 +77,8 @@ class Promo(models.Model):
         return f"{self.name}"   
         
     @property
-    def is_expired(self):
-        self.objects.filter(self.exp_date < datetime.datetime.now().date())
+    def is_valid(self):
+        return self.promo.exp_date >= datetime.now().date()
     
 class PhysicalSeat(models.Model):
     seat_row = models.CharField(max_length=1)
@@ -88,8 +88,8 @@ class PhysicalSeat(models.Model):
         return f"{self.seat_row + str(self.seat_number)}"
 
 class SeatInShowing(models.Model):
-    physical_seat = models.OneToOneField(PhysicalSeat, primary_key=True, on_delete=models.CASCADE, unique=True)
-    reserved = models.BooleanField()    
+    physical_seat = models.OneToOneField(PhysicalSeat, on_delete=models.CASCADE)
+    reserved = models.BooleanField(default=False)    
 
     def __str__(self):
         return f"{self.pk} - {self.reserved}"
@@ -104,19 +104,31 @@ class Showing(models.Model):
     movie = models.ForeignKey(Movie, on_delete = models.CASCADE)
     showtime = models.DateTimeField()
     room = models.ForeignKey(ShowRoom, on_delete=models.CASCADE)
+    seats = models.ManyToManyField(SeatInShowing, blank=True)
 
     class Meta:
         unique_together = ('showtime', 'room',)
 
     def __str__(self):
-        return f"{self.movie} - {self.showtime}"
+        return f"{self.movie} - {self.showtime.strftime('%a, %B %d - %I:%M %p')}"
 
     def clean(self):
         showings = Showing.objects.filter(movie__pk=self.movie.id)
+        overlap = False
         for showing in showings:
             showingtime = showing.showtime
             runtime = showing.movie.runtime
             showdatetime = self.showtime
             showingtime = showingtime+timedelta(minutes=int(runtime))
             if(showdatetime < showingtime and showing.room == self.room):
+                overlap = True
                 raise ValidationError({'showtime': "Movie Showings overlap"})
+        
+        if not overlap:
+            self.save()
+            room_seats = [] 
+            for seat in self.room.seats.all():
+                room_seats.append(SeatInShowing.objects.create(physical_seat=seat, reserved=False))
+            self.seats.set(room_seats)
+            self.save()
+            raise ValidationError({'seats': " to confirm"})

@@ -9,7 +9,7 @@ default_message = "Please log in, in order to see the requested page."
 
 def user_passes_test(test_func, message=default_message):
     """
-    Decorator for views that checks that the user passes the given test,
+    Python decorator for views that checks that the user passes the given test,
     setting a message in case of no success. The test should be a callable
     that takes the user object and returns True if the user passes.
     """
@@ -26,6 +26,8 @@ def login_required_message(function=None, message=default_message):
     """
     Decorator for views that checks that the user is logged in, redirecting
     to the log-in page if necessary.
+    
+    Overrides the defuault to allow messages to be added to login_required: Adapater Pattern
     """
     actual_decorator = user_passes_test(
         lambda u: u.is_authenticated, #fixed by removing ()
