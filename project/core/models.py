@@ -88,7 +88,7 @@ class PhysicalSeat(models.Model):
         return f"{self.seat_row + str(self.seat_number)}"
 
 class SeatInShowing(models.Model):
-    physical_seat = models.OneToOneField(PhysicalSeat, on_delete=models.CASCADE)
+    physical_seat = models.ForeignKey   (PhysicalSeat, on_delete=models.CASCADE)
     reserved = models.BooleanField(default=False)    
 
     def __str__(self):
