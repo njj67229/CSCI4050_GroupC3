@@ -1,15 +1,19 @@
+from datetime import datetime
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 from core.models import Movie, Showing, Promo, ShowRoom, SeatInShowing, PhysicalSeat
-from checkout.models import TicketFactory, Booking
+from checkout.models import TicketFactory, Booking, TicketType
 from home.views import format_runtime
 import json
 from .api import get_actor_info
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .adapter import login_required_message
+from django.core.mail import send_mail
+
+
 
 def get_actors(actor_ids):
     """Returns a list of tuples with actor name, actor picture"""
@@ -93,6 +97,7 @@ def order_summary(request, tickets=None, seats=None, show_id=None):
     tickets = {"AD" : 3, "CH" : 1, "SR": 1}
     seats = "3,6,12,18,22" #SeatInShowing
     show_id = 1
+    
     #t = TicketFactory('AD',1).get_ticket()
     #t.save()
     #testing booking
@@ -110,6 +115,50 @@ def checkout(request, tickets=None, seats=None, show_id=None):
     tickets = {"AD" : 3, "CH" : 1, "SR": 1}
     seats = "3,6,12,18,22" #SeatInShowing
     show_id = 1
+    email = 'yalini.nadar@gmail.com'
+    
+    def calculate_total():
+        """calculates total ticket prices"""
+        total = 0
+        for key in tickets:
+            t_t = TicketType.objects.filter(type = key).first()
+            total += t_t.price * tickets[key]
+        print(total)
+        
+        # print(TicketType.objects.all())
+    def send_email():
+        """sends email confirmation to given email"""
+        email = 'yalini.nadar@gmail.com'
+        email_body = "Hi User!\nYou have succesfully booking {num_tickets}% for the showing {showing}"
+        send_mail(
+            "Booking Succesfull",
+            email_body,
+            "teamc3movies@gmail.com",
+            [email],
+            fail_silently=False,
+        )
+        messages.add_message(request, messages.SUCCESS, "Emails Have Been Sent")
+    
+    calculate_total()
+    send_email()
+    if request.method == 'POST':
+        promo_code = request.POST['promo_code']
+        promo = Promo.objects.filter(code = promo_code).first()
+        
+        #Apply Promo
+        if not promo:
+            messages.error(request,'Promo Code Does Not Exist')
+            promo = None
+        # print(promo.exp_date)
+        elif (promo.exp_date >= datetime.now().date()):
+            messages.error(request, 'Sorry this promo is expired')
+            promo = None
+        else:
+            print('yay')
+            messages.success(request,'Promo Code has been added!')
+            promo = promo
+        
+        
     return render(request, "checkout.html")
 
 
