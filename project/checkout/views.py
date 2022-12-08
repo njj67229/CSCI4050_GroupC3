@@ -60,44 +60,56 @@ def select_show_time(request, movie_id):
     return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 
 @login_required (login_url='/members/login/')
-def select_tickets_and_age(request, seats=None):
-    template = loader.get_template("select_tickets_and_age.html")
-    return HttpResponse(template.render())
+def select_tickets_and_age(request, seats=None, show_id=None):
+    if show_id:
+            showing = Showing.objects.get(pk=show_id)
+    return render(request, "select_tickets_and_age.html", {'showing': showing, 'seats': seats})
 
 
 @login_required (login_url='/members/login/')
 def select_seats(request, show_id=None):
-    if show_id:
-        showing = Showing.objects.get(pk=show_id)
-        #room = ShowRoom.objects.get(pk=showing.room.pk)
-        showing_seats = showing.seats.all()
-        seats = {}
-        for i in range(len(showing_seats)):
-            if showing_seats[i].physical_seat.seat_row not in seats:
-                seats[showing_seats[i].physical_seat.seat_row] = {} 
-            seats[showing_seats[i].physical_seat.seat_row][showing_seats[i].physical_seat.seat_number] = showing_seats[i]    
-            
-    else:
-        showing = None
-        room = None
-    return render(request, "select_seats.html", {'showing': showing, 'seats': seats.items()})
+    if request.method == 'POST':
+        data = request.POST
+        seats = data.get("chosen_seats")
+        return select_tickets_and_age(request, seats, show_id)
+    else:    
+        if show_id:
+            showing = Showing.objects.get(pk=show_id)
+            #room = ShowRoom.objects.get(pk=showing.room.pk)
+            showing_seats = showing.seats.all()
+            seats = {}
+            for i in range(len(showing_seats)):
+                if showing_seats[i].physical_seat.seat_row not in seats:
+                    seats[showing_seats[i].physical_seat.seat_row] = {} 
+                seats[showing_seats[i].physical_seat.seat_row][showing_seats[i].physical_seat.seat_number] = showing_seats[i]    
+                
+        else:
+            showing = None
+            room = None
+        return render(request, "select_seats.html", {'showing': showing, 'seats': seats.items()})
 
 
-def order_summary(request):
-    t = TicketFactory('AD',4).get_ticket()
-    t.save()
+def order_summary(request, tickets=None, seats=None, show_id=None):
+    tickets = {"AD" : 3, "CH" : 1, "SR": 1}
+    seats = "3,6,12,18,22" #SeatInShowing
+    show_id = 1
+    #t = TicketFactory('AD',1).get_ticket()
+    #t.save()
     #testing booking
-    p = Promo.objects.get(pk=1) 
-    booking = Booking(user=request.user, showing=t.showing, promo=p)
-    booking.save()
-    booking.tickets.set([t])
-    booking.save()
-    print(booking.caclculate_price())
+    #p = Promo.objects.get(pk=1) 
+    #booking = Booking(user=request.user, showing=t.showing)
+    #booking.save()
+    #booking.tickets.set([t])
+    #booking.save()
+    #print(booking.caclculate_price())
 
     return render(request,"order_summary.html" )
 
 
-def checkout(request):
+def checkout(request, tickets=None, seats=None, show_id=None):
+    tickets = {"AD" : 3, "CH" : 1, "SR": 1}
+    seats = "3,6,12,18,22" #SeatInShowing
+    show_id = 1
     return render(request, "checkout.html")
 
 

@@ -41,15 +41,20 @@
                     You have selected seat(s) <span id="count"></span>
                 </p>
             </div>
-            <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
-            <a id="select_tickets" class="btn btn-primary text-uppercase btn-lg">Continue</a>
+            <div class="btn-group">
+            <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px;"onclick="history.back()">Back</button>
+            <form method="post">
+                {% csrf_token %}
+                <button name="chosen_seats" value="" id="select_tickets" style="margin-left: 5px;"class="btn btn-primary text-uppercase btn-lg">Continue</a>
+            </form>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
     var select_tickets = document.getElementById("select_tickets") 
-    const selected = []
+    var selected = []
     const count = document.getElementById("count");
     function select_seat(button) {
         if(!button.classList.contains("occupied")) {
@@ -62,7 +67,7 @@
             }
         }
         count.innerHTML = selected
-        href="{% url 'select_tickets_and_age' seats=selected}"
+        select_tickets.value = selected
     }
 
 </script>
