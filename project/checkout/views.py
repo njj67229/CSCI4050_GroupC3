@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .adapter import login_required_message
 from django.core.mail import send_mail
+from accounts.models import PaymentCard
 
 from django.core.mail import EmailMessage
 from django.db.models.signals import post_save
@@ -153,7 +154,7 @@ def checkout(request, tickets=None, seats=None, show_id=None):
         email.content_subtype = "html"
         email.send()
     
-    calculate_total()
+    total = calculate_total()
     # send_email()
     if request.method == 'POST':
         promo_code = request.POST['promo_code']
@@ -197,7 +198,9 @@ def checkout(request, tickets=None, seats=None, show_id=None):
     
     # print(our_tickets)
         
-    return render(request, "checkout.html")
+    curr_cards = PaymentCard.objects.filter(card_owner=request.user).all()
+
+    return render(request, "checkout.html", {'card':curr_cards, 'total': total})
 
 
 def confirmation(request):
