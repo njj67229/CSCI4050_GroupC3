@@ -143,6 +143,25 @@ def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None)
 
     return render(request,"order_summary.html", {"ad":ad, "ch":ch, "sr": sr, "tickets": tickets, "showing":showing, "seats": seats, "phys_seats":phys_seats, "price": price})
 
+def send_email(info):
+        """sends email confirmation to given email"""
+        # email_address = 'yalini.nadar@gmail.com'
+        email_address = 'nak90782@uga.edu'
+        # {"booking": b, "time": time, "tix": tix}
+        
+        
+        # message = get_template("email.html").render()
+        html_message = render_to_string("email.html", { 'email': email_address, 'booking': info["booking"], 'time': info["time"], "tix": info["tix"] })
+
+        email = EmailMessage(
+            subject='Hello',
+            body=html_message,
+            from_email='teamc3movies@gmail.com',
+            to=[email_address],
+            headers={'Message-ID': 'foo'},
+        )
+        email.content_subtype = "html"
+        email.send()
 
 def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
     tickets = {"AD" : ad, "CH" : ch, "SR": sr}
@@ -164,27 +183,9 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
         total = float(total) * 1.08
         total += online_fee
         return total
-        
-        # print(TicketType.objects.all())
-    def send_email():
-        """sends email confirmation to given email"""
-        email_address = 'yalini.nadar@gmail.com'
-        
-        # message = get_template("email.html").render()
-        html_message = render_to_string("email.html", { 'context': 'hi', })
-
-        email = EmailMessage(
-            subject='Hello',
-            body=html_message,
-            from_email='teamc3movies@gmail.com',
-            to=[email_address],
-            headers={'Message-ID': 'foo'},
-        )
-        email.content_subtype = "html"
-        email.send()
     
     total = calculate_total()
-    send_email()
+    # send_email()
     if request.method == 'POST':
         promo_code = request.POST['promo_code']
         promo = Promo.objects.filter(code = promo_code).first()
@@ -242,7 +243,7 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
 
 
 def confirmation(request):
-    b = Booking.objects.filter(user=request.user).first()
+    b = Booking.objects.filter(user=request.user).last()
     time = b.showing.showtime.strftime('%a, %B %d - %I:%M %p')
     tix = {"Adult": 0, "Senior": 0, "Child":0}
     for ticket in b.tickets.all():
@@ -252,6 +253,10 @@ def confirmation(request):
             tix["Child"] += 1
         elif ticket.ticket_type.type == "SR":
             tix["Senior"] += 1
+    
+    info = {"booking": b, "time": time, "tix": tix}
+    send_email(info)
+    messages.success(request,'A confirmation email has been sent to '+ request.user.email)
           
     return render(request,"confirmation.html", {"booking": b, "time": time, "tix": tix})
 
