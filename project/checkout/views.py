@@ -67,11 +67,11 @@ def select_show_time(request, movie_id):
             for i,show in enumerate(showtimes):
                 if show["datetime"].strftime("%Y %m %d") == showing.showtime.strftime("%Y %m %d"):
                     found = True
-                    showtimes[i]["time"].append({'time' : showing.showtime.strftime("%H:%M:%S"), 'id': showing.id})
+                    showtimes[i]["time"].append({'time' : showing.showtime.strftime("%I:%M %p"), 'id': showing.id})
                     showtimes[i]["time"] = sorted(showtimes[i]["time"], key= lambda j: j['time'])
                     break
             if not found:
-                showtimes.append({"datetime": showing.showtime, "day": showing.showtime.date, "time": [{'time': showing.showtime.strftime("%H:%M:%S"), 'id': showing.id}]})  
+                showtimes.append({"datetime": showing.showtime, "day": showing.showtime.date, "time": [{'time': showing.showtime.strftime("%I:%M %p"), 'id': showing.id}]})  
 
     return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 

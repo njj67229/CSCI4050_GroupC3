@@ -55,6 +55,7 @@
       <h3>Available Show Times</h3>
       {% if showtimes %}
         {% for showing in showtimes %}
+          <p>{{showing.day}}</p>   
           {% for showtime in showing.time %}
             <a href="{% url 'select_seats' show_id=showtime.id %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">{{showtime.time}}</a>
           {% endfor %}    
