@@ -105,11 +105,26 @@ def select_tickets_and_age(request, seats, show_id):
 
 
 def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None):
-    tickets = {"ad":ad, "ch":ch, "sr":sr}
-    print(tickets)
+    tickets = {"AD":[ad], "CH":[ch], "SR":[sr]}
+    ticket_types = TicketType.objects.all()
+    price = [0.00, 0.00, 0.00, 0.00]
+    for type in ticket_types:
+        val = type.price * tickets[type.type][0]
+        tickets[type.type].append(val)
+        price[0] += float(val)
+    price[1] = price[0] * .08 #Sales tax percentage
+    price[2] = price[0] * .1 # 10% fee for online transaction
+    price[3] = price[0] + price[1] + price[2]    
+    showing = Showing.objects.get(pk=show_id)
+    movie = showing.movie
+    seats = seats.split(",")
+    phys_seats = []
+    for seat in seats:
+        phys_seats.append(str(SeatInShowing.objects.get(pk=int(seat)).physical_seat))
+    phys_seats = ', '.join(seat for seat in phys_seats)
     #print(booking.caclculate_price())
 
-    return render(request,"order_summary.html" )
+    return render(request,"order_summary.html", {"tickets": tickets, "showing":showing, "seats": seats, "phys_seats":phys_seats, "price": price})
 
 
 def checkout(request, ad=None, seats=None, show_id=None):
