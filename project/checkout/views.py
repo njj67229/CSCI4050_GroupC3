@@ -145,8 +145,8 @@ def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None)
 
 def send_email(info):
         """sends email confirmation to given email"""
-        email_address = 'yalini.nadar@gmail.com'
-        # email_address = 'nak90782@uga.edu'
+        # email_address = 'yalini.nadar@gmail.com'
+        email_address = 'nak90782@uga.edu'
         # {"booking": b, "time": time, "tix": tix}
         
         
