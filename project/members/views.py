@@ -186,7 +186,7 @@ def user_login(request):
                 return redirect(reverse('login'))
             #check if suspended
             if user.status.id == 3:
-                messages.error(request,'your account account has been suspended. Contact admin for more information')
+                messages.error(request,'your account account has been suspended. Contact admin for more information at admin@gmail.com')
                 return redirect(reverse('login'))        
         else:
             messages.error(request,'username or password not correct')
