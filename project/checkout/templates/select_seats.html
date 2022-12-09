@@ -28,11 +28,13 @@
                     {% for row in seats %}
                         <div class="row">
                         {% for seat, showing_seat in row.1.items %}
+                        {% with showing_seat.id|stringformat:"s" as seat_id %}
                             {% if showing_seat.reserved %}
-                                <div id={{row.0}}{{seat}} class="seat occupied" onclick="select_seat(this)"></div>
+                                <div id={{row.0}}{{seat}} data-seat={{seat_id}} class="seat occupied" onclick="select_seat(this)"></div>
                             {% else %}
-                                <div id={{row.0}}{{seat}} class="seat" onclick="select_seat(this)"></div>
+                                <div id={{row.0}}{{seat}} data-seat={{seat_id}} class="seat" onclick="select_seat(this)"></div>
                             {% endif %}
+                        {% endwith %}
                         {% endfor %}
                         </div>
                     {% endfor %}
@@ -45,7 +47,7 @@
             <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px;"onclick="history.back()">Back</button>
             <form method="post">
                 {% csrf_token %}
-                <button name="chosen_seats" value="" id="select_tickets" style="margin-left: 5px;"class="btn btn-primary text-uppercase btn-lg">Continue</a>
+                <button name="chosen_seats" value="" id="select_tickets" style="margin-left: 5px;"class="btn btn-primary text-uppercase btn-lg">Continue</a>    
             </form>
             </div>
         </div>
@@ -55,19 +57,23 @@
 <script>
     var select_tickets = document.getElementById("select_tickets") 
     var selected = []
+    var selected_ids = []
     const count = document.getElementById("count");
     function select_seat(button) {
+        id = button.getAttribute('data-seat')
         if(!button.classList.contains("occupied")) {
             if (button.classList.contains("selected")) {
                 button.classList.remove("selected")
                 selected.splice(selected.indexOf(button.id), 1)
+                selected_ids.splice(selected_ids.indexOf(id))
             } else {
                 button.classList.add("selected")
                 selected.push(button.id)
+                selected_ids.push(id)
             }
         }
         count.innerHTML = selected
-        select_tickets.value = selected
+        select_tickets.value = selected_ids
     }
 
 </script>

@@ -9,57 +9,55 @@
     </div>
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <p class="text-uppercase fs-4 mt-4 ib" style="display: inline-block;"><b>DC League of Super Pets</b></p>
-            {% load static %}
-            <img src="{% static 'pencil-square.svg' %}" alt="" />
+            <p class="text-uppercase fs-4 mt-4 ib" style="display: inline-block;"><b>{{showing.movie.title}}</b></p>
             <ul class="list-inline fs-5">
-                <li class="list-inline-item">PG</li>
-                <li class="list-inline-item">1h 45m</li>
+                <li class="list-inline-item">{{showing.movie.rating}}</li>
+                <li class="list-inline-item">{{showing.movie.runtime}} minutes</li>
             </ul>
-            <p class="fs-5" style="display: inline-block;">When: Wednesday, September 21, 2022 at 4:30 PM</p>
-            {% load static %}
-            <img src="{% static 'pencil-square.svg' %}" alt="" />
+            <p class="fs-5" style="display: inline-block;">When: {{showing.showtime}}</p>
             <div>
-                <p class="fs-5" style="display: inline-block;">Seats: A5</p>
-                {% load static %}
-                <img src="{% static 'pencil-square.svg' %}" alt="" />
+                <p class="fs-5" style="display: inline-block;">Seats: {{phys_seats}}</p>
             </div>
-
             <table class="table mt-4">
                 <tbody>
-                    <tr>
-                        <td>
-                            <p style="display: inline-block;">Adult x1</p>
-                            {% load static %}
-                            <img src="{% static 'pencil-square.svg' %}" alt="" />
-                            {% load static %}
-                            <img src="{% static 'trash3-fill.svg' %}" alt="" />
-                        <td>
-
-                        <td class="text-end">$8.00</td>
-                    </tr>
+                        {% for ticket, amounts in tickets.items %}
+                            {% if amounts.0 > 0 %}
+                                <tr>
+                                    <td>
+                                        {% if ticket == 'AD' %}
+                                            <p style="display: inline-block;">Adult x{{amounts.0}}</p>
+                                        {% elif ticket == 'CH' %}
+                                            <p style="display: inline-block;">Child x{{amounts.0}}</p>
+                                        {% else %}
+                                            <p style="display: inline-block;">Senior x{{amounts.0}}</p>
+                                        {% endif %} 
+                                    <td>
+                                    <td class="text-end">${{ amounts.1|floatformat:2 }}</td>
+                                </tr>
+                            {% endif %}    
+                        {% endfor %}
                     <tr>
                         <td>Subtotal</td>
-                        <td class="text-end">$8.00</td>
+                        <td class="text-end">${{price.0|floatformat:2}}</td>
                     </tr>
                     <tr>
                         <td>Sales Tax</td>
-                        <td class="text-end">$2.00</td>
+                        <td class="text-end">${{price.1|floatformat:2}}</td>
                     </tr>
                     <tr>
                         <td>Online Fees</td>
-                        <td class="text-end">$1.00</td>
+                        <td class="text-end">${{price.2|floatformat:2}}</td>
                     </tr>
                     <tr>
                         <td class="text-uppercase"><b>Total</b></td>
-                        <td class="text-end">$11.00</td>
+                        <td class="text-end">${{price.3|floatformat:2}}</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="mt-5">
                 <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
-                <a href="{% url 'checkout' %}" class="btn btn-primary text-uppercase btn-lg">Continue to checkout</a>
+                <a href="{% url 'checkout' ad=ad ch=ch sr=sr seats=seats show_id=showing.id%}" class="btn btn-primary text-uppercase btn-lg">Continue to checkout</a>
             </div>
         </div>
     </div>

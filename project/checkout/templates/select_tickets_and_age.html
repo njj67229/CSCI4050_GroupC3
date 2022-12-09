@@ -22,9 +22,9 @@
         <tbody>
           <tr>
             <th scope="row">Adult</th>
-            <td>$10.00</td>
+            <td>${{prices.AD}}</td>
             <td>
-              <select class="form-select" aria-label="Default select example">
+              <select id="AD_select" class="form-select" onchange="update_prices()" aria-label="Default select example">
                 <option selected value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -33,13 +33,13 @@
                 <option value="5">5</option>
               </select>
             </td>
-            <td>$10.00</td>
+            <td id="AD_price">$0.00</td>
           </tr>
           <tr>
             <th scope="row">Child <i>(Age 2-12)</i></th>
-            <td>$8.00</td>
+            <td>${{prices.CH}}</td>
             <td>
-              <select class="form-select" aria-label="Default select example">
+              <select id="CH_select" class="form-select" onchange="update_prices()" aria-label="Default select example">
                 <option selected value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -48,13 +48,13 @@
                 <option value="5">5</option>
               </select>
             </td>
-            <td>$0.00</td>
+            <td id="CH_price">$0.00</td>
           </tr>
           <tr>
             <th scope="row">Senior <i>(Age 60+)</i></th>
-            <td>$6.00</td>
+            <td>${{prices.SR}}</td>
             <td>
-              <select class="form-select" aria-label="Default select example">
+              <select id="SR_select" class="form-select" onchange="update_prices()" aria-label="Default select example">
                 <option selected value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -63,16 +63,75 @@
                 <option value="5">5</option>
               </select>
             </td>
-            <td>$0.00</td>
+            <td id="SR_price">$0.00</td>
           </tr>
         </tbody>
       </table>
-      <p class="text-center">Select 1 remaining ticket.</p>
-      <!-- <a href="{% url 'select_seats' %}" class="btn btn-secondary text-uppercase btn-lg">Back</a> -->
-      <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
-      <a href="{% url 'order_summary' %}" class="btn btn-primary text-uppercase btn-lg">Continue</a>
-    </div>
+      <p id="remaining" class="text-center">Select 0 remaining ticket.</p>
+      <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px;"onclick="history.back()">Back</button>
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="ad" id="AD_tix" value="0"></input>
+        <input type="hidden" name="ch" id="CH_tix" value="0"></input>
+        <input type="hidden" name="sr" id="SR_tix" value="0"></input>
+        <button id="continue" class="btn btn-primary text-uppercase btn-lg disabled" disabled>Continue</button>
+      </form>    
+      </div>
     <div class="col-md-1"></div>
   </div>
 </div>
+
+<script>
+  var ch_price = document.getElementById("CH_price")
+  var ad_price = document.getElementById("AD_price")
+  var sr_price = document.getElementById("SR_price")
+
+  var remaining = document.getElementById("remaining")
+  
+  var ch_select = document.getElementById("CH_select")
+  var ad_select = document.getElementById("AD_select")
+  var sr_select = document.getElementById("SR_select")
+
+  var ch_tix = document.getElementById("CH_tix")
+  var ad_tix = document.getElementById("AD_tix")
+  var sr_tix = document.getElementById("SR_tix")
+
+  var cont_checkout = document.getElementById("continue")
+  var num_seats = "Select {{seats|length}} remaining tickets."
+  remaining.innerHTML = num_seats
+  function update_prices(){
+    var ch_val = ch_select.value
+    var ad_val = ad_select.value  
+    var sr_val = sr_select.value
+    var total = parseInt("{{seats|length}}") - parseInt(ch_val) - parseInt(ad_val) - parseInt(sr_val)
+    ch_price.innerHTML = "$" + (parseFloat("{{prices.CH}}") * ch_val).toFixed(2)
+    ad_price.innerHTML = "$" + (parseFloat("{{prices.AD}}") * ad_val).toFixed(2)
+    sr_price.innerHTML = "$" + (parseFloat("{{prices.SR}}") * sr_val).toFixed(2)
+    if (total > 0){
+      var num_seats = "Select " + String(total) + " remaining tickets."
+      if (!cont_checkout.classList.contains("disabled")) { 
+        cont_checkout.classList.add("disabled")
+        cont_checkout.disabled=true
+      }
+    } else if (total < 0) {
+      var num_seats = "Too many tickets selected. Please select {{seats|length}} ticket(s)."
+      if (!cont_checkout.classList.contains("disabled")) { 
+        cont_checkout.classList.add("disabled")
+        cont_checkout.disabled=true
+      }
+    } else {
+      var num_seats = "Select " + String(total) + " remaining tickets."
+      if (cont_checkout.classList.contains("disabled")) { 
+        cont_checkout.classList.remove("disabled")
+        cont_checkout.disabled= false
+      }
+      ch_tix.value = ch_val
+      ad_tix.value = ad_val
+      sr_tix.value = sr_val
+
+    }
+    remaining.innerHTML = num_seats
+  }
+</script>
+
 {% endblock %}
