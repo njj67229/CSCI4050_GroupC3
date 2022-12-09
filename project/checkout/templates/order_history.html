@@ -7,20 +7,38 @@
             <h1 class="text-uppercase">Order History</h1>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row mt-3">
         {% if not order%}
         <h5>No Previous Bookings to Show</h5>
         {%else%}
-            {% for i in order %}
-            Order Number:
-                {{i.booking_id}}
-                <br>
-                {{ i.showing }}
-                <br>
-                <br>
-            {% endfor %}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Order Number</th>
+                    <th scope="col">Movie</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Room</th>
+                    <th scope="col">Seats</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in order %}
+                <tr>
+                    <th scope="row">{{i.booking_id}}</th>
+                    <td>{{ i.showing.movie }}</td>
+                    <td>{{ i.showing.showtime }}</td>
+                    <td>{{ i.showing.room }}</td>
+                    <!-- <td>{{ i.showing.seats}}</td> -->
+                    <td>{{ seats }}</td>
+                    <td>${{ i.price}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         {%endif%}
-        
     </div>
 </div>
 

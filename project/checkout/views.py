@@ -252,11 +252,22 @@ def order_history(request):
     final = []
     #need to organize tickets
         
+
     for item in orders:
+        price = 0
+        for ticket in item.tickets.all():
+            price += ticket.price
+
+        seats = []
+        for seat in item.showing.seats.all():
+            seats.append(seat.SeatInShowing)
+
         res = {
             'booking_id' : item.pk,
             'showing': item.showing,
-            'tix': item.tickets.all()
+            'tix': item.tickets.all(),
+            'price': price,
+            'seats': seats
         }
         final.append(res)
     
