@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h1 class="text-uppercase">Order History</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% if not order%}
+        <h5>No Previous Bookings to Show</h5>
+        {%else%}
+            {% for i in order %}
+            Order Number:
+                {{i.booking_id}}
+                <br>
+                {{ i.showing }}
+                <br>
+                <br>
+            {% endfor %}
+        {%endif%}
+        
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,15 +1,27 @@
+from datetime import datetime
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 from core.models import Movie, Showing, Promo, ShowRoom, SeatInShowing, PhysicalSeat
-from checkout.models import TicketFactory, Booking
+from checkout.models import TicketFactory, Booking, TicketType, Ticket
 from home.views import format_runtime
 import json
 from .api import get_actor_info
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .adapter import login_required_message
+from django.core.mail import send_mail
+
+from django.core.mail import EmailMessage
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.template import Context
+from django.template.loader import get_template
+
+from django.views.generic.list import ListView
+
+
 
 def get_actors(actor_ids):
     """Returns a list of tuples with actor name, actor picture"""
@@ -93,6 +105,7 @@ def order_summary(request, tickets=None, seats=None, show_id=None):
     tickets = {"AD" : 3, "CH" : 1, "SR": 1}
     seats = "3,6,12,18,22" #SeatInShowing
     show_id = 1
+    
     #t = TicketFactory('AD',1).get_ticket()
     #t.save()
     #testing booking
@@ -110,9 +123,102 @@ def checkout(request, tickets=None, seats=None, show_id=None):
     tickets = {"AD" : 3, "CH" : 1, "SR": 1}
     seats = "3,6,12,18,22" #SeatInShowing
     show_id = 1
+    email = 'yalini.nadar@gmail.com'
+    promo = None
+            
+    def calculate_total(promo=None):
+        """calculates total ticket prices"""
+        total = 0
+        for key in tickets:
+            t_t = TicketType.objects.filter(type = key).first()
+            total += t_t.price * tickets[key]
+        if promo:
+            total = total * (1-promo)
+        return total
+        
+        # print(TicketType.objects.all())
+    def send_email():
+        """sends email confirmation to given email"""
+        email = 'yalini.nadar@gmail.com'
+        
+        message = get_template("email.html").render()
+
+        email = EmailMessage(
+            subject='Hello',
+            body=message,
+            from_email='teamc3movies@gmail.com',
+            to=['yalini.nadar@gmail.com'],
+            headers={'Message-ID': 'foo'},
+        )
+        email.content_subtype = "html"
+        email.send()
+    
+    calculate_total()
+    # send_email()
+    if request.method == 'POST':
+        promo_code = request.POST['promo_code']
+        promo = Promo.objects.filter(code = promo_code).first()
+        
+        #Apply Promo
+        if not promo:
+            messages.error(request,'Promo Code Does Not Exist')
+            promo = None
+        # print(promo.exp_date)
+        elif (promo.exp_date >= datetime.now().date()):
+            messages.error(request, 'Sorry this promo is expired')
+            promo = None
+        else:
+            print('yay')
+            messages.success(request,'Promo Code has been added!')
+            promo = promo
+    
+    #create multiple ticket objects and saves them to the db
+    tickets_cleaned = []
+    for key in tickets:
+        for idx in range(tickets[key]):
+            tickets_cleaned.append(key)
+    
+    ticket_ids = []
+    for item in tickets_cleaned:
+        t = TicketFactory(item,show_id).get_ticket()
+        t.save()
+        ticket_ids.append(t.pk)
+        
+    print(ticket_ids)
+      
+    #create booking object
+    s = Showing.objects.filter(pk = show_id).first()
+    booking = Booking(user=request.user, showing=s, promo=promo)
+    booking.save()
+    for id in ticket_ids:
+        booking.tickets.add(id)
+        booking.save()
+    print(booking)
+    
+    # print(our_tickets)
+        
     return render(request, "checkout.html")
 
 
 def confirmation(request):
-    template = loader.get_template("confirmation.html")
-    return HttpResponse(template.render())
+    b = Booking.objects.filter(user=request.user).first()
+    print(b.tickets.all())
+    return render(request,"confirmation.html")
+
+def order_history(request):
+    orders = Booking.objects.filter(user=request.user)
+    final = []
+    #need to organize tickets
+        
+    for item in orders:
+        res = {
+            'booking_id' : item.pk,
+            'showing': item.showing,
+            'tix': item.tickets.all()
+        }
+        final.append(res)
+    
+    print(final)
+        
+    print(orders)
+    return render(request, "order_history.html", {'order': final} )
