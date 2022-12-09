@@ -1,0 +1,27 @@
+[
+    {
+      "model": "checkout.TicketType",
+      "pk": "1",
+      "fields": {
+        "type": "AD",
+        "price": 10.00
+      }
+    },
+    {
+      "model": "checkout.TicketType",
+      "pk": "2",
+      "fields": {
+        "type": "CH",
+        "price": 8.00
+      }
+    },
+    {
+      "model": "checkout.TicketType",
+      "pk": "3",
+      "fields": {
+        "type": "SR",
+        "price": 6.00
+      }
+    }
+   
+]
