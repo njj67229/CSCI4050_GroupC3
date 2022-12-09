@@ -12,6 +12,8 @@ class MovieAdmin(admin.ModelAdmin):
     list_display = ['title', 'rating', 'poster', 'release_date']
     search_fields = ['title', 'id']
     filter_horizontal = ('actor_ids',)
+    ordering = ['title']
+    list_filter = ("genres",)
 
 @admin.register(Promo)
 class PromoAdmin(admin.ModelAdmin):
