@@ -226,7 +226,7 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
     print(ticket_ids)
       
     #create booking object
-    s = Showing.objects.filter(pk = show_id).first()
+    s = Showing.objects.filter(pk = show_id).last()
     booking = Booking(user=request.user, showing=s, promo=promo, price=total)
     booking.save()
     for id in ticket_ids:
