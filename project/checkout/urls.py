@@ -7,7 +7,7 @@ urlpatterns = [
     path("", views.select_show_time, name="select_show_time"),
     path("select_show_time/<int:movie_id>/", views.select_show_time, name="select_show_time"),
     path(
-        "select-tickets-and-age",
+        "select_tickets_and_age/<str:seats>/<int:show_id>",
         views.select_tickets_and_age,
         name="select_tickets_and_age",
     ),

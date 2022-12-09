@@ -2,8 +2,9 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
+from django.urls import reverse
 from core.models import Movie, Showing, Promo, ShowRoom, SeatInShowing, PhysicalSeat
-from checkout.models import TicketFactory, Booking
+from checkout.models import TicketFactory, Booking, TicketType
 from home.views import format_runtime
 import json
 from .api import get_actor_info
@@ -60,27 +61,47 @@ def select_show_time(request, movie_id):
     return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 
 @login_required (login_url='/members/login/')
-def select_tickets_and_age(request, seats=None):
-    template = loader.get_template("select_tickets_and_age.html")
-    return HttpResponse(template.render())
+def select_tickets_and_age(request, seats, show_id):
+    if request.method == 'POST':
+        data = request.POST
+        tickets = data.get("order")
+        print("Tickets" + str(tickets))
+        return render(request, "confirmation.html")
+    else:    
+        if show_id:
+            showing = Showing.objects.get(pk=show_id)
+        ticket_types = TicketType.objects.all()
+        prices = {}
+        seats = seats.split(",")
+        for type in ticket_types:
+            prices[type.type] = type.price    
+        context = {'showing' : showing, 'seats':seats, 'prices':prices}
+        print("HERE")
+        return render(request, "select_tickets_and_age.html", context)
 
 
 @login_required (login_url='/members/login/')
 def select_seats(request, show_id=None):
-    if show_id:
-        showing = Showing.objects.get(pk=show_id)
-        #room = ShowRoom.objects.get(pk=showing.room.pk)
-        showing_seats = showing.seats.all()
-        seats = {}
-        for i in range(len(showing_seats)):
-            if showing_seats[i].physical_seat.seat_row not in seats:
-                seats[showing_seats[i].physical_seat.seat_row] = {} 
-            seats[showing_seats[i].physical_seat.seat_row][showing_seats[i].physical_seat.seat_number] = showing_seats[i]    
-            
-    else:
-        showing = None
-        room = None
-    return render(request, "select_seats.html", {'showing': showing, 'seats': seats.items()})
+    if request.method == 'POST':
+        data = request.POST
+        seats = data.get("chosen_seats")
+        print("Seats" + str(seats))
+        return redirect(reverse('select_tickets_and_age', kwargs={"seats": str(seats), "show_id": show_id}))
+    else:    
+        if show_id:
+            showing = Showing.objects.get(pk=show_id)
+            #room = ShowRoom.objects.get(pk=showing.room.pk)
+            showing_seats = showing.seats.all()
+            seats = {}
+            for i in range(len(showing_seats)):
+                if showing_seats[i].physical_seat.seat_row not in seats:
+                    seats[showing_seats[i].physical_seat.seat_row] = {} 
+                seats[showing_seats[i].physical_seat.seat_row][showing_seats[i].physical_seat.seat_number] = showing_seats[i]    
+                
+        else:
+            showing = None
+            room = None
+        return render(request, "select_seats.html", {'showing': showing, 'seats': seats.items()})
 
 
 def order_summary(request):
