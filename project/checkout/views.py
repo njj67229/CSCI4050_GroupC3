@@ -13,6 +13,12 @@ from django.contrib import messages
 from .adapter import login_required_message
 from django.core.mail import send_mail
 
+from django.core.mail import EmailMessage
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.template import Context
+from django.template.loader import get_template
+
 
 
 def get_actors(actor_ids):
@@ -116,7 +122,7 @@ def checkout(request, tickets=None, seats=None, show_id=None):
     seats = "3,6,12,18,22" #SeatInShowing
     show_id = 1
     email = 'yalini.nadar@gmail.com'
-    
+            
     def calculate_total():
         """calculates total ticket prices"""
         total = 0
@@ -129,18 +135,21 @@ def checkout(request, tickets=None, seats=None, show_id=None):
     def send_email():
         """sends email confirmation to given email"""
         email = 'yalini.nadar@gmail.com'
-        email_body = "Hi User!\nYou have succesfully booking {num_tickets}% for the showing {showing}"
-        send_mail(
-            "Booking Succesfull",
-            email_body,
-            "teamc3movies@gmail.com",
-            [email],
-            fail_silently=False,
+        
+        message = get_template("email.html").render()
+
+        email = EmailMessage(
+            subject='Hello',
+            body=message,
+            from_email='teamc3movies@gmail.com',
+            to=['yalini.nadar@gmail.com'],
+            headers={'Message-ID': 'foo'},
         )
-        messages.add_message(request, messages.SUCCESS, "Emails Have Been Sent")
+        email.content_subtype = "html"
+        email.send()
     
     calculate_total()
-    send_email()
+    # send_email()
     if request.method == 'POST':
         promo_code = request.POST['promo_code']
         promo = Promo.objects.filter(code = promo_code).first()

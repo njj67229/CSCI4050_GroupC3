@@ -11,13 +11,13 @@
         <div class="col-md-10 offset-md-1">
             <h2 class="text-uppercase">Have a promo code?</h2>
             <label for="inputPromoCode">Enter your code below to redeem it!</label>
-            <form class="form-inline mb-5" method="post">
+            <form class="form-inline mb-5" action="{%url 'checkout'%}" method="post"  id="promo_form">
                 {% csrf_token %}
                 {% include 'messages.html' %}
                 <input class="form-control mr-2" id="inputPromoCode" style="width: 90%;" name="promo_code">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            
+
             <h2 class="text-uppercase">Where should we send your tickets?</h2>
             <p>
                 Once you've made your payment, we'll email your tickets and order confirmation to you at the
@@ -62,4 +62,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
