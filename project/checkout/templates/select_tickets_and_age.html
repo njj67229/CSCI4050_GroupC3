@@ -68,7 +68,8 @@
         </tbody>
       </table>
       <p id="remaining" class="text-center">Select 0 remaining ticket.</p>
-      <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px;"onclick="history.back()">Back</button>
+      <div class="btn-group">
+      <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px; margin-right: 5px;"onclick="history.back()">Back</button>
       <form method="post">
         {% csrf_token %}
         <input type="hidden" name="ad" id="AD_tix" value="0"></input>
@@ -76,6 +77,7 @@
         <input type="hidden" name="sr" id="SR_tix" value="0"></input>
         <button id="continue" class="btn btn-primary text-uppercase btn-lg disabled" disabled>Continue</button>
       </form>    
+      </div>
       </div>
     <div class="col-md-1"></div>
   </div>

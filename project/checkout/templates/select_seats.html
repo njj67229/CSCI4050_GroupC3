@@ -47,7 +47,7 @@
             <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px;"onclick="history.back()">Back</button>
             <form method="post">
                 {% csrf_token %}
-                <button name="chosen_seats" value="" id="select_tickets" style="margin-left: 5px;"class="btn btn-primary text-uppercase btn-lg">Continue</a>    
+                <button name="chosen_seats" value="" id="select_tickets" style="margin-left: 5px;"class="btn btn-primary text-uppercase btn-lg disabled" disabled>Continue</a>    
             </form>
             </div>
         </div>
@@ -58,6 +58,7 @@
     var select_tickets = document.getElementById("select_tickets") 
     var selected = []
     var selected_ids = []
+    var num_seats = 0
     const count = document.getElementById("count");
     function select_seat(button) {
         id = button.getAttribute('data-seat')
@@ -66,13 +67,27 @@
                 button.classList.remove("selected")
                 selected.splice(selected.indexOf(button.id), 1)
                 selected_ids.splice(selected_ids.indexOf(id))
+                num_seats -= 1
             } else {
+                num_seats += 1
                 button.classList.add("selected")
                 selected.push(button.id)
                 selected_ids.push(id)
             }
         }
         count.innerHTML = selected
+        if (num_seats < 1) {
+            if(!select_tickets.disabled) {
+                select_tickets.disabled = true
+                select_tickets.classList.add("disabled")
+            }   
+        } else {
+            if(select_tickets.disabled) {
+                select_tickets.classList.remove("disabled")
+                select_tickets.disabled = false
+            }   
+        }
+
         select_tickets.value = selected_ids
     }
 
