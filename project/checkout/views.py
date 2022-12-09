@@ -19,6 +19,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.template import Context
 from django.template.loader import get_template
+from django.template.loader import render_to_string 
 
 from django.views.generic.list import ListView
 
@@ -142,11 +143,12 @@ def checkout(request, tickets=None, seats=None, show_id=None):
         """sends email confirmation to given email"""
         email = 'yalini.nadar@gmail.com'
         
-        message = get_template("email.html").render()
+        # message = get_template("email.html").render()
+        html_message = render_to_string("email.html", { 'context': 'hi', })
 
         email = EmailMessage(
             subject='Hello',
-            body=message,
+            body=html_message,
             from_email='teamc3movies@gmail.com',
             to=['yalini.nadar@gmail.com'],
             headers={'Message-ID': 'foo'},
@@ -155,7 +157,7 @@ def checkout(request, tickets=None, seats=None, show_id=None):
         email.send()
     
     total = calculate_total()
-    # send_email()
+    send_email()
     if request.method == 'POST':
         promo_code = request.POST['promo_code']
         promo = Promo.objects.filter(code = promo_code).first()
