@@ -37,16 +37,18 @@
                 <p>Showing Details:</p>
               </div>
               <div class="col">
-                <p>xx/xx/xx, X:XX p.m.</p>
+                <p>{{time}}</p>
               </div>
             </div>
             <div class="row">
               <div class="col col-sm-2" style="color: #666666;">
                 <p>Ticket(s):</p>
               </div>
+              {% for type, amount in tix.items %}
               <div class="col">
-                <p>2x Adult</p>
+                <p>{{amount}}x {{type}}</p>
               </div>
+              {% endfor %}
             </div>
             <div class="row">
               <div class="col col-sm-2" style="color: #666666;">
