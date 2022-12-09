@@ -37,7 +37,7 @@ class TicketFactory:
     Returns:
         Ticket object with correct pricing information
     """
-    def __init__(self, type='AD', showing_id = 4,):
+    def __init__(self, type='AD', showing_id = 1,):
         #need to create a ticket for that showing, with correct price 
         s = Showing.objects.get(pk=showing_id) #particular showing
         t_type = TicketType.objects.get(type=type) #how to get based on choice

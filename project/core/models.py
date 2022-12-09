@@ -131,4 +131,4 @@ class Showing(models.Model):
                 room_seats.append(SeatInShowing.objects.create(physical_seat=seat, reserved=False))
             self.seats.set(room_seats)
             self.save()
-            raise ValidationError({'seats': " to confirm"})
+            raise ValidationError({'seats': "Refresh to confirm"})

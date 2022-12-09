@@ -38,6 +38,10 @@ class PaymentCard(models.Model):
     billing_address = models.ForeignKey(Address, on_delete=models.SET_NULL, default=None, null=True)
     card_owner = models.ForeignKey('CustomUser', on_delete=models.SET_NULL, default=None, null=True)
     
+    def __str__(self):
+        check_digits = "*********" + self.cc_number[-4:]
+        return f"{check_digits}, {self.name}"
+    
 class CustomUser(AbstractUser):
     receive_promos = models.BooleanField(default=False, blank=True, null=True)
     profile_pic = models.ImageField(upload_to="profiles/", blank=True, default='profiles/default_profile.jpg') 

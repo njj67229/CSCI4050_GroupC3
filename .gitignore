@@ -141,5 +141,4 @@ core/fixtures/
 # Had to add these files to stop tracking changes
 myenv
 project/accounts/migrations/0001_initial.py
-project/load.py
 project/core/migrations/0002_alter_promo_code_alter_promo_exp_date.py
