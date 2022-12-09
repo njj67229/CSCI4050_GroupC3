@@ -201,7 +201,7 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
             messages.success(request,'Promo Code has been added!')
             promo = promo
         total = calculate_total(promo.discount)
-        current_booking = Booking.objects.get(showing)    
+        #current_booking = Booking.objects.get(showing)    
     
     #create multiple ticket objects and saves them to the db
     tickets_cleaned = []
