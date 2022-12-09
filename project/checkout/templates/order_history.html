@@ -20,7 +20,7 @@
                     <th scope="col">Movie</th>
                     <th scope="col">Date</th>
                     <th scope="col">Room</th>
-                    <th scope="col">Seats</th>
+                    <th scope="col">Number of Tickets</th>
                     <th scope="col">Price</th>
                 </tr>
             </thead>
@@ -31,8 +31,7 @@
                     <td>{{ i.showing.movie }}</td>
                     <td>{{ i.showing.showtime }}</td>
                     <td>{{ i.showing.room }}</td>
-                    <!-- <td>{{ i.showing.seats}}</td> -->
-                    <td>{{ seats }}</td>
+                    <td>{{ i.numTickets}}</td>
                     <td>${{ i.price}}</td>
                 </tr>
                 {% endfor %}
