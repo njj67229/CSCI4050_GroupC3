@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 from core.models import Movie, Showing, Promo, ShowRoom, SeatInShowing, PhysicalSeat
-from checkout.models import TicketFactory, Booking, TicketType
+from checkout.models import TicketFactory, Booking, TicketType, Ticket
 from home.views import format_runtime
 import json
 from .api import get_actor_info
@@ -18,6 +18,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.template import Context
 from django.template.loader import get_template
+
+from django.views.generic.list import ListView
 
 
 
@@ -122,14 +124,17 @@ def checkout(request, tickets=None, seats=None, show_id=None):
     seats = "3,6,12,18,22" #SeatInShowing
     show_id = 1
     email = 'yalini.nadar@gmail.com'
+    promo = None
             
-    def calculate_total():
+    def calculate_total(promo=None):
         """calculates total ticket prices"""
         total = 0
         for key in tickets:
             t_t = TicketType.objects.filter(type = key).first()
             total += t_t.price * tickets[key]
-        print(total)
+        if promo:
+            total = total * (1-promo)
+        return total
         
         # print(TicketType.objects.all())
     def send_email():
@@ -166,11 +171,54 @@ def checkout(request, tickets=None, seats=None, show_id=None):
             print('yay')
             messages.success(request,'Promo Code has been added!')
             promo = promo
+    
+    #create multiple ticket objects and saves them to the db
+    tickets_cleaned = []
+    for key in tickets:
+        for idx in range(tickets[key]):
+            tickets_cleaned.append(key)
+    
+    ticket_ids = []
+    for item in tickets_cleaned:
+        t = TicketFactory(item,show_id).get_ticket()
+        t.save()
+        ticket_ids.append(t.pk)
         
+    print(ticket_ids)
+      
+    #create booking object
+    s = Showing.objects.filter(pk = show_id).first()
+    booking = Booking(user=request.user, showing=s, promo=promo)
+    booking.save()
+    for id in ticket_ids:
+        booking.tickets.add(id)
+        booking.save()
+    print(booking)
+    
+    # print(our_tickets)
         
     return render(request, "checkout.html")
 
 
 def confirmation(request):
-    template = loader.get_template("confirmation.html")
-    return HttpResponse(template.render())
+    b = Booking.objects.filter(user=request.user).first()
+    print(b.tickets.all())
+    return render(request,"confirmation.html")
+
+def order_history(request):
+    orders = Booking.objects.filter(user=request.user)
+    final = []
+    #need to organize tickets
+        
+    for item in orders:
+        res = {
+            'booking_id' : item.pk,
+            'showing': item.showing,
+            'tix': item.tickets.all()
+        }
+        final.append(res)
+    
+    print(final)
+        
+    print(orders)
+    return render(request, "order_history.html", {'order': final} )
