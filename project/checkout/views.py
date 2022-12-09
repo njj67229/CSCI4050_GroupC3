@@ -122,7 +122,6 @@ def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None)
     for seat in seats:
         phys_seats.append(str(SeatInShowing.objects.get(pk=int(seat)).physical_seat))
     phys_seats = ', '.join(seat for seat in phys_seats)
-    #print(booking.caclculate_price())
 
     return render(request,"order_summary.html", {"tickets": tickets, "showing":showing, "seats": seats, "phys_seats":phys_seats, "price": price})
 
