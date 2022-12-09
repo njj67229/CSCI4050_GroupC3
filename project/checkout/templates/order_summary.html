@@ -57,7 +57,7 @@
 
             <div class="mt-5">
                 <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
-                <a href="{% url 'checkout' %}" class="btn btn-primary text-uppercase btn-lg">Continue to checkout</a>
+                <a href="{% url 'checkout' ad=ad ch=ch sr=sr seats=seats show_id=showing.id%}" class="btn btn-primary text-uppercase btn-lg">Continue to checkout</a>
             </div>
         </div>
     </div>

@@ -18,10 +18,10 @@
             <!-- Body text-->          
             <div class="row">
               <div class="col col-sm-2" style="color: #666666;">
-                <p>Booking Number:</p>
+                <p>Booking Number: </p>
               </div>
               <div class="col">
-                <p>Booking Number Here</p>
+                <p>{{booking.id}}</p>
               </div>
             </div>
             <div class="row">
@@ -29,7 +29,7 @@
                 <p>Movie Title:</p>
               </div>
               <div class="col">
-                <p>Movie Title Here</p>
+                <p>{{booking.showing.movie.title}}</p>
               </div>
             </div>
             <div class="row">
@@ -53,7 +53,7 @@
                 <p>Order Total:</p>
               </div>
               <div class="col">
-                <p>$XX USD</p>
+                <p>$ {{booking.price}} USD</p>
               </div>
             </div>
             <!-- /Body text -->

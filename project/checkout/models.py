@@ -17,14 +17,13 @@ class TicketType(models.Model):
     
     type = models.CharField(max_length=2, choices=TicketType.choices, default=TicketType.ADULT)
     price = models.DecimalField(default=0, decimal_places=2, max_digits=4)
-   
     def __str__(self):
         return f"{self.type}-{self.price}"
     
 class Ticket(models.Model):
     ticket_type = models.ForeignKey(TicketType, on_delete=models.CASCADE, default="")
     showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
-    # seat = models.ForeignKey("core.SeatInShowing", on_delete=models.PROTECT)
+    seat = models.ForeignKey("core.SeatInShowing", on_delete=models.PROTECT, default=None)
     price = models.DecimalField(default=0, decimal_places=2, max_digits=4)
 
     def __str__(self):
@@ -59,6 +58,7 @@ class Booking(models.Model):
     )
     showing = models.ForeignKey("core.Showing", on_delete=models.CASCADE)
     tickets = models.ManyToManyField(Ticket)
+    price = models.DecimalField(decimal_places=2, max_digits=8, default=0)
     
     def caclculate_price(self):
         price = 0

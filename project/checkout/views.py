@@ -20,6 +20,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.template import Context
 from django.template.loader import get_template
+from django.template.defaulttags import register
 
 from django.views.generic.list import ListView
 
@@ -117,6 +118,11 @@ def select_tickets_and_age(request, seats, show_id):
 
 
 def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None):
+    
+    @register.filter(name='lookup')
+    def lookup(val, key):
+        return val.get(key)[0]
+    
     tickets = {"AD":[ad], "CH":[ch], "SR":[sr]}
     ticket_types = TicketType.objects.all()
     price = [0.00, 0.00, 0.00, 0.00]
@@ -129,19 +135,19 @@ def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None)
     price[3] = price[0] + price[1] + price[2]    
     showing = Showing.objects.get(pk=show_id)
     movie = showing.movie
-    seats = seats.split(",")
+    selected_seats = seats.split(",")
     phys_seats = []
-    for seat in seats:
+    for seat in selected_seats:
         phys_seats.append(str(SeatInShowing.objects.get(pk=int(seat)).physical_seat))
     phys_seats = ', '.join(seat for seat in phys_seats)
 
-    return render(request,"order_summary.html", {"tickets": tickets, "showing":showing, "seats": seats, "phys_seats":phys_seats, "price": price})
+    return render(request,"order_summary.html", {"ad":ad, "ch":ch, "sr": sr, "tickets": tickets, "showing":showing, "seats": seats, "phys_seats":phys_seats, "price": price})
 
 
-def checkout(request, tickets=None, seats=None, show_id=None):
-    tickets = {"AD" : 3, "CH" : 1, "SR": 1}
-    seats = "3,6,12,18,22" #SeatInShowing
-    show_id = 1
+def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
+    tickets = {"AD" : ad, "CH" : ch, "SR": sr}
+    #seats = "3,6,12,18,22" #SeatInShowing
+    #show_id = 1
     email = 'yalini.nadar@gmail.com'
     promo = None
             
@@ -153,12 +159,16 @@ def checkout(request, tickets=None, seats=None, show_id=None):
             total += t_t.price * tickets[key]
         if promo:
             total = total * (1-promo)
+
+        online_fee = float(total) * .1
+        total = float(total) * 1.08
+        total += online_fee
         return total
         
         # print(TicketType.objects.all())
     def send_email():
         """sends email confirmation to given email"""
-        email = 'yalini.nadar@gmail.com'
+        email_address = 'yalini.nadar@gmail.com'
         
         message = get_template("email.html").render()
 
@@ -166,7 +176,7 @@ def checkout(request, tickets=None, seats=None, show_id=None):
             subject='Hello',
             body=message,
             from_email='teamc3movies@gmail.com',
-            to=['yalini.nadar@gmail.com'],
+            to=[email_address],
             headers={'Message-ID': 'foo'},
         )
         email.content_subtype = "html"
@@ -183,13 +193,15 @@ def checkout(request, tickets=None, seats=None, show_id=None):
             messages.error(request,'Promo Code Does Not Exist')
             promo = None
         # print(promo.exp_date)
-        elif (promo.exp_date >= datetime.now().date()):
+        elif (promo.exp_date <= datetime.now().date()):
             messages.error(request, 'Sorry this promo is expired')
             promo = None
         else:
-            print('yay')
+            #print('yay')
             messages.success(request,'Promo Code has been added!')
             promo = promo
+        total = calculate_total(promo.discount)
+        current_booking = Booking.objects.get(showing)    
     
     #create multiple ticket objects and saves them to the db
     tickets_cleaned = []
@@ -198,8 +210,13 @@ def checkout(request, tickets=None, seats=None, show_id=None):
             tickets_cleaned.append(key)
     
     ticket_ids = []
-    for item in tickets_cleaned:
+    seats = seats.split(",")
+    for i,item in enumerate(tickets_cleaned):
         t = TicketFactory(item,show_id).get_ticket()
+        t_seat = SeatInShowing.objects.get(pk=seats[i])
+        t_seat.reserved = True
+        t_seat.save()
+        t.seat = t_seat
         t.save()
         ticket_ids.append(t.pk)
         
@@ -207,24 +224,26 @@ def checkout(request, tickets=None, seats=None, show_id=None):
       
     #create booking object
     s = Showing.objects.filter(pk = show_id).first()
-    booking = Booking(user=request.user, showing=s, promo=promo)
+    booking = Booking(user=request.user, showing=s, promo=promo, price=total)
     booking.save()
     for id in ticket_ids:
         booking.tickets.add(id)
-        booking.save()
+        booking.save() 
     print(booking)
     
     # print(our_tickets)
         
     curr_cards = PaymentCard.objects.filter(card_owner=request.user).all()
 
-    return render(request, "checkout.html", {'card':curr_cards, 'total': total})
+    return render(request, "checkout.html", {'ad':ad, 'ch':ch, 'sr':sr, 'seats':seats, 'show_id':show_id, 'card':curr_cards, 'total': total})
 
 
 def confirmation(request):
     b = Booking.objects.filter(user=request.user).first()
-    print(b.tickets.all())
-    return render(request,"confirmation.html")
+    print(b.showing)
+    print(b)
+    print("Booking: " + str(b.tickets.all().values))
+    return render(request,"confirmation.html", {"booking": b})
 
 def order_history(request):
     orders = Booking.objects.filter(user=request.user)
