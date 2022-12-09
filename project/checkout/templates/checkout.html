@@ -15,7 +15,7 @@
                 {% csrf_token %}
                 {% include 'messages.html' %}
                 <input class="form-control mr-2" id="inputPromoCode" style="width: 90%;" name="promo_code">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Apply</button>
             </form>
 
             <h2 class="text-uppercase">Where should we send your tickets?</h2>
@@ -28,23 +28,44 @@
                 <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
             </div>
 
+            <h2 class="text-uppercase">Total</h2>
+            <p>${{total}}</p>
 
-            <h2 class="text-uppercase">Enter Credit/Debit Card</h2>
+            <h2 class="text-uppercase">Select Payment Method</h2>
             <p>
                 Please enter the details of the card you wish to use to make your payment.
             </p>
-            <div class="form-check form-check-inline">
+            <h5>
+                Option 1: Select Existing Card
+            </h5>
+            {% if card%}
+                {% for c in card%}
+                <input class="form-check-input" type="radio" name="card">
+                <b><label class="form-check-label" for="flexRadioDefault1"></b>
+                    {{c}}
+                </label>
+                <br>
+                <!-- <h3>{{c}}</h3> -->
+                {% endfor %}
+            {% else%}
+                <p>No cards Added </p>
+            {% endif %}
+            <br>
+            <h5>
+                Option 2: Enter Card Information
+            </h5>
+            <!-- <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                 <label class="form-check-label" for="flexRadioDefault1">
                     Credit
                 </label>
-            </div>
-            <div class="form-check form-check-inline">
+            </div> -->
+            <!-- <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                 <label class="form-check-label" for="flexRadioDefault2">
                     Debit
                 </label>
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label for="inputCardNumber" class="form-label">Card Number</label>
                 <input type="number" class="form-control" id="inputCardNumber">
