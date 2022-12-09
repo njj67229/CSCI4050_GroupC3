@@ -154,7 +154,7 @@ def send_email(info):
         html_message = render_to_string("email.html", { 'email': email_address, 'booking': info["booking"], 'time': info["time"], "tix": info["tix"] })
 
         email = EmailMessage(
-            subject='Hello',
+            subject='Order Confirmation',
             body=html_message,
             from_email='teamc3movies@gmail.com',
             to=[email_address],
