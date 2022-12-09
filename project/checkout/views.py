@@ -144,6 +144,24 @@ def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None)
 
     return render(request,"order_summary.html", {"ad":ad, "ch":ch, "sr": sr, "tickets": tickets, "showing":showing, "seats": seats, "phys_seats":phys_seats, "price": price})
 
+def send_email():
+        """sends email confirmation to given email"""
+        email_address = 'yalini.nadar@gmail.com'
+        # email_address = 'nak90782@uga.edu'
+        
+        
+        # message = get_template("email.html").render()
+        html_message = render_to_string("email.html", { 'context': 'hi', })
+
+        email = EmailMessage(
+            subject='Hello',
+            body=html_message,
+            from_email='teamc3movies@gmail.com',
+            to=[email_address],
+            headers={'Message-ID': 'foo'},
+        )
+        email.content_subtype = "html"
+        email.send()
 
 def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
     tickets = {"AD" : ad, "CH" : ch, "SR": sr}
@@ -170,7 +188,7 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
     def send_email():
         """sends email confirmation to given email"""
         email_address = 'yalini.nadar@gmail.com'
-        email_address = 'nak90782@uga.edu'
+        # email_address = 'nak90782@uga.edu'
         
         
         # message = get_template("email.html").render()
