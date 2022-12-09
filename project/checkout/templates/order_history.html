@@ -17,16 +17,24 @@
             <thead>
                 <tr>
                     <th scope="col">Order Number</th>
-                    <th scope="col">Movie and Date</th>
+                    <th scope="col">Movie</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Room</th>
+                    <th scope="col">Seats</th>
+                    <th scope="col">Price</th>
                 </tr>
             </thead>
             <tbody>
                 {% for i in order %}
                 <tr>
                     <th scope="row">{{i.booking_id}}</th>
-                    <td>{{ i.showing }}</td>
+                    <td>{{ i.showing.movie }}</td>
+                    <td>{{ i.showing.showtime }}</td>
+                    <td>{{ i.showing.room }}</td>
+                    <!-- <td>{{ i.showing.seats}}</td> -->
+                    <td>{{ seats }}</td>
+                    <td>${{ i.price}}</td>
                 </tr>
-                <br>
                 {% endfor %}
             </tbody>
         </table>
