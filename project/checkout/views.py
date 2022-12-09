@@ -256,6 +256,7 @@ def confirmation(request):
     
     info = {"booking": b, "time": time, "tix": tix}
     send_email(info)
+    messages.success(request,'A confirmation email has been sent to '+ request.user.email)
           
     return render(request,"confirmation.html", {"booking": b, "time": time, "tix": tix})
 
