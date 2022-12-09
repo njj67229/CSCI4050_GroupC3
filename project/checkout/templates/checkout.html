@@ -40,7 +40,7 @@
             </h5>
             {% if card%}
                 {% for c in card%}
-                <input class="form-check-input" type="radio" name="card">
+                <input class="form-check-input" type="radio" name="card" onchange="allow_proceed()" id="card{{c.pk}}">
                 <b><label class="form-check-label" for="flexRadioDefault1"></b>
                     {{c}}
                 </label>
@@ -67,21 +67,44 @@
                 </label>
             </div> -->
             <div class="mb-3">
-                <label for="inputCardNumber" class="form-label">Card Number</label>
-                <input type="number" class="form-control" id="inputCardNumber">
+                <label for="inputCardNumber" class="form-label" >Card Number</label>
+                <input type="number" class="form-control" onchange="validate_checkout()" id="inputCardNumber">
             </div>
             <div class="mb-3">
-                <label for="inputExpiryDate" class="form-label">Expiry Date</label>
-                <input type="date" class="form-control" id="inputExpiryDate">
+                <label for="inputExpiryDate" class="form-label" >Expiry Date</label>
+                <input type="date" class="form-control" onchange="validate_checkout()" id="inputExpiryDate">
             </div>
             <div class="mb-3">
                 <label for="inputAddress" class="form-label">Billing Address</label>
-                <input type="address" class="form-control" id="inputAddress" aria-describedby="emailHelp">
+                <input type="address" class="form-control" onchange="validate_checkout()" id="inputAddress" aria-describedby="emailHelp">
             </div>
             <button class="btn btn-secondary text-uppercase btn-lg" onclick="history.back()">Back</button>
-            <a href="{% url 'confirmation' %}" class="btn btn-success text-uppercase btn-lg">Submit payment</a>
+            <a id="continue_checkout" href="{% url 'confirmation' %}" class="btn btn-success text-uppercase btn-lg disabled">Submit payment</a>
         </div>
     </div>
 </div>
 
+<script>
+    var continue_checkout = document.getElementById("continue_checkout")
+    var inputCN = document.getElementById("inputCardNumber")
+    var inputExpiryDate = document.getElementById("inputExpiryDate")
+    var inputAddress = document.getElementById("inputAddress")
+
+    function allow_proceed() {
+        if (continue_checkout.classList.contains("disabled")) {
+            continue_checkout.classList.remove("disabled")
+        }
+    }
+    function validate_checkout() {
+        if (inputCN.value == "" || inputExpiryDate.value == null || inputAddress.value == "") {
+            if (!continue_checkout.classList.contains("disabled")) {
+                continue_checkout.classList.add("disabled")
+            } 
+        } else {
+            allow_proceed()
+        }
+    }
+</script>
+
 {% endblock %}
+
