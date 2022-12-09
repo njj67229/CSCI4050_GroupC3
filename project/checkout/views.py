@@ -203,7 +203,9 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
             messages.success(request,'Promo Code has been added!')
             promo = promo
         total = calculate_total(promo.discount)
-        #current_booking = Booking.objects.get(showing)    
+        b = Booking.objects.filter(user=request.user).first()
+        b.price = total
+        b.save()
     
     #create multiple ticket objects and saves them to the db
     tickets_cleaned = []
@@ -212,10 +214,10 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
             tickets_cleaned.append(key)
     
     ticket_ids = []
-    seats = seats.split(",")
+    selected_seats = seats.split(",")
     for i,item in enumerate(tickets_cleaned):
         t = TicketFactory(item,show_id).get_ticket()
-        t_seat = SeatInShowing.objects.get(pk=seats[i])
+        t_seat = SeatInShowing.objects.get(pk=selected_seats[i])
         t_seat.reserved = True
         t_seat.save()
         t.seat = t_seat
@@ -251,8 +253,6 @@ def order_history(request):
     orders = Booking.objects.filter(user=request.user)
     final = []
     #need to organize tickets
-        
-
     for item in orders:
         price = 0
         for ticket in item.tickets.all():
