@@ -71,7 +71,10 @@
       <button class="btn btn-secondary text-uppercase btn-lg" style="border-radius: 5px;"onclick="history.back()">Back</button>
       <form method="post">
         {% csrf_token %}
-        <button name="order" value="" id="continue" class="btn btn-primary text-uppercase btn-lg disabled">Continue</button>
+        <input type="hidden" name="ad" id="AD_tix" value="0"></input>
+        <input type="hidden" name="ch" id="CH_tix" value="0"></input>
+        <input type="hidden" name="sr" id="SR_tix" value="0"></input>
+        <button id="continue" class="btn btn-primary text-uppercase btn-lg disabled" disabled>Continue</button>
       </form>    
       </div>
     <div class="col-md-1"></div>
@@ -82,10 +85,17 @@
   var ch_price = document.getElementById("CH_price")
   var ad_price = document.getElementById("AD_price")
   var sr_price = document.getElementById("SR_price")
+
   var remaining = document.getElementById("remaining")
+  
   var ch_select = document.getElementById("CH_select")
   var ad_select = document.getElementById("AD_select")
   var sr_select = document.getElementById("SR_select")
+
+  var ch_tix = document.getElementById("CH_tix")
+  var ad_tix = document.getElementById("AD_tix")
+  var sr_tix = document.getElementById("SR_tix")
+
   var cont_checkout = document.getElementById("continue")
   var num_seats = "Select {{seats|length}} remaining tickets."
   remaining.innerHTML = num_seats
@@ -99,18 +109,26 @@
     sr_price.innerHTML = "$" + (parseFloat("{{prices.SR}}") * sr_val).toFixed(2)
     if (total > 0){
       var num_seats = "Select " + String(total) + " remaining tickets."
+      if (!cont_checkout.classList.contains("disabled")) { 
+        cont_checkout.classList.add("disabled")
+        cont_checkout.disabled=true
+      }
     } else if (total < 0) {
       var num_seats = "Too many tickets selected. Please select {{seats|length}} ticket(s)."
       if (!cont_checkout.classList.contains("disabled")) { 
         cont_checkout.classList.add("disabled")
+        cont_checkout.disabled=true
       }
     } else {
       var num_seats = "Select " + String(total) + " remaining tickets."
       if (cont_checkout.classList.contains("disabled")) { 
         cont_checkout.classList.remove("disabled")
+        cont_checkout.disabled= false
       }
-      tickets = {"AD" : ad_val, "CH" : ch_val, "SR": sr_val}
-      cont_checkout.value = tickets
+      ch_tix.value = ch_val
+      ad_tix.value = ad_val
+      sr_tix.value = sr_val
+
     }
     remaining.innerHTML = num_seats
   }

@@ -11,6 +11,7 @@ from .api import get_actor_info
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .adapter import login_required_message
+import urllib
 
 def get_actors(actor_ids):
     """Returns a list of tuples with actor name, actor picture"""
@@ -61,31 +62,10 @@ def select_show_time(request, movie_id):
     return render(request, "select_show_time.html", {'movie': movie_info, "showtimes":showtimes})
 
 @login_required (login_url='/members/login/')
-def select_tickets_and_age(request, seats, show_id):
-    if request.method == 'POST':
-        data = request.POST
-        tickets = data.get("order")
-        print("Tickets" + str(tickets))
-        return render(request, "confirmation.html")
-    else:    
-        if show_id:
-            showing = Showing.objects.get(pk=show_id)
-        ticket_types = TicketType.objects.all()
-        prices = {}
-        seats = seats.split(",")
-        for type in ticket_types:
-            prices[type.type] = type.price    
-        context = {'showing' : showing, 'seats':seats, 'prices':prices}
-        print("HERE")
-        return render(request, "select_tickets_and_age.html", context)
-
-
-@login_required (login_url='/members/login/')
 def select_seats(request, show_id=None):
     if request.method == 'POST':
         data = request.POST
         seats = data.get("chosen_seats")
-        print("Seats" + str(seats))
         return redirect(reverse('select_tickets_and_age', kwargs={"seats": str(seats), "show_id": show_id}))
     else:    
         if show_id:
@@ -104,21 +84,38 @@ def select_seats(request, show_id=None):
         return render(request, "select_seats.html", {'showing': showing, 'seats': seats.items()})
 
 
-def order_summary(request):
-    t = TicketFactory('AD',4).get_ticket()
-    t.save()
-    #testing booking
-    p = Promo.objects.get(pk=1) 
-    booking = Booking(user=request.user, showing=t.showing, promo=p)
-    booking.save()
-    booking.tickets.set([t])
-    booking.save()
-    print(booking.caclculate_price())
+@login_required (login_url='/members/login/')
+def select_tickets_and_age(request, seats, show_id):
+    if request.method == 'POST':
+        data = request.POST
+        ad = data.get("ad")
+        sr = data.get("sr")
+        ch = data.get("ch")
+        return redirect(reverse('order_summary', kwargs={"ad": ad, "ch": ch, "sr":sr, "seats": str(seats), "show_id": show_id}))
+    else:    
+        if show_id:
+            showing = Showing.objects.get(pk=show_id)
+        ticket_types = TicketType.objects.all()
+        prices = {}
+        seats = seats.split(",")
+        for type in ticket_types:
+            prices[type.type] = type.price    
+        context = {'showing' : showing, 'seats':seats, 'prices':prices}
+        return render(request, "select_tickets_and_age.html", context)
+
+
+def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None):
+    tickets = {"ad":ad, "ch":ch, "sr":sr}
+    print(tickets)
+    #print(booking.caclculate_price())
 
     return render(request,"order_summary.html" )
 
 
-def checkout(request):
+def checkout(request, ad=None, seats=None, show_id=None):
+    tickets = {"AD" : 3, "CH" : 1, "SR": 1}
+    seats = "3,6,12,18,22" #SeatInShowing
+    show_id = 1
     return render(request, "checkout.html")
 
 
