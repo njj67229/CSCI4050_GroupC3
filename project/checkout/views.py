@@ -123,7 +123,6 @@ def order_summary(request, ad=None, ch=None, sr=None , seats=None, show_id=None)
     @register.filter(name='lookup')
     def lookup(val, key):
         return val.get(key)[0]
-    
     tickets = {"AD":[ad], "CH":[ch], "SR":[sr]}
     ticket_types = TicketType.objects.all()
     price = [0.00, 0.00, 0.00, 0.00]
@@ -222,10 +221,10 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
             #print('yay')
             messages.success(request,'Promo Code has been added!')
             promo = promo
-        total = calculate_total(promo.discount)
-        b = Booking.objects.filter(user=request.user).first()
-        b.price = total
-        b.save()
+            total = calculate_total(promo.discount)
+            b = Booking.objects.filter(user=request.user).first()
+            b.price = total
+            b.save()
     
     #create multiple ticket objects and saves them to the db
     tickets_cleaned = []
@@ -264,30 +263,30 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
 
 def confirmation(request):
     b = Booking.objects.filter(user=request.user).first()
-    print(b.showing)
-    print(b)
-    print("Booking: " + str(b.tickets.all().values))
-    return render(request,"confirmation.html", {"booking": b})
+    time = b.showing.showtime.strftime('%a, %B %d - %I:%M %p')
+    tix = {"Adult": 0, "Senior": 0, "Child":0}
+    for ticket in b.tickets.all():
+        if ticket.ticket_type.type == "AD":
+            tix["Adult"] += 1
+        elif ticket.ticket_type.type == "CH":
+            tix["Child"] += 1
+        elif ticket.ticket_type.type == "SR":
+            tix["Senior"] += 1
+          
+    return render(request,"confirmation.html", {"booking": b, "time": time, "tix": tix})
 
 def order_history(request):
     orders = Booking.objects.filter(user=request.user)
     final = []
     #need to organize tickets
     for item in orders:
-        price = 0
-        for ticket in item.tickets.all():
-            price += ticket.price
-
-        seats = []
-        for seat in item.showing.seats.all():
-            seats.append(seat.SeatInShowing)
 
         res = {
             'booking_id' : item.pk,
             'showing': item.showing,
             'tix': item.tickets.all(),
-            'price': price,
-            'seats': seats
+            'price': item.price,
+            'numTickets': len(item.tickets.all())
         }
         final.append(res)
     
