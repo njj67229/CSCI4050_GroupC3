@@ -170,6 +170,8 @@ def checkout(request, ad=None, ch=None, sr=None, seats=None, show_id=None):
     def send_email():
         """sends email confirmation to given email"""
         email_address = 'yalini.nadar@gmail.com'
+        email_address = 'nak90782@uga.edu'
+        
         
         # message = get_template("email.html").render()
         html_message = render_to_string("email.html", { 'context': 'hi', })
