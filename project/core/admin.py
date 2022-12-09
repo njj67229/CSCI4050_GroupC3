@@ -21,7 +21,9 @@ class PromoAdmin(admin.ModelAdmin):
 
 @admin.register(Showing)
 class Showing(admin.ModelAdmin):
-    pass
+    # fields = ('movie', 'showtime', 'room')
+    exclude = ('seats',)
+    # pass
 
 @admin.register(Genre)
 class Genre(admin.ModelAdmin):
